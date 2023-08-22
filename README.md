@@ -13,7 +13,6 @@ This study offers insights into the role and significance of extrachromosomal ci
 - **03_Count_reads_in_bed_regions.py**: Count overlapping reads from a SAM file with a BED file.
 - **04_Repeats_identification.py**: Identify direct repeats crucial for eccDNA formation.
 - **Merge.R**: Merge and post-process identified eccDNAs.
-- **genomeSize.py**: Analyze the genome's size relative to eccDNA abundance.
 
 ## Quick Start
 
