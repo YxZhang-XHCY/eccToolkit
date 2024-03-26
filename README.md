@@ -1,6 +1,6 @@
 # README for eccToolkit
 
-Welcome to the `eccToolkit` repository. This repository contains the analytical code employed in the research paper titled "The Adaptational Dynamics of Extrachromosomal Circular DNA in Rice."
+Welcome to the `eccToolkit` repository. This repository contains the analytical code employed in the research paper titled "Dynamics of Extrachromosomal Circular DNA in Rice."
 
 ## Overview
 
