@@ -1,0 +1,43 @@
+name: ecctoolkit
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  # Python runtime
+  - python>=3.8
+  
+  # Core scientific computing
+  - pandas>=1.3.0
+  - numpy>=1.20.0
+  - scipy>=1.7.0
+  - matplotlib>=3.3.0
+  - seaborn>=0.11.0
+  - statsmodels>=0.12.0
+  
+  # Bioinformatics libraries
+  - pysam>=0.17.0
+  
+  # Progress and utilities
+  - tqdm>=4.60.0
+  
+  # Bioinformatics tools
+  - bedtools>=2.30.0
+  - bwa>=0.7.17
+  - samtools>=1.10
+  - blast>=2.10.0
+  - seqkit>=2.0.0
+  - fastp>=0.20.0
+  
+  # Additional utilities
+  - pip
+  
+  # pip-only dependencies
+  - pip:
+    - circle-map-py  # If available on PyPI, otherwise manual installation needed
+    
+# Manual installation notes:
+# Some tools may require manual installation:
+# - Circle-Map: https://github.com/iprada/Circle-Map
+# - CircleSeeker: https://github.com/TreesLab/CircleSeeker
+# - FLED: https://github.com/FangLabTools/FLED

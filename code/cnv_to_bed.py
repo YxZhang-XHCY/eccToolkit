@@ -16,10 +16,12 @@ BED output columns:
 import argparse, os
 import pandas as pd
 
+
 def main():
     p = argparse.ArgumentParser(
-        description="Convert CNV.tsv to per-cell-line BED files")
-    p.add_argument("-i", "--input",  required=True, help="CNV.tsv")
+        description="Convert CNV.tsv to per-cell-line BED files"
+    )
+    p.add_argument("-i", "--input", required=True, help="CNV.tsv")
     p.add_argument("-o", "--outdir", required=True, help="output directory")
     args = p.parse_args()
 
@@ -31,17 +33,22 @@ def main():
     # convert 1-based Start → 0-based for BED
     df["Start0"] = df["Start"] - 1
 
-    bed_cols = ["Chromosome", "Start0", "End",
-                "SegmentMean", "NumProbes", "Status",
-                "ModelID", "ProfileID"]
+    bed_cols = [
+        "Chromosome",
+        "Start0",
+        "End",
+        "SegmentMean",
+        "NumProbes",
+        "Status",
+        "ModelID",
+        "ProfileID",
+    ]
 
     # write one BED per Cell_Lines
     for cell, sub in df.groupby("Cell_Lines", sort=False):
         out_path = os.path.join(args.outdir, f"{cell}.cnv.bed")
-        sub[bed_cols].to_csv(out_path,
-                             sep="\t",
-                             header=False,
-                             index=False)
+        sub[bed_cols].to_csv(out_path, sep="\t", header=False, index=False)
+
 
 if __name__ == "__main__":
     main()

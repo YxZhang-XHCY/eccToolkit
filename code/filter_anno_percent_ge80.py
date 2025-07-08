@@ -11,6 +11,7 @@ filter_anno_percent_ge80.py
 import sys
 import pandas as pd
 
+
 def main():
     if len(sys.argv) != 3:
         print("用法: python filter_anno_percent_ge80.py input.csv output.csv")
@@ -21,10 +22,11 @@ def main():
     # 读取数据
     df = pd.read_csv(input_file)
     # 过滤
-    filtered = df[df['anno_Percent'] >= 80]
+    filtered = df[df["anno_Percent"] >= 80]
     # 保存
     filtered.to_csv(output_file, index=False)
     print(f"已筛选出anno_Percent >= 80的{len(filtered)}条记录，保存为{output_file}")
+
 
 if __name__ == "__main__":
     main()

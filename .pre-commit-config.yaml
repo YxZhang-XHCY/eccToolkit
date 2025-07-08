@@ -1,0 +1,214 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  # General pre-commit hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.md$
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-xml
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+      - id: name-tests-test
+        args: ['--pytest-test-first']
+
+  # Python code formatting with Black
+  - repo: https://github.com/psf/black
+    rev: 23.7.0
+    hooks:
+      - id: black
+        language_version: python3.8
+        args: ['--line-length=88']
+        exclude: ^(deprecated/|code_backup_.*/)
+
+  # Import sorting with isort
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--filter-files"]
+        exclude: ^(deprecated/|code_backup_.*/)
+
+  # Linting with flake8
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies: [
+          flake8-docstrings,
+          flake8-bugbear,
+          flake8-comprehensions,
+          flake8-simplify,
+        ]
+        exclude: ^(deprecated/|code_backup_.*/)
+
+  # Type checking with mypy
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.5.1
+    hooks:
+      - id: mypy
+        additional_dependencies: [
+          types-requests,
+          pandas-stubs,
+          types-setuptools,
+        ]
+        exclude: ^(deprecated/|code_backup_.*/)
+        args: [--ignore-missing-imports]
+
+  # Security linting with bandit
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: ['-c', 'pyproject.toml']
+        additional_dependencies: ['bandit[toml]']
+        exclude: ^(tests/|deprecated/|code_backup_.*/)
+
+  # Upgrade Python syntax with pyupgrade
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.10.1
+    hooks:
+      - id: pyupgrade
+        args: [--py38-plus]
+        exclude: ^(deprecated/|code_backup_.*/)
+
+  # Check for common issues in requirements files
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+      - id: python-no-log-warn
+      - id: python-use-type-annotations
+      - id: rst-backticks
+      - id: rst-directive-colons
+      - id: rst-inline-touching-normal
+
+  # Additional Python checks
+  - repo: https://github.com/asottile/add-trailing-comma
+    rev: v3.0.1
+    hooks:
+      - id: add-trailing-comma
+        args: [--py36-plus]
+        exclude: ^(deprecated/|code_backup_.*/)
+
+  # Remove unused imports
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.2.0
+    hooks:
+      - id: autoflake
+        args: [
+          --remove-all-unused-imports,
+          --remove-unused-variables,
+          --remove-duplicate-keys,
+          --in-place,
+        ]
+        exclude: ^(deprecated/|code_backup_.*/)
+
+  # Sort and format setup.py requirements
+  - repo: https://github.com/asottile/setup-cfg-fmt
+    rev: v2.4.0
+    hooks:
+      - id: setup-cfg-fmt
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.35.0
+    hooks:
+      - id: markdownlint
+        args: ['--fix']
+        exclude: ^(deprecated/|code_backup_.*/)
+
+  # YAML formatting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.1
+    hooks:
+      - id: prettier
+        types: [yaml]
+        exclude: ^(deprecated/|code_backup_.*/)
+
+# Global configuration
+default_language_version:
+  python: python3.8
+
+# Exclude certain files/directories globally
+exclude: |
+  (?x)^(
+    deprecated/.*|
+    code_backup_.*/.*|
+    \.git/.*|
+    \.mypy_cache/.*|
+    \.pytest_cache/.*|
+    __pycache__/.*|
+    build/.*|
+    dist/.*|
+    \.eggs/.*
+  )$
+
+# Fail fast - stop running hooks after first failure
+fail_fast: false
+
+# Configure specific hooks
+repos_final:
+  # Custom hook for eccToolkit specific checks
+  - repo: local
+    hooks:
+      - id: check-script-headers
+        name: Check Python script headers
+        entry: python -c "
+import sys
+import os
+
+for filepath in sys.argv[1:]:
+    if filepath.endswith('.py') and filepath.startswith('code/'):
+        with open(filepath, 'r', encoding='utf-8') as f:
+            first_line = f.readline().strip()
+            if not first_line.startswith('#!'):
+                print(f'Missing shebang in {filepath}')
+                sys.exit(1)
+            
+            # Check for proper encoding if needed
+            lines = f.readlines()
+            if len(lines) > 1 and 'coding' not in lines[0] and 'coding' not in lines[1]:
+                # This is optional, but good practice for international projects
+                pass
+"
+        language: system
+        files: ^code/.*\.py$
+        exclude: ^(deprecated/|code_backup_.*/)
+
+      - id: check-chinese-comments
+        name: Check for Chinese comments (warning only)
+        entry: python -c "
+import sys
+import re
+
+chinese_pattern = re.compile(r'[\u4e00-\u9fff]+')
+issues_found = False
+
+for filepath in sys.argv[1:]:
+    if filepath.endswith('.py') and filepath.startswith('code/'):
+        with open(filepath, 'r', encoding='utf-8') as f:
+            for line_num, line in enumerate(f, 1):
+                if chinese_pattern.search(line):
+                    print(f'WARNING: Chinese characters found in {filepath}:{line_num}: {line.strip()}')
+                    issues_found = True
+
+if issues_found:
+    print('\\nWARNING: Chinese characters found. Consider translating to English for consistency.')
+    print('This is a warning only - commit will proceed.')
+"
+        language: system
+        files: ^code/.*\.py$
+        exclude: ^(deprecated/|code_backup_.*/)
+        verbose: true
