@@ -3,8 +3,8 @@ requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "eccToolkit"
-version = "1.0.0"
+name = "ecctoolkit"
+version = "0.7.1"
 description = "A comprehensive toolkit for extrachromosomal circular DNA (eccDNA) analysis"
 authors = [{name = "eccToolkit Team", email = "contact@ecctoolkit.org"}]
 license = {file = "LICENSE"}
@@ -19,6 +19,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
 ]
 keywords = ["eccDNA", "bioinformatics", "genomics", "circular-DNA", "analysis"]
@@ -33,6 +34,8 @@ dependencies = [
     "pysam>=0.17.0",
     "tqdm>=4.60.0",
     "biopython>=1.79",
+    "click>=8.0.0",
+    "pyyaml>=6.0",
 ]
 
 [project.optional-dependencies]
@@ -59,7 +62,10 @@ Repository = "https://github.com/yourusername/eccToolkit.git"
 "Bug Tracker" = "https://github.com/yourusername/eccToolkit/issues"
 
 [project.scripts]
-eccToolkit = "eccToolkit.cli:main"
+ecc = "ecctoolkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 # Black configuration
 [tool.black]
@@ -87,7 +93,7 @@ extend-exclude = '''
 profile = "black"
 multi_line_output = 3
 line_length = 88
-known_first_party = ["eccToolkit"]
+known_first_party = ["ecctoolkit"]
 known_third_party = [
     "pandas",
     "numpy",
@@ -105,7 +111,7 @@ force_single_line = false
 atomic = true
 include_trailing_comma = true
 use_parentheses = true
-src_paths = ["code", "tests"]
+src_paths = ["src", "tests"]
 
 # MyPy configuration
 [tool.mypy]
@@ -145,7 +151,7 @@ addopts = [
     "-ra",
     "--strict-markers",
     "--strict-config",
-    "--cov=code",
+    "--cov=src/ecctoolkit",
     "--cov-report=term-missing",
     "--cov-report=html",
     "--cov-report=xml",
@@ -162,7 +168,7 @@ markers = [
 
 # Coverage configuration
 [tool.coverage.run]
-source = ["code"]
+source = ["src/ecctoolkit"]
 branch = true
 omit = [
     "*/tests/*",
@@ -242,4 +248,4 @@ exclude = [
 max-complexity = 10
 
 [tool.ruff.isort]
-known-first-party = ["eccToolkit"]
+known-first-party = ["ecctoolkit"]

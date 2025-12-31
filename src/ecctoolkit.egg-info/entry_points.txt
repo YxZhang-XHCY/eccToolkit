@@ -1,0 +1,2 @@
+[console_scripts]
+ecc = ecctoolkit.cli:main

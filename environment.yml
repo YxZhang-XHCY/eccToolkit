@@ -26,15 +26,17 @@ dependencies:
   - bwa>=0.7.17
   - samtools>=1.10
   - blast>=2.10.0
+  - minimap2>=2.24
   - seqkit>=2.0.0
   - fastp>=0.20.0
   
   # Additional utilities
+  - pyyaml>=6.0
   - pip
   
   # pip-only dependencies
   - pip:
-    - circle-map-py  # If available on PyPI, otherwise manual installation needed
+    # circle-map-py is not available on PyPI; install manually if needed.
     
 # Manual installation notes:
 # Some tools may require manual installation:

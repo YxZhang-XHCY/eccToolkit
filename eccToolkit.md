@@ -13,6 +13,7 @@
 ## 目录 (Table of Contents)
 
 - [安装指南](https://www.google.com/search?q=%23安装指南)
+- [模拟入门](https://www.google.com/search?q=%23模拟入门)
 - [工具脚本详解](https://www.google.com/search?q=%23工具脚本详解)
   - [`run_circlemap_pipeline.py`](https://www.google.com/search?q=%23run_circlemap_pipelinepy-circle-map-eccdna-鉴定工作流)
   - [`validate_eccdna_amplicons.py`](https://www.google.com/search?q=%23validate_eccdna_amplicons_py-靶向测序eccdna验证流程)
@@ -71,6 +72,7 @@ pysam
 - `fastp`
 - `bwa`
 - `samtools` (>= 1.10)
+- `minimap2` (用于 eccDNA 区域模拟)
 - `bedtools`
 - `blastn` (来自 NCBI BLAST+ 套件)
 - `seqkit`
@@ -80,7 +82,48 @@ pysam
 
 ------
 
+## 模拟入门 (Simulation)
 
+`sim-region` 是模拟流程的标准入口，会生成 `.all.bed` / `.all.fa`，
+后续 `sim-reads`、检测与分析均基于这些输出。
+
+**1) 生成 eccDNA 区域**
+
+```bash
+ecc sim-region \
+    -r /path/to/reference.fa \
+    -o sim_ecc \
+    -u 1000 -m 100 -c 50 \
+    -t 8 --seed 42
+
+# 输出示例:
+# sim_ecc/sim_ecc.all.bed
+# sim_ecc/sim_ecc.all.fa
+# sim_ecc/sim_ecc.qc.log
+```
+
+**2) 生成测序读段**
+
+```bash
+ecc sim-reads \
+    -i sim_ecc/sim_ecc.all.fa \
+    -o reads_out \
+    --config configs/sim-reads.yaml \
+    --cov-ngs 10000 --cov-hifi 1000 --cov-ont 1000
+```
+
+**常用高级参数 (sim-region)**
+
+- 比对阈值: `--identity`, `--min-coverage`, `--max-secondary`, `--no-hit-policy`
+- 分流与 preset: `--split-by-length/--no-split-by-length`, `--split-length`,
+  `--minimap-preset-short`, `--minimap-preset-long`
+- 采样强度: `--tail-min`, `--tail-max`, `--multiplier-u`, `--multiplier-m`
+- 调试: `--keep-tmp`
+
+**配置模板**
+
+- `configs/sim-region.yaml`: sim-region 参数清单（CLI 对照）
+- `configs/sim-reads.yaml`: sim-reads YAML 配置模板（可直接 `--config` 使用）
 
 ## 工具脚本详解 (Toolkit Scripts)
 

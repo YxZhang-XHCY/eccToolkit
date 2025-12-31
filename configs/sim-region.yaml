@@ -1,0 +1,27 @@
+# sim-region CLI parameter template (use as a checklist)
+# This file is not read by the CLI; map keys to flags manually.
+reference: /path/to/reference.fa
+output_prefix: sim_ecc
+num_unique: 1000
+num_multi: 100
+num_chimeric: 50
+threads: 8
+seed: 42
+mode: 400.0
+sigma: 0.8
+tail_weight: 0.05
+tail_min: 5000
+tail_max: 500000
+min_length: 100
+max_length: 500000
+identity: 99.0
+min_coverage: 90.0
+max_secondary: 50
+no_hit_policy: skip
+split_by_length: true
+split_length: 5000
+minimap_preset_short: sr
+minimap_preset_long: asm5
+candidate_multiplier_u: 2.0
+candidate_multiplier_m: 10.0
+keep_tmp: false

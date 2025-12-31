@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: ecctoolkit
+Version: 0.7.1
+Summary: A comprehensive toolkit for extrachromosomal circular DNA (eccDNA) analysis
+Author-email: eccToolkit Team <contact@ecctoolkit.org>
+Project-URL: Homepage, https://github.com/yourusername/eccToolkit
+Project-URL: Documentation, https://eccToolkit.readthedocs.io/
+Project-URL: Repository, https://github.com/yourusername/eccToolkit.git
+Project-URL: Bug Tracker, https://github.com/yourusername/eccToolkit/issues
+Keywords: eccDNA,bioinformatics,genomics,circular-DNA,analysis
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: matplotlib>=3.3.0
+Requires-Dist: seaborn>=0.11.0
+Requires-Dist: statsmodels>=0.12.0
+Requires-Dist: pysam>=0.17.0
+Requires-Dist: tqdm>=4.60.0
+Requires-Dist: biopython>=1.79
+Requires-Dist: click>=8.0.0
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: dev
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: isort>=5.12.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.3.0; extra == "dev"
+Requires-Dist: pre-commit>=3.0.0; extra == "dev"
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Provides-Extra: plotting
+Requires-Dist: matplotlib-venn>=0.11.7; extra == "plotting"
+Requires-Dist: plotly>=5.0.0; extra == "plotting"
+Requires-Dist: bokeh>=2.4.0; extra == "plotting"

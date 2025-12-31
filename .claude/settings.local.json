@@ -9,7 +9,18 @@
       "Bash(pip install:*)",
       "Bash(python3 -m pip install:*)",
       "Bash(export:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(wc:*)",
+      "Bash(ecctoolkit:*)",
+      "Bash(ecc:*)",
+      "Bash(tar:*)",
+      "Bash(du:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(time ecc sim-reads:*)",
+      "Bash(cat:*)",
+      "Bash(time python:*)",
+      "Bash(python -m build:*)",
+      "Bash(python -c:*)"
     ],
     "deny": []
   }
