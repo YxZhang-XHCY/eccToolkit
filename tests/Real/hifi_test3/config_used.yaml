@@ -1,0 +1,100 @@
+background:
+  enabled: false
+  fasta_path: null
+  length_distribution: lognormal
+  length_mean: 2000.0
+  length_std: 1500.0
+  max_length: 10000
+  min_length: 200
+  ratio: 0.1
+branch:
+  B_rate: 0.05
+  B_sat: 30
+  branch_length_mode: ratio_trunk
+  branch_mode: per_repeat
+  k_branch: 0.3
+  mu_br: -1.5
+  sigma_br: 0.5
+constants:
+  I_sigma_fixed: null
+  I_sigma_ratio: 0.1
+  L_ref: 1000
+  Y_comp_cv: 0.3
+  Y_comp_max: 500.0
+  Y_comp_mean: 50.0
+  beta: 0.2
+  branch_chimera_window: 100
+  chimera_alpha: 0.1
+  chimera_background_pool: 200
+  chimera_background_ratio: 0.0
+  chimera_breakpoint_alpha: 0.5
+  chimera_breakpoint_beta: 0.5
+  chimera_breakpoint_mode: uniform
+  chimera_len_ratio: 0.1
+  chimera_max_len: 2000
+  chimera_mode: per_pair
+  competition_mode: total_pool
+  force_ecc_coverage: true
+  force_ecc_min_reads_factor: 2.0
+  gamma: 1.0
+  hifi_max_length: 50000
+  hifi_min_length: 5000
+  hifi_target_size_mean: 15000
+  hifi_target_size_std: 1200
+  lambda_clog: 5.0e-05
+  ont_min_length: 200
+  p_branch_chimera: 0.3
+  p_flip: 0.0
+  p_nick_per_debranch: 0.1
+  p_nick_to_break: 0.05
+  p_trunc_debranched: 0.05
+  p_trunc_per_anchor: 0.3
+  read_length: 150
+debranch:
+  D_eff: 0.1
+  L_ref_debranch: 500
+  k_debranch: 0.01
+kinetics:
+  dntp: null
+  k_dntp: 1.0
+  k_inact_bound: 0.0005
+  k_inact_free: 0.0005
+  k_off: 0.005
+  k_off_pause: null
+  k_on: 0.2
+  k_pause: 0.01
+  k_ppi: 1.0
+  k_resume: 0.05
+  k_start: 2.0
+  len_exp_off: 0.5
+  len_exp_on: 0.5
+  len_exp_pause: 0.5
+  len_exp_v: 0.0
+  len_scale_mode: saturating
+  len_scale_tau: 1.0
+  length_penalty_mode: none
+  max_events: 50000
+  off_pause_multiplier: 2.0
+  ppi: null
+  reaction_time_min: 2880
+  rebinding_target: same_molecule
+  resource_mode: none
+  resource_noise_sigma: 0.3
+  v_nt_per_min: 5000
+ngs_library:
+  I_mu: 400.0
+output_scale:
+  Cov_HiFi: 10000
+  Cov_NGS: 10000
+  Cov_ONT: 1000
+  mode: read_count
+rca:
+  R_max: 10000
+  R_min: 200
+  k_len: 0.5
+  mode: kinetic
+  mu_R: 3.0
+  sigma_R: 0.5
+seed: null
+spatial:
+  lambda_comp: 3.0

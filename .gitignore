@@ -1,0 +1,47 @@
+.DS_Store
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Packaging/build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test/coverage artifacts
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Tool caches / virtual envs
+.mypy_cache/
+.ruff_cache/
+.tox/
+.venv/
+venv/
+
+# Large local data/output (not source)
+annotations/
+demo_reads*/
+eccToolkit-clean.tar.gz
+
+# Temporary test directories
+_tmp_*/
+_test_*/
+_test_*.py
+demo_region_test/
+
+# Claude Code config
+.claude/
+
+# Tool libraries (external)
+_tool_libs/
+
+# Demo/test data files
+_demo_*.fa
+
+# macOS finder artifacts
+htmlcov*/

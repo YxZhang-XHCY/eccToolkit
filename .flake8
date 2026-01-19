@@ -1,0 +1,74 @@
+[flake8]
+# Maximum line length
+max-line-length = 88
+
+# Error codes to ignore
+extend-ignore = 
+    # E203: whitespace before ':' (conflicts with black)
+    E203,
+    # W503: line break before binary operator (conflicts with black)
+    W503,
+    # E501: line too long (handled by black)
+    E501,
+    # F401: imported but unused (handled by isort and mypy)
+    F401
+
+# Maximum complexity
+max-complexity = 10
+
+# Directories to exclude
+exclude = 
+    .git,
+    __pycache__,
+    .mypy_cache,
+    .pytest_cache,
+    .tox,
+    .venv,
+    venv,
+    build,
+    dist,
+    *.egg-info,
+    deprecated/,
+    code_backup_*/
+
+# Files to exclude
+per-file-ignores =
+    # Allow unused imports in __init__.py files
+    __init__.py:F401
+    # Allow long lines in some specific files
+    setup.py:E501
+    # Allow complex functions in main analysis scripts
+    code/eccdna_analyzer.py:C901
+    code/eccDNA-MultiScale.py:C901
+
+# Select specific error codes to check
+select = 
+    # Pyflakes
+    F,
+    # Pycodestyle errors
+    E,
+    # Pycodestyle warnings  
+    W,
+    # Complexity
+    C90
+
+# Show source code for each error
+show-source = True
+
+# Show statistics at the end
+statistics = True
+
+# Count errors and warnings
+count = True
+
+# Format for error messages
+format = %(path)s:%(row)d:%(col)d: %(code)s %(text)s
+
+# Naming conventions
+inline-quotes = double
+multiline-quotes = double
+docstring-quotes = double
+
+# Import order checking (delegated to isort)
+import-order-style = pep8
+application-import-names = eccToolkit

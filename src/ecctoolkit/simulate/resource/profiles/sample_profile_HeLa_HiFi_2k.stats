@@ -1,0 +1,8 @@
+num	2000
+len_total	26851154
+len_min	2858
+len_max	51185
+len_mean	13425.577000
+len_sd	4009.549985
+accuracy_mean	0.997883
+accuracy_sd	0.003634

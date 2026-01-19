@@ -1,0 +1,7 @@
+platform	ecc_id	length	read_count	min_coverage	max_coverage	mean_coverage	median_coverage	zero_coverage_bases	zero_coverage_ratio_pct	fully_covered_5x
+HiFi	ecc_1	500	10	397	399	398.19	398.0	0	0.0	Yes
+HiFi	ecc_2	1000	1	20	21	20.41	20.0	0	0.0	Yes
+HiFi	ecc_3	5000	3	10	11	10.17	10.0	0	0.0	Yes
+HiFi	ecc_4	10000	31	61	62	61.66	62.0	0	0.0	Yes
+HiFi	ecc_5	50000	28	7	18	11.0	11.0	0	0.0	Yes
+HiFi	ecc_6	100000	64	5	29	12.81	11.0	0	0.0	Yes

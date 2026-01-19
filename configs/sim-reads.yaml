@@ -1,0 +1,35 @@
+# sim-reads YAML config template (partial; missing keys use defaults)
+seed: 42
+output_scale:
+  mode: read_count
+  Cov_NGS: 10000.0
+  Cov_HiFi: 1000.0
+  Cov_ONT: 1000.0
+rca:
+  mode: empirical
+  mu_R: 3.0
+  sigma_R: 0.5
+  k_len: 0.5
+branch:
+  B_rate: 0.5
+  mu_br: -1.5
+  sigma_br: 0.5
+  branch_length_mode: ratio_trunk
+debranch:
+  D_eff: 0.9
+ngs_library:
+  I_mu: 400
+background:
+  enabled: false
+  fasta_path: /path/to/reference.fa
+  ratio: 0.0
+  min_length: 200
+  max_length: 10000
+constants:
+  chimera_breakpoint_mode: uniform
+  chimera_breakpoint_alpha: 0.5
+  chimera_breakpoint_beta: 0.5
+  chimera_background_ratio: 0.0
+  chimera_background_pool: 200
+  force_ecc_coverage: true
+  force_ecc_min_reads_factor: 2.0

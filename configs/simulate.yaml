@@ -1,0 +1,178 @@
+# ============================================================================
+# eccToolkit 统一模拟配置文件
+# ============================================================================
+#
+# 使用方法:
+#   ecc simulate -c simulate.yaml -r reference.fa -o output/
+#
+# 此配置文件整合了 sim-region 和 readsim 的所有参数。
+# 可以通过命令行参数覆盖配置文件中的设置。
+
+# ============================================================================
+# 全局设置
+# ============================================================================
+sample: "sim_ecc"        # 样本名称（用作输出前缀）
+seed: 42                 # 随机种子（确保可重复性）
+threads: 8               # 线程数
+
+# ============================================================================
+# 区域模拟参数 (sim-region)
+# ============================================================================
+region:
+  # 目标 eccDNA 数量
+  num_unique: 1000       # UeccDNA（唯一比对）数量
+  num_multi: 100         # MeccDNA（多位置比对）数量
+  num_chimeric: 50       # CeccDNA（嵌合体）数量
+  max_length_multi: 10000  # MeccDNA 最大长度 (bp)
+
+  # 长度分布参数
+  length_distribution:
+    mode: 400.0          # Lognormal 分布峰值 (bp)
+    sigma: 0.8           # Lognormal 标准差
+    tail_weight: 0.05    # 尾部分布权重 (0-1)，控制长 eccDNA 比例
+    tail_min: 5000       # 尾部分布最小长度 (bp)
+    tail_max: 500000     # 尾部分布最大长度 (bp)
+    min_length: 100      # 全局最小长度 (bp)
+    max_length: 500000   # 全局最大长度 (bp)
+
+  # 分类阈值（用于 minimap2 比对分类）
+  classification:
+    identity: 99.0       # 最小 identity 阈值 (%)
+    min_coverage: 90.0   # self-hit 覆盖率阈值 (%)
+    length_consistency: 99.0  # 长度一致性阈值 (%)
+    multi_coverage: 95.0      # multi-hit 覆盖率阈值 (%)
+    max_secondary: 50         # 最多副比对数
+    no_hit_policy: "skip"     # 无命中策略: "skip" 或 "unique"
+
+  # minimap2 设置
+  minimap:
+    split_by_length: true    # 是否按长度分流
+    split_length: 5000       # 分流阈值 (bp)
+    preset_short: "sr"       # 短序列预设
+    preset_long: "asm5"      # 长序列预设
+
+  # 候选生成倍数（提高成功率）
+  candidate_multiplier_u: 2.0   # Unique 候选倍数
+  candidate_multiplier_m: 10.0  # Multi 候选倍数
+
+  # 输出选项
+  keep_tmp: false        # 是否保留临时文件
+
+# ============================================================================
+# 读段模拟参数 (readsim)
+# ============================================================================
+readsim:
+  # 模拟模式选择
+  # - "lite": 使用外部工具 (ART, PBSIM2)，速度快
+  # - "full": 使用 RCA 模型，更真实但较慢
+  # - "both": 同时运行 lite 和 full
+  # - "none": 不进行读段模拟（仅生成 eccDNA 区域）
+  mode: "full"
+
+  # 平台选择
+  platforms:
+    ngs: true            # 生成 NGS (Illumina) 读段
+    hifi: true           # 生成 PacBio HiFi 读段
+    ont: true            # 生成 Oxford Nanopore 读段
+
+  # -------------------------------------------------------------------------
+  # Lite 模式参数（使用外部工具）
+  # -------------------------------------------------------------------------
+  lite:
+    # 分子池生成
+    circular_number: 5000    # 环形 DNA 分子数
+    linear_number: 5000      # 线性 DNA 分子数
+    simple_ratio: null       # 简单 eccDNA 比例 (null=自动计算)
+    simple_template: null    # 简单 eccDNA 模板 BED 文件
+    chimeric_template: null  # 嵌合体 eccDNA 模板 BED 文件
+
+    # RCA 扩增参数
+    amp: 5000                # RCA 扩增长度 (bp)
+    meancov: 25.0            # 平均覆盖度
+
+    # NGS (Illumina) 平台参数
+    ngs:
+      platform: "HS25"       # ART 平台标识
+      read_length: 150       # 读长 (bp)
+      insert_mean: 400.0     # 插入大小均值 (bp)
+      insert_std: 125.0      # 插入大小标准差 (bp)
+
+    # ONT 平台参数
+    ont:
+      model: "R94"           # PBSIM2 ONT 模型
+      mean_length: 3000.0    # 平均读长 (bp)
+      std_length: 2500.0     # 读长标准差 (bp)
+
+    # HiFi 平台参数
+    hifi:
+      mode: "auto"           # 模拟模式: "auto", "sampling", "simple"
+      sample_fastq: null     # 采样模式用的 FASTQ 文件
+      profile_id: null       # PBSIM2 配置文件 ID
+      profile_root: null     # PBSIM2 配置文件目录
+      len_min: 5000          # 最小读长 (bp)
+      len_peak_min: 10000    # 峰值最小长度 (bp)
+      len_peak_max: 25000    # 峰值最大长度 (bp)
+      len_max: 60000         # 最大读长 (bp)
+      qmin: 20               # 最小质量值
+      qmean: 30              # 平均质量值
+      qsd: 0.0               # 质量标准差
+      total_reads: null      # simple 模式的总读数
+
+  # -------------------------------------------------------------------------
+  # Full 模式参数（RCA 模型模拟）
+  # -------------------------------------------------------------------------
+  full:
+    # 输出规模
+    output_scale:
+      mode: "coverage"       # 输出模式: "read_count" 或 "coverage"
+      cov_ngs: 30.0          # NGS 覆盖度或读数
+      cov_hifi: 30.0         # HiFi 覆盖度或读数
+      cov_ont: 30.0          # ONT 覆盖度或读数
+
+    # 自适应采样（确保每个 eccDNA 都被覆盖）
+    adaptive:
+      enabled: true          # 是否启用
+      min_coverage: 3.0      # 每个 eccDNA 的最小覆盖度
+
+    # RCA 主干重复参数
+    rca:
+      mode: "kinetic"        # RCA 模式: "empirical" 或 "kinetic"
+      mu_R: 3.0              # ln(重复数) 均值
+      sigma_R: 0.5           # ln(重复数) 标准差
+      k_len: 0.5             # 长度修正指数
+
+    # 动力学参数（kinetic 模式）
+    kinetics:
+      reaction_hours: 16.0   # 反应时间（小时）
+
+    # 支链参数
+    branch:
+      B_rate: 0.5            # 支链率 (/kb)
+      branch_length_mode: "ratio_trunk"  # 支链长度模式
+
+    # 去支化参数
+    debranch:
+      D_eff: 0.9             # 去支化效率 (0-1)
+
+    # NGS 文库参数
+    ngs_library:
+      I_mu: 400.0            # 插入大小均值 (bp)
+
+    # 背景 DNA 参数（可选）
+    background:
+      enabled: false         # 是否启用
+      ratio: 0.1             # 背景 DNA 比例 (0-1)
+      min_length: 200        # 最小长度 (bp)
+      max_length: 10000      # 最大长度 (bp)
+
+    # 嵌合体参数
+    chimera:
+      breakpoint_mode: "uniform"  # 断点分布: "uniform" 或 "beta"
+      background_ratio: 0.0       # 来自背景的嵌合体比例
+      background_pool: 200        # 背景供体池大小
+
+    # 输出选项
+    output:
+      compress: false        # 是否压缩输出 (gzip)
+      truth_format: "tsv"    # 真值格式: "tsv" 或 "jsonl"
+      force_ecc_coverage: true  # 强制每个 eccDNA 至少出现一次
