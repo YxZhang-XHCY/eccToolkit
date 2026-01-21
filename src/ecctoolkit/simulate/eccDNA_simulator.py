@@ -911,8 +911,44 @@ class RegionGenerator:
             logging.info(f"Fragment candidate generation: {failed} failed out of {num_candidates}")
         return regions
 
+    # Minimum distance between IntraChr fragments to ensure they are distinct loci
+    MIN_INTRACHR_FRAGMENT_DISTANCE = 1000
+
+    def _check_fragment_distance(
+        self,
+        new_start: int,
+        new_end: int,
+        existing_fragments: List[Tuple[str, int, int]],
+        same_chrom: str,
+        min_distance: int = 1000,
+    ) -> bool:
+        """Check if new fragment has sufficient distance from existing fragments on same chromosome.
+
+        For IntraChr CeccDNA, fragments must be far enough apart to be recognized
+        as distinct genomic loci (not merged during detection).
+
+        Returns:
+            True if distance is sufficient, False otherwise
+        """
+        for frag_chrom, frag_start, frag_end in existing_fragments:
+            if frag_chrom != same_chrom:
+                continue
+            # Calculate distance between regions
+            if new_start < frag_start:
+                distance = frag_start - new_end
+            else:
+                distance = new_start - frag_end
+            if distance < min_distance:
+                return False
+        return True
+
     def generate_chimeric(self, num_chimeric: int, id_prefix: str = "CeccDNA") -> List[EccRegion]:
-        """生成嵌合体 eccDNA"""
+        """生成嵌合体 eccDNA
+
+        For IntraChr chimeric eccDNA (all fragments on same chromosome),
+        ensures fragments are separated by at least MIN_INTRACHR_FRAGMENT_DISTANCE
+        to be recognized as distinct genomic loci during detection.
+        """
         if num_chimeric == 0:
             return []
 
@@ -926,22 +962,44 @@ class RegionGenerator:
         probs = np.array([weights[k] for k in options], dtype=float)
         probs = probs / probs.sum()
 
+        max_attempts_per_fragment = 50
+
         for i in range(num_chimeric):
             num_frags = int(self.rng.choice(options, p=probs))
             fragments: List[Tuple[str, int, int]] = []
             total_len = 0
 
-            for _ in range(num_frags):
+            for frag_idx in range(num_frags):
                 chrom = self.choose_chromosome()
                 frag_len = self.length_sampler.sample_uniform(100, 5000)
                 frag_len = min(frag_len, chrom.length - 100)
                 if frag_len < 100:
                     continue
-                max_start = chrom.length - frag_len
-                start = int(self.rng.integers(0, max_start + 1))
-                end = start + frag_len
-                fragments.append((chrom.name, start, end))
-                total_len += frag_len
+
+                # Try to find a valid position with sufficient distance from existing fragments
+                found_valid = False
+                for attempt in range(max_attempts_per_fragment):
+                    max_start = chrom.length - frag_len
+                    start = int(self.rng.integers(0, max_start + 1))
+                    end = start + frag_len
+
+                    # Check distance for IntraChr case
+                    if self._check_fragment_distance(
+                        start, end, fragments, chrom.name,
+                        min_distance=self.MIN_INTRACHR_FRAGMENT_DISTANCE
+                    ):
+                        fragments.append((chrom.name, start, end))
+                        total_len += frag_len
+                        found_valid = True
+                        break
+
+                # Fallback: accept the fragment even if distance is insufficient
+                if not found_valid:
+                    max_start = chrom.length - frag_len
+                    start = int(self.rng.integers(0, max_start + 1))
+                    end = start + frag_len
+                    fragments.append((chrom.name, start, end))
+                    total_len += frag_len
 
             if len(fragments) < 2:
                 continue
