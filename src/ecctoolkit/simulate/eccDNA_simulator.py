@@ -927,12 +927,26 @@ class RegionGenerator:
         For IntraChr CeccDNA, fragments must be far enough apart to be recognized
         as distinct genomic loci (not merged during detection).
 
+        Also rejects fragments that significantly overlap with existing ones (>50% overlap).
+
         Returns:
-            True if distance is sufficient, False otherwise
+            True if distance is sufficient and no significant overlap, False otherwise
         """
         for frag_chrom, frag_start, frag_end in existing_fragments:
             if frag_chrom != same_chrom:
                 continue
+
+            # Check for significant overlap (reject if >50% overlap)
+            overlap_start = max(new_start, frag_start)
+            overlap_end = min(new_end, frag_end)
+            if overlap_start < overlap_end:
+                overlap_len = overlap_end - overlap_start
+                new_len = new_end - new_start
+                frag_len = frag_end - frag_start
+                overlap_ratio = overlap_len / min(new_len, frag_len)
+                if overlap_ratio > 0.5:
+                    return False
+
             # Calculate distance between regions
             if new_start < frag_start:
                 distance = frag_start - new_end
@@ -993,13 +1007,28 @@ class RegionGenerator:
                         found_valid = True
                         break
 
-                # Fallback: accept the fragment even if distance is insufficient
+                # Fallback: try a different chromosome to avoid overlap/duplicate issues
                 if not found_valid:
-                    max_start = chrom.length - frag_len
-                    start = int(self.rng.integers(0, max_start + 1))
-                    end = start + frag_len
-                    fragments.append((chrom.name, start, end))
-                    total_len += frag_len
+                    # Try other chromosomes to find a valid fragment
+                    fallback_found = False
+                    for _ in range(10):  # Try up to 10 different chromosomes
+                        alt_chrom = self.choose_chromosome()
+                        alt_frag_len = self.length_sampler.sample_uniform(100, 5000)
+                        alt_frag_len = min(alt_frag_len, alt_chrom.length - 100)
+                        if alt_frag_len < 100:
+                            continue
+                        max_start = alt_chrom.length - alt_frag_len
+                        start = int(self.rng.integers(0, max_start + 1))
+                        end = start + alt_frag_len
+                        # Check this fragment is valid (different chrom = always valid for distance)
+                        if self._check_fragment_distance(start, end, fragments, alt_chrom.name, min_distance=0):
+                            fragments.append((alt_chrom.name, start, end))
+                            total_len += alt_frag_len
+                            fallback_found = True
+                            break
+                    # If still not found, skip this fragment entirely (better than duplicate)
+                    if not fallback_found:
+                        logging.debug(f"Could not find valid fragment for chimeric {i+1}, skipping fragment {frag_idx+1}")
 
             if len(fragments) < 2:
                 continue
