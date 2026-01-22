@@ -493,16 +493,16 @@ def sim_region(reference, output, output_dir, num_unique, num_multi, num_chimeri
 
 
 # ============================================================================
-# Read Simulation Command (readsim)
+# Read Simulation Command (sim-reads)
 # ============================================================================
 
-@main.command("readsim")
+@main.command("sim-reads")
 # === Required parameters ===
 @click.option("--sample", required=True, help="Sample name (output prefix)")
 @click.option("-o", "--output", "path", required=True, help="Output directory")
 @click.option("-t", "--threads", required=True, type=int, help="Number of threads")
 # === Common optional parameters ===
-@click.option("--meancov", default=25.0, help="Mean coverage (default=25)")
+@click.option("--meancov", default=30.0, help="Mean coverage (default=30)")
 @click.option("--seed", type=int, help="Random seed")
 # === Platform selection ===
 @click.option("--skip-sr", is_flag=True, help="Skip short-read (NGS) simulation")
@@ -564,16 +564,16 @@ def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
     \b
     Examples:
       # Use eccDNA from sim-region (recommended)
-      ecc readsim -r hg38.fa -i sample.all.fa -o output --sample test -t 4
+      ecc sim-reads -r hg38.fa -i sample.all.fa -o output --sample test -t 4
 
       # Random generation with reference genome
-      ecc readsim -r hg38.fa -o output --sample test -t 4
+      ecc sim-reads -r hg38.fa -o output --sample test -t 4
 
       # Use pre-generated molecule pool
-      ecc readsim --pool-csv pool.csv -o output --sample test -t 4
+      ecc sim-reads --pool-csv pool.csv -o output --sample test -t 4
 
       # Skip certain platforms
-      ecc readsim -r hg38.fa -i sample.all.fa -o output --sample test -t 4 --skip-ont
+      ecc sim-reads -r hg38.fa -i sample.all.fa -o output --sample test -t 4 --skip-ont
     """
     import logging
     import os
@@ -754,7 +754,7 @@ def simulate(reference, output, num_unique, num_multi, num_chimeric,
              config_file, skip_region, input_eccdna, compress, dry_run, verbose):
     """Run complete eccDNA simulation pipeline.
 
-    Combines region generation (sim-region) with read simulation (readsim).
+    Combines region generation (sim-region) with read simulation (sim-reads).
 
     \b
     Examples:
