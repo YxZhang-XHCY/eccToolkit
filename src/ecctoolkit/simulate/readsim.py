@@ -623,7 +623,7 @@ class libsim:
         reference: str,
         path: str,
         seed: Optional[int] = None,
-        meancov: float = 25,
+        meancov: float = 30,
         amp: int = 50000,
         min_rca_length: Optional[int] = None,
         min_repeats: int = 5,

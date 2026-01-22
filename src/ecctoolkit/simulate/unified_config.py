@@ -124,7 +124,7 @@ class ReadsimParams:
     # RCA 扩增
     amp: int = 50000           # 最小扩增长度 (bp)
     min_repeats: int = 5       # 每个 eccDNA 最少重复次数
-    meancov: float = 25.0
+    meancov: float = 30.0
 
     # 平台参数
     ngs: NGSConfig = field(default_factory=NGSConfig)
