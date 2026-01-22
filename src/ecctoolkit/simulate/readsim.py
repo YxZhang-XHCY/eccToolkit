@@ -615,6 +615,7 @@ class libsim:
         min_rca_length: 最小 RCA 扩增长度
         min_repeats: 每个 eccDNA 的最少重复次数（默认 5）
         threads: 线程数（用于并行 RCA 扩增，默认 1）
+        rca_output_dir: RCA 扩增数据的独立输出目录（可选，默认与 path 相同）
     """
     def __init__(
         self,
@@ -627,6 +628,7 @@ class libsim:
         min_rca_length: Optional[int] = None,
         min_repeats: int = 5,
         threads: int = 1,
+        rca_output_dir: Optional[str] = None,
     ) -> None:
 
         self.sample = sample
@@ -639,7 +641,9 @@ class libsim:
         self.threads = max(1, int(threads))
 
         self.path = path  # 直接使用 path，不创建 sample 子目录
-        self.prefix = [join(self.path, self.sample + '.neg'), join(self.path, self.sample + '.pos'), join(self.path,  self.sample + '.lib')]
+        # RCA 输出目录：如果指定了独立目录则使用，否则与 path 相同
+        self.rca_path = rca_output_dir if rca_output_dir else path
+        self.prefix = [join(self.path, self.sample + '.neg'), join(self.path, self.sample + '.pos'), join(self.rca_path,  self.sample + '.lib')]
         self.utils = utilities(reference)
 
         self.sim_library()

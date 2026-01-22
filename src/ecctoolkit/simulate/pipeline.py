@@ -113,6 +113,11 @@ class SimulatePipeline:
         if not self.skip_region:
             self.region_dir.mkdir(exist_ok=True)
 
+        # RCA 扩增目录
+        if self.config.readsim.enabled:
+            self.rca_dir = self.output_dir / "rca"
+            self.rca_dir.mkdir(exist_ok=True)
+
         # 多覆盖度时使用 sequencing_{cov}X 目录，单覆盖度时使用 sequencing
         if self.config.readsim.enabled:
             if len(self.coverage_list) == 1:
@@ -535,11 +540,12 @@ class SimulatePipeline:
             amp=readsim_cfg.amp,
             min_repeats=readsim_cfg.min_repeats,
             threads=self.config.threads,
+            rca_output_dir=str(self.rca_dir),
         )
 
         # 运行 fqsim
         logger.info("运行 fqsim...")
-        csv_path = self.sequencing_dir / f"{self.config.sample}.lib.csv"
+        csv_path = self.rca_dir / f"{self.config.sample}.lib.csv"
 
         fqsim(
             sample=self.config.sample,
@@ -605,6 +611,10 @@ class SimulatePipeline:
             logger.info("转换 eccDNA 格式...")
             self._convert_region_format(eccdna_fasta)
 
+            # 为当前覆盖度创建 RCA 子目录
+            rca_cov_dir = self.rca_dir / f"{cov_str}X"
+            rca_cov_dir.mkdir(exist_ok=True)
+
             # 运行 libsim
             logger.info(f"运行 libsim (覆盖度: {cov_str}X)...")
             libsim(
@@ -616,11 +626,12 @@ class SimulatePipeline:
                 amp=readsim_cfg.amp,
                 min_repeats=readsim_cfg.min_repeats,
                 threads=self.config.threads,
+                rca_output_dir=str(rca_cov_dir),
             )
 
             # 运行 fqsim
             logger.info(f"运行 fqsim (覆盖度: {cov_str}X)...")
-            csv_path = cov_dir / f"{self.config.sample}.lib.csv"
+            csv_path = rca_cov_dir / f"{self.config.sample}.lib.csv"
 
             fqsim(
                 sample=self.config.sample,
