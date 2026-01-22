@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ecctoolkit"
-version = "0.6.1"
+version = "0.6.2"
 description = "A comprehensive toolkit for extrachromosomal circular DNA (eccDNA) analysis"
 authors = [{name = "eccToolkit Team", email = "contact@ecctoolkit.org"}]
 license = {file = "LICENSE"}
