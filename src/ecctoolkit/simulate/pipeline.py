@@ -598,6 +598,35 @@ class SimulatePipeline:
         logger.info(f"覆盖度列表: {', '.join([f'{self._fmt_cov(c)}X' for c in self.coverage_list])}")
         logger.info("-" * 40)
 
+        # RCA 扩增只运行一次（使用第一个覆盖度作为基准）
+        base_cov = self.coverage_list[0]
+        base_cov_str = self._fmt_cov(base_cov)
+
+        # 使用第一个覆盖度目录进行格式转换
+        first_cov_dir = self.output_dir / f"sequencing_{base_cov_str}X"
+        self.sequencing_dir = first_cov_dir
+
+        logger.info("")
+        logger.info("运行 RCA 扩增（只运行一次）...")
+        self._convert_region_format(eccdna_fasta)
+
+        libsim(
+            sample=self.config.sample,
+            reference=self.reference,
+            path=str(first_cov_dir),
+            seed=self.config.seed,
+            meancov=base_cov,
+            amp=readsim_cfg.amp,
+            min_repeats=readsim_cfg.min_repeats,
+            threads=self.config.threads,
+            rca_output_dir=str(self.rca_dir),
+        )
+
+        # 读取基准 RCA 数据
+        import pandas as pd
+        base_csv_path = self.rca_dir / f"{self.config.sample}.lib.csv"
+        base_lib_df = pd.read_csv(base_csv_path, sep='\t')
+
         for i, cov in enumerate(self.coverage_list, 1):
             cov_str = self._fmt_cov(cov)
             cov_dir = self.output_dir / f"sequencing_{cov_str}X"
@@ -607,31 +636,18 @@ class SimulatePipeline:
             logger.info(f"[{i}/{len(self.coverage_list)}] 处理覆盖度 {cov_str}X")
             logger.info(f"输出目录: {cov_dir}")
 
-            # 将 sim-region 输出转换为读段模拟格式
-            logger.info("转换 eccDNA 格式...")
-            self._convert_region_format(eccdna_fasta)
-
-            # 为当前覆盖度创建 RCA 子目录
-            rca_cov_dir = self.rca_dir / f"{cov_str}X"
-            rca_cov_dir.mkdir(exist_ok=True)
-
-            # 运行 libsim
-            logger.info(f"运行 libsim (覆盖度: {cov_str}X)...")
-            libsim(
-                sample=self.config.sample,
-                reference=self.reference,
-                path=str(cov_dir),
-                seed=self.config.seed,
-                meancov=cov,  # 使用当前覆盖度
-                amp=readsim_cfg.amp,
-                min_repeats=readsim_cfg.min_repeats,
-                threads=self.config.threads,
-                rca_output_dir=str(rca_cov_dir),
-            )
+            # 根据覆盖度比例调整 tempcov，生成该覆盖度的 .lib.csv
+            cov_scale = cov / base_cov
+            cov_lib_df = base_lib_df.copy()
+            cov_lib_df['realcov'] = cov_lib_df['realcov'] * cov_scale
+            cov_lib_df['tempcov'] = cov_lib_df['tempcov'] * cov_scale
+            cov_csv_path = cov_dir / f"{self.config.sample}.lib.csv"
+            cov_lib_df.to_csv(cov_csv_path, index=None, sep='\t')
+            logger.info(f"生成覆盖度调整后的 lib.csv: {cov_csv_path}")
 
             # 运行 fqsim
             logger.info(f"运行 fqsim (覆盖度: {cov_str}X)...")
-            csv_path = rca_cov_dir / f"{self.config.sample}.lib.csv"
+            csv_path = cov_csv_path
 
             fqsim(
                 sample=self.config.sample,
