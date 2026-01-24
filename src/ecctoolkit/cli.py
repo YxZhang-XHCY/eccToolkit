@@ -420,6 +420,8 @@ def quantify(input_file, output):
 @click.option("--max-length-multi", default=10000, help="Maximum MeccDNA length")
 @click.option("--identity", default=99.0, help="Identity threshold (%)")
 @click.option("--min-coverage", default=90.0, help="Minimum coverage threshold (%)")
+@click.option("--length-consistency", default=99.0, help="Length consistency threshold for classification (%)")
+@click.option("--multi-coverage", default=95.0, help="Multi-mapping coverage threshold (%)")
 @click.option("--max-secondary", default=50, help="Max secondary alignments")
 @click.option("--no-hit-policy", type=click.Choice(["skip", "unique"]), default="skip",
               help="Handle no-hit regions: skip or count as unique")
@@ -436,7 +438,8 @@ def quantify(input_file, output):
 @click.option("--ml-identity", default=99.0, help="Identity threshold for ML training data (%)")
 def sim_region(reference, output, output_dir, num_unique, num_multi, num_chimeric,
                threads, seed, mode, sigma, tail_weight, tail_min, tail_max,
-               min_length, max_length, max_length_multi, identity, min_coverage, max_secondary,
+               min_length, max_length, max_length_multi, identity, min_coverage,
+               length_consistency, multi_coverage, max_secondary,
                no_hit_policy, split_by_length, split_length, minimap_preset_short,
                minimap_preset_long, multiplier_u, multiplier_m, keep_tmp, verbose,
                generate_ml_data, ml_identity):
@@ -457,6 +460,22 @@ def sim_region(reference, output, output_dir, num_unique, num_multi, num_chimeri
       # Auto-create directory from prefix
       ecc sim-region -r hg38.fa -o /path/to/output/sample1
     """
+    # 参数范围验证
+    if threads < 1:
+        raise click.ClickException("--threads must be >= 1")
+    if num_unique < 0 or num_multi < 0 or num_chimeric < 0:
+        raise click.ClickException("--num-unique/--num-multi/--num-chimeric must be >= 0")
+    if num_unique + num_multi + num_chimeric == 0:
+        raise click.ClickException("At least one of --num-unique/--num-multi/--num-chimeric must be > 0")
+    if min_length <= 0 or max_length <= 0:
+        raise click.ClickException("--min-length and --max-length must be > 0")
+    if min_length > max_length:
+        raise click.ClickException("--min-length must be <= --max-length")
+    if not (0 <= identity <= 100):
+        raise click.ClickException("--identity must be between 0 and 100")
+    if not (0 <= min_coverage <= 100):
+        raise click.ClickException("--min-coverage must be between 0 and 100")
+
     from ecctoolkit.simulate.region import run_region_simulation
     run_region_simulation(
         reference=reference,
@@ -477,6 +496,8 @@ def sim_region(reference, output, output_dir, num_unique, num_multi, num_chimeri
         max_length_multi=max_length_multi,
         identity=identity,
         min_coverage=min_coverage,
+        length_consistency=length_consistency,
+        multi_coverage=multi_coverage,
         max_secondary=max_secondary,
         no_hit_policy=no_hit_policy,
         split_by_length=split_by_length,
@@ -515,7 +536,7 @@ def sim_region(reference, output, output_dir, num_unique, num_multi, num_chimeri
 # === Sequence generation options ===
 @click.option("--circular-number", default=5000, help="Circular DNA count (default=5000)")
 @click.option("--linear-number", default=5000, help="Linear DNA count (default=5000)")
-@click.option("--amp", default=5000, help="RCA amplification length bp (default=5000)")
+@click.option("--amp", default=50000, help="RCA amplification length bp (default=50000)")
 @click.option("--simple-ratio", type=float, help="Simple eccDNA ratio")
 @click.option("--simple-template", help="Simple eccDNA template BED")
 @click.option("--chimeric-template", help="Chimeric eccDNA template BED")
@@ -530,8 +551,8 @@ def sim_region(reference, output, output_dir, num_unique, num_multi, num_chimeri
 @click.option("--ont-std", default=2500.0, help="ONT read length std (default=2500)")
 # === HiFi platform options ===
 @click.option("--hifi-sample-fastq", help="HiFi sample FASTQ for PBSIM2")
-@click.option("--hifi-mode", default="auto", type=click.Choice(["auto", "sampling", "simple"]),
-              help="HiFi simulation mode (default=auto)")
+@click.option("--hifi-mode", default="auto", type=click.Choice(["auto", "sampling"]),
+              help="HiFi simulation mode (default=auto, requires PBSIM2)")
 @click.option("--hifi-profile-id", help="HiFi profile ID for PBSIM2")
 @click.option("--hifi-profile-root", help="HiFi profile directory")
 @click.option("--hifi-len-min", default=5000, help="HiFi min length (default=5000)")
@@ -541,7 +562,6 @@ def sim_region(reference, output, output_dir, num_unique, num_multi, num_chimeri
 @click.option("--hifi-qmin", default=20, help="HiFi min quality (default=20)")
 @click.option("--hifi-qmean", default=30, help="HiFi mean quality (default=30)")
 @click.option("--hifi-qsd", default=0.0, help="HiFi quality std (default=0.0)")
-@click.option("--hifi-total-reads", type=int, help="Total HiFi reads (simple-mode)")
 # === Output options ===
 @click.option("-v", "--verbose", is_flag=True, help="Verbose output (debug logging)")
 def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
@@ -551,7 +571,7 @@ def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
             ont_model, ont_mean, ont_std,
             hifi_sample_fastq, hifi_mode, hifi_profile_id, hifi_profile_root,
             hifi_len_min, hifi_len_peak_min, hifi_len_peak_max, hifi_len_max,
-            hifi_qmin, hifi_qmean, hifi_qsd, hifi_total_reads,
+            hifi_qmin, hifi_qmean, hifi_qsd,
             verbose):
     """Simulate sequencing reads from eccDNA.
 
@@ -583,6 +603,16 @@ def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",
     )
     logger = logging.getLogger(__name__)
+
+    # 参数范围验证
+    if threads < 1:
+        raise click.ClickException("--threads must be >= 1")
+    if meancov <= 0:
+        raise click.ClickException("--meancov must be > 0")
+    if amp <= 0:
+        raise click.ClickException("--amp must be > 0")
+    if sr_readlen <= 0:
+        raise click.ClickException("--sr-readlen must be > 0")
 
     if not pool_csv and not reference:
         raise click.ClickException("-r/--reference is required unless --pool-csv is provided")
@@ -684,11 +714,11 @@ def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
         hifi_qmin=hifi_qmin,
         hifi_qmean=hifi_qmean,
         hifi_qsd=hifi_qsd,
-        hifi_total_reads=hifi_total_reads,
         sr_platform=sr_platform,
         sr_mean=sr_mean,
         sr_std=sr_std,
         sr_readlen=sr_readlen,
+        generate_truth=True,
     )
 
     logger.info("Read simulation completed!")
@@ -726,6 +756,9 @@ def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
               help="Number of threads (default: 8)")
 @click.option("--seed", default=42, type=int,
               help="Random seed (default: 42)")
+@click.option("--replicates", default=1, type=int,
+              help="Number of independent replicates to generate (default: 1). "
+                   "Each replicate uses seed+i as random seed.")
 @click.option("--sample", default="sim_ecc",
               help="Sample name/output prefix (default: sim_ecc)")
 # === Platform selection ===
@@ -749,7 +782,7 @@ def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
 @click.option("-v", "--verbose", is_flag=True,
               help="Verbose output")
 def simulate(reference, output, num_unique, num_multi, num_chimeric,
-             skip_readsim, coverage, threads, seed, sample,
+             skip_readsim, coverage, threads, seed, replicates, sample,
              skip_sr, skip_hifi, skip_ont,
              config_file, skip_region, input_eccdna, compress, dry_run, verbose):
     """Run complete eccDNA simulation pipeline.
@@ -767,6 +800,15 @@ def simulate(reference, output, num_unique, num_multi, num_chimeric,
       # Custom coverage
       ecc simulate -r hg38.fa -o output/ -u 5000 --cov 50
 
+      # Multiple coverages
+      ecc simulate -r hg38.fa -o output/ -u 5000 --cov 10 --cov 30 --cov 50
+
+      # Multiple replicates (3 independent samples)
+      ecc simulate -r hg38.fa -o output/ -u 5000 --replicates 3
+
+      # Multiple replicates × multiple coverages (3 samples × 2 coverages = 6 datasets)
+      ecc simulate -r hg38.fa -o output/ -u 5000 --replicates 3 --cov 30 --cov 50
+
       # Only generate eccDNA regions (no reads)
       ecc simulate -r hg38.fa -o output/ -u 5000 --skip-readsim
 
@@ -777,6 +819,7 @@ def simulate(reference, output, num_unique, num_multi, num_chimeric,
       ecc simulate -r hg38.fa -o output/ -u 10000 -m 1000 -c 1000 --dry-run
     """
     import logging
+    import os
 
     logging.basicConfig(
         level=logging.DEBUG if verbose else logging.INFO,
@@ -787,62 +830,105 @@ def simulate(reference, output, num_unique, num_multi, num_chimeric,
     from ecctoolkit.simulate.unified_config import UnifiedSimulateConfig
     from ecctoolkit.simulate.pipeline import SimulatePipeline, show_simulation_plan
 
-    # Load config from file or use defaults
-    if config_file:
-        logger.info(f"Loading config from: {config_file}")
-        config = UnifiedSimulateConfig.from_yaml(config_file)
-    else:
-        config = UnifiedSimulateConfig()
+    # Validate replicates
+    if replicates < 1:
+        raise click.ClickException("--replicates must be >= 1")
 
-    # Apply CLI parameters (override config)
-    config.sample = sample
-    config.threads = threads
-    config.seed = seed
-
-    # Region parameters
-    config.region.num_unique = num_unique
-    config.region.num_multi = num_multi
-    config.region.num_chimeric = num_chimeric
-
-    # Readsim mode
-    config.readsim.mode = "none" if skip_readsim else "on"
-
-    # Coverage setting - convert tuple to list, use first for single mode
+    # Coverage setting - convert tuple to list
     coverage_list = list(coverage)
-    config.readsim.params.meancov = coverage_list[0]  # First coverage for config
 
     # Handle input_eccdna
     if input_eccdna:
         skip_region = True
-
-    # Validate config
-    warnings = config.validate()
-    if warnings:
-        for w in warnings:
-            logger.warning(f"Config warning: {w}")
+        if replicates > 1:
+            raise click.ClickException("--replicates > 1 is not supported with --input-eccdna")
 
     # Dry run - show plan and exit
     if dry_run:
+        config = UnifiedSimulateConfig()
+        config.sample = sample
+        config.threads = threads
+        config.seed = seed
+        config.region.num_unique = num_unique
+        config.region.num_multi = num_multi
+        config.region.num_chimeric = num_chimeric
+        config.readsim.mode = "none" if skip_readsim else "on"
+        config.readsim.params.meancov = coverage_list[0]
+
+        logger.info(f"=== Simulation Plan ===")
+        logger.info(f"Replicates: {replicates}")
+        logger.info(f"Coverages: {coverage_list}")
+        logger.info(f"Total datasets: {replicates} × {len(coverage_list)} = {replicates * len(coverage_list)}")
         show_simulation_plan(config, output, reference, skip_region, input_eccdna, coverage_list)
         return
 
-    # Run pipeline
-    pipeline = SimulatePipeline(
-        config=config,
-        output_dir=output,
-        reference=reference,
-        skip_region=skip_region,
-        input_eccdna=input_eccdna,
-        skip_sr=skip_sr,
-        skip_hifi=skip_hifi,
-        skip_ont=skip_ont,
-        compress=compress,
-        verbose=verbose,
-        coverage_list=coverage_list,
-    )
-    pipeline.run()
+    # Run pipeline for each replicate
+    for rep_idx in range(1, replicates + 1):
+        rep_seed = seed + rep_idx - 1  # seed, seed+1, seed+2, ...
 
+        # Determine output directory for this replicate
+        if replicates == 1:
+            rep_output = output
+            rep_sample = sample
+        else:
+            rep_output = os.path.join(output, f"rep{rep_idx}")
+            rep_sample = f"{sample}_rep{rep_idx}"
+            logger.info("")
+            logger.info(f"{'='*60}")
+            logger.info(f"Replicate {rep_idx}/{replicates} (seed={rep_seed})")
+            logger.info(f"{'='*60}")
+
+        # Load config from file or use defaults
+        if config_file:
+            logger.info(f"Loading config from: {config_file}")
+            config = UnifiedSimulateConfig.from_yaml(config_file)
+        else:
+            config = UnifiedSimulateConfig()
+
+        # Apply CLI parameters (override config)
+        config.sample = rep_sample
+        config.threads = threads
+        config.seed = rep_seed
+
+        # Region parameters
+        config.region.num_unique = num_unique
+        config.region.num_multi = num_multi
+        config.region.num_chimeric = num_chimeric
+
+        # Readsim mode
+        config.readsim.mode = "none" if skip_readsim else "on"
+        config.readsim.params.meancov = coverage_list[0]  # First coverage for config
+
+        # Validate config
+        warnings = config.validate()
+        if warnings:
+            for w in warnings:
+                logger.warning(f"Config warning: {w}")
+
+        # Run pipeline
+        pipeline = SimulatePipeline(
+            config=config,
+            output_dir=rep_output,
+            reference=reference,
+            skip_region=skip_region,
+            input_eccdna=input_eccdna,
+            skip_sr=skip_sr,
+            skip_hifi=skip_hifi,
+            skip_ont=skip_ont,
+            compress=compress,
+            verbose=verbose,
+            coverage_list=coverage_list,
+        )
+        pipeline.run()
+
+        if replicates > 1:
+            logger.info(f"Replicate {rep_idx}/{replicates} completed!")
+
+    logger.info("")
+    logger.info("="*60)
     logger.info("Simulation pipeline completed successfully!")
+    if replicates > 1:
+        logger.info(f"Generated {replicates} replicates × {len(coverage_list)} coverages = {replicates * len(coverage_list)} datasets")
 
 
 # ============================================================================

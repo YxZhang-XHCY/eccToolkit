@@ -108,7 +108,6 @@ class HiFiConfig:
     qmin: int = 20
     qmean: int = 30
     qsd: float = 0.0
-    total_reads: Optional[int] = None
 
 
 @dataclass
@@ -250,7 +249,6 @@ class UnifiedSimulateConfig:
                         "qmin": self.readsim.params.hifi.qmin,
                         "qmean": self.readsim.params.hifi.qmean,
                         "qsd": self.readsim.params.hifi.qsd,
-                        "total_reads": self.readsim.params.hifi.total_reads,
                     },
                 },
             },
@@ -445,9 +443,6 @@ class UnifiedSimulateConfig:
                     )
                     config.readsim.params.hifi.qsd = hifi.get(
                         "qsd", config.readsim.params.hifi.qsd
-                    )
-                    config.readsim.params.hifi.total_reads = hifi.get(
-                        "total_reads", config.readsim.params.hifi.total_reads
                     )
 
         return config

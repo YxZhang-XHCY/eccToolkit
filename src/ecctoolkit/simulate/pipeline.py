@@ -6,7 +6,6 @@
 
 import logging
 import os
-from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 from typing import List, Optional
 
@@ -290,7 +289,8 @@ class SimulatePipeline:
                         chrom, start, end, frag_len, seq = region
                         sampled = True
                         break
-                    except:
+                    except (RuntimeError, ValueError, IndexError) as e:
+                        logger.debug(f"备选染色体 {chrom} 采样失败: {e}")
                         continue
                 if not sampled:
                     # 如果还是失败，跳过此线性 DNA
@@ -329,12 +329,15 @@ class SimulatePipeline:
             - {sample}.pos.bed: chrom, start, end, length, id
             - {sample}.pos.csv: id, fragN, region, length, seq
             - {sample}.neg.bed/csv: 线性 DNA（这里生成空文件）
+
+        所有 RCA 相关的中间文件都放在 rca_dir 中。
         """
         import gzip
         import pandas as pd
         from Bio import SeqIO
 
-        sample_dir = self.sequencing_dir
+        # RCA 中间文件放在 rca_dir 中
+        sample_dir = self.rca_dir
         sample_dir.mkdir(parents=True, exist_ok=True)
 
         logger.info("转换 sim-region 输出格式...")
@@ -570,7 +573,6 @@ class SimulatePipeline:
             hifi_qmin=readsim_cfg.hifi.qmin,
             hifi_qmean=readsim_cfg.hifi.qmean,
             hifi_qsd=readsim_cfg.hifi.qsd,
-            hifi_total_reads=readsim_cfg.hifi.total_reads,
             sr_mean=readsim_cfg.ngs.insert_mean,
             sr_std=readsim_cfg.ngs.insert_std,
             sr_readlen=readsim_cfg.ngs.read_length,
@@ -627,6 +629,12 @@ class SimulatePipeline:
         base_csv_path = self.rca_dir / f"{self.config.sample}.lib.csv"
         base_lib_df = pd.read_csv(base_csv_path, sep='\t')
 
+        # 验证必要的列存在
+        required_cols = ['realcov', 'tempcov']
+        missing_cols = [col for col in required_cols if col not in base_lib_df.columns]
+        if missing_cols:
+            raise ValueError(f"lib.csv 缺少必要的列: {missing_cols}")
+
         for i, cov in enumerate(self.coverage_list, 1):
             cov_str = self._fmt_cov(cov)
             cov_dir = self.output_dir / f"sequencing_{cov_str}X"
@@ -672,7 +680,6 @@ class SimulatePipeline:
                 hifi_qmin=readsim_cfg.hifi.qmin,
                 hifi_qmean=readsim_cfg.hifi.qmean,
                 hifi_qsd=readsim_cfg.hifi.qsd,
-                hifi_total_reads=readsim_cfg.hifi.total_reads,
                 sr_mean=readsim_cfg.ngs.insert_mean,
                 sr_std=readsim_cfg.ngs.insert_std,
                 sr_readlen=readsim_cfg.ngs.read_length,

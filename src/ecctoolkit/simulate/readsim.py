@@ -189,7 +189,7 @@ def generate_truth_from_fastq(
         pool_csv_path: 分子池 CSV 文件路径
         output_truth_path: 输出 truth TSV 文件路径
         platform: 平台名称 (NGS, HiFi, ONT)
-        read_id_parser: read ID 解析器 ('art', 'pbsim', 'hifi_simple', 'auto')
+        read_id_parser: read ID 解析器 ('art', 'pbsim', 'auto')
 
     Returns:
         写入的 truth 记录数
@@ -215,16 +215,12 @@ def generate_truth_from_fastq(
     if read_id_parser == 'auto':
         if platform.upper() == 'NGS':
             parser_func = parse_art_read_id
-        elif platform.upper() == 'HIFI':
-            parser_func = parse_hifi_simple_read_id  # 默认使用 simple 模式解析
-        else:  # ONT
+        else:  # HiFi, ONT 都使用 PBSIM2
             parser_func = parse_pbsim_read_id
     elif read_id_parser == 'art':
         parser_func = parse_art_read_id
     elif read_id_parser == 'pbsim':
         parser_func = parse_pbsim_read_id
-    elif read_id_parser == 'hifi_simple':
-        parser_func = parse_hifi_simple_read_id
     else:
         parser_func = parse_pbsim_read_id
 
@@ -235,7 +231,6 @@ def generate_truth_from_fastq(
         'source_mol_id',
         'ecc_ids',
         'repeat_count',
-        'has_chimera',
         'is_background',
         'source_ecc_length',
         'background_region'
@@ -276,7 +271,6 @@ def generate_truth_from_fastq(
                         'source_mol_id': mol_id,
                         'ecc_ids': _clean_value(mol_info.get('ecc_ids', '')),
                         'repeat_count': _clean_value(mol_info.get('repeat_count', '')),
-                        'has_chimera': _clean_value(mol_info.get('has_chimera', '')),
                         'is_background': _clean_value(mol_info.get('is_background', '')),
                         'source_ecc_length': _clean_value(mol_info.get('source_ecc_length', '')),
                         'background_region': _clean_value(mol_info.get('background_region', ''))
@@ -643,7 +637,8 @@ class libsim:
         self.path = path  # 直接使用 path，不创建 sample 子目录
         # RCA 输出目录：如果指定了独立目录则使用，否则与 path 相同
         self.rca_path = rca_output_dir if rca_output_dir else path
-        self.prefix = [join(self.path, self.sample + '.neg'), join(self.path, self.sample + '.pos'), join(self.rca_path,  self.sample + '.lib')]
+        # 所有 RCA 相关文件都放在 rca_path 中
+        self.prefix = [join(self.rca_path, self.sample + '.neg'), join(self.rca_path, self.sample + '.pos'), join(self.rca_path,  self.sample + '.lib')]
         self.utils = utilities(reference)
 
         self.sim_library()
@@ -906,7 +901,6 @@ class libsim:
             axis=1
         )
         # 其他 truth 字段
-        output_table['has_chimera'] = False  # Lite 模式不模拟 chimera
         output_table['is_background'] = output_table['id'].str.startswith('neg_')
         output_table['source_ecc_length'] = output_table['original_length']
         output_table['background_region'] = ''
@@ -987,12 +981,11 @@ class fqsim:
         ont_std: ONT 读长标准差
         ont_model: PBSIM2 ONT 模型
         hifi_sample_fastq: HiFi 采样 FASTQ 文件
-        hifi_mode: HiFi 模式 ('auto', 'sampling', 'simple')
+        hifi_mode: HiFi 模式 ('auto', 'sampling')，需要 PBSIM2
         hifi_profile_id: HiFi profile ID
         hifi_profile_root: HiFi profile 目录
-        hifi_len_min/peak_min/peak_max/max: HiFi 长度分布参数
-        hifi_qmin/qmean/qsd: HiFi 质量参数
-        hifi_total_reads: HiFi 总读数（simple 模式）
+        hifi_len_min/peak_min/peak_max/max: HiFi 长度分布参数（内置 profile 使用）
+        hifi_qmin/qmean/qsd: HiFi 质量参数（内置 profile 使用）
         sr_mean/std: NGS insert size 参数
         sr_readlen: NGS 读长
         sr_platform: ART 平台
@@ -1022,7 +1015,6 @@ class fqsim:
         hifi_qmin: int = 20,
         hifi_qmean: int = 30,
         hifi_qsd: float = 0.0,
-        hifi_total_reads: Optional[int] = None,
         sr_mean: float = 400,
         sr_std: float = 125,
         sr_readlen: int = 150,
@@ -1051,7 +1043,6 @@ class fqsim:
         self.hifi_qmin = int(hifi_qmin)
         self.hifi_qmean = int(hifi_qmean)
         self.hifi_qsd = float(hifi_qsd)
-        self.hifi_total_reads = None if hifi_total_reads is None else int(hifi_total_reads)
         self.sr_mean = float(sr_mean)
         self.sr_std = float(sr_std)
         self.sr_readlen = int(sr_readlen)
@@ -1080,10 +1071,8 @@ class fqsim:
 
         # Only create per-molecule FASTA files when required by external tools.
         # - NGS: we use batched ART on multi-FASTA (no per-molecule files needed).
-        # - HiFi sampling (PBSIM2) and ONT (PBSIM2) still require per-molecule FASTA.
-        need_unifasta = (not self.skip_ont) or (
-            (not self.skip_hifi) and (self.hifi_effective_mode() == 'sampling')
-        )
+        # - HiFi (PBSIM2) and ONT (PBSIM2) require per-molecule FASTA.
+        need_unifasta = (not self.skip_ont) or (not self.skip_hifi)
         if need_unifasta:
             self.unifasta()
         if not self.skip_sr:
@@ -1383,15 +1372,9 @@ class fqsim:
         """
         确定 HiFi 模拟的有效模式。
 
-        auto 模式逻辑:
-        - 如果提供了 sample_fastq 或 profile_id -> sampling
-        - 否则使用内置 profile -> sampling (默认)
-        - 只有显式指定 --hifi-mode simple 才会使用 simple 模式
+        始终返回 'sampling'，需要 PBSIM2 支持。
         """
-        if self.hifi_mode == 'auto':
-            # auto 模式默认使用 sampling（内置或自定义 profile）
-            return 'sampling'
-        return self.hifi_mode
+        return 'sampling'
 
     def _get_hifi_profile_cache_dir(self) -> str:
         """获取 HiFi profile 缓存目录 (~/.ecctoolkit/hifi_profiles/)"""
@@ -1452,10 +1435,10 @@ class fqsim:
 
         # Profile 不存在，需要生成
         if not self.hifi_sample_fastq:
-            logger.warning(f'HiFi profile "{profile_id}" not found and no sample fastq provided.')
-            logger.warning('Falling back to simple mode.')
-            self.hifi_mode = 'simple'  # 强制使用 simple 模式
-            return
+            raise ValueError(
+                f'HiFi profile "{profile_id}" not found and no sample fastq provided. '
+                'Please provide --hifi-sample-fastq or ensure built-in profile exists.'
+            )
 
         logger.info(f'Generating HiFi profile from: {self.hifi_sample_fastq}')
         logger.info(f'Profile will be cached at: {cache_dir}')
@@ -1488,9 +1471,9 @@ class fqsim:
             sp.run(cmd_parts, check=True, env=self.pbsim_hifi_env(), cwd=cache_dir, capture_output=True)
             logger.info(f'HiFi profile cached: {profile_id}')
         except Exception as e:
-            logger.warning(f'Failed to generate HiFi profile: {e}')
-            logger.warning('Falling back to simple mode.')
-            self.hifi_mode = 'simple'
+            raise RuntimeError(
+                f'Failed to generate HiFi profile from {self.hifi_sample_fastq}: {e}'
+            )
         finally:
             # 清理临时文件
             self.utils.remove_glob(dummy_prefix + '*')
@@ -1723,41 +1706,31 @@ class fqsim:
 
     def sim_fastq_hifi(self):
         '''
-        Generate HiFi fastq reads using PBSIM2 or simple mode.
+        Generate HiFi fastq reads using PBSIM2.
+
+        Requires PBSIM2/3 with --sample-fastq support.
         '''
-        mode = self.hifi_effective_mode()
-        if mode == 'sampling':
-            if self.hifi_total_reads is not None:
-                raise ValueError('hifi_total_reads is supported in HiFi simple-mode only.')
-            # 检测 PBSIM2/3 是否支持 sampling 模式
-            if not self._check_pbsim_hifi_sampling_available():
-                pbsim_info = self._get_pbsim_version_info()
-                logger.warning(
-                    f'PBSIM HiFi sampling mode not available ({pbsim_info}). '
-                    'HiFi sampling requires PBSIM2/3 with --sample-fastq support. '
-                    'Falling back to simple mode.'
-                )
-                self.sim_fastq_hifi_simple()
-                self._generate_hifi_fasta()
-                return
-            # 确保 profile 已准备好（会设置内置 profile 或用户自定义 profile）
-            self.ensure_hifi_profile()
-            # Copy profile files to tmp directory for PBSIM2 to find
-            self._copy_hifi_profile_to_tmp()
-            self.pbsim2_hifi_para_file = self.multi_para_pbsim2_hifi()
-            with mp.Pool(self.thread) as pool:
-                results = pool.starmap(self.pbsim2_hifi, self.pbsim2_hifi_para_file)
-            failed = [(mol_id, err) for mol_id, success, err in results if not success]
-            if failed:
-                logger.warning('HiFi simulation failed for %d molecules: %s', len(failed), [m for m, _ in failed[:5]])
-            self._generate_hifi_fasta()
+        # 检测 PBSIM2/3 是否支持 sampling 模式
+        if not self._check_pbsim_hifi_sampling_available():
+            pbsim_info = self._get_pbsim_version_info()
+            logger.warning(
+                f'PBSIM HiFi sampling mode not available ({pbsim_info}). '
+                'HiFi simulation requires PBSIM2/3 with --sample-fastq support. '
+                'Install with: conda install -c bioconda pbsim2'
+            )
+            logger.warning('Skipping HiFi read simulation.')
             return
-        if mode == 'simple':
-            logger.info('HiFi simple-mode enabled (no sample fastq/profile provided); results are approximate.')
-            self.sim_fastq_hifi_simple()
-            self._generate_hifi_fasta()
-            return
-        raise ValueError("unknown hifi_mode: {0}".format(mode))
+        # 确保 profile 已准备好（会设置内置 profile 或用户自定义 profile）
+        self.ensure_hifi_profile()
+        # Copy profile files to tmp directory for PBSIM2 to find
+        self._copy_hifi_profile_to_tmp()
+        self.pbsim2_hifi_para_file = self.multi_para_pbsim2_hifi()
+        with mp.Pool(self.thread) as pool:
+            results = pool.starmap(self.pbsim2_hifi, self.pbsim2_hifi_para_file)
+        failed = [(mol_id, err) for mol_id, success, err in results if not success]
+        if failed:
+            logger.warning('HiFi simulation failed for %d molecules: %s', len(failed), [m for m, _ in failed[:5]])
+        self._generate_hifi_fasta()
 
     def _generate_hifi_fasta(self):
         '''
@@ -1796,152 +1769,6 @@ class fqsim:
                 rid = header.strip().lstrip('@').split()[0]
                 fa.write(f">{rid}\n{seq.strip()}\n")
 
-    def sample_hifi_read_length(self, rng):
-        if self.hifi_len_min <= 0:
-            raise ValueError('hifi_len_min must be > 0')
-        if not (self.hifi_len_min <= self.hifi_len_peak_min <= self.hifi_len_peak_max <= self.hifi_len_max):
-            raise ValueError('HiFi length bounds must satisfy min <= peak-min <= peak-max <= max')
-        r = rng.random()
-        if r < 0.85:
-            return int(rng.integers(self.hifi_len_peak_min, self.hifi_len_peak_max + 1))
-        if r < 0.95:
-            return int(rng.integers(self.hifi_len_min, self.hifi_len_peak_min + 1))
-        return int(rng.integers(self.hifi_len_peak_max, self.hifi_len_max + 1))
-
-    def sample_hifi_qualities(self, rng, length):
-        qmin = max(0, int(self.hifi_qmin))
-        qmean = max(qmin, int(self.hifi_qmean))
-        qsd = float(self.hifi_qsd)
-        if qsd <= 0:
-            q = qmean
-            if q > 93:
-                q = 93
-            return bytes([q + 33]) * length
-        quals = rng.normal(loc=qmean, scale=qsd, size=length)
-        quals = np.clip(np.rint(quals), qmin, 93).astype(np.int16)
-        return bytes((int(q) + 33 for q in quals))
-
-    def introduce_substitution_errors(self, rng, seq_bytes, qmean):
-        if not seq_bytes:
-            return seq_bytes
-        qmean = max(0, int(qmean))
-        p_error = 10 ** (-qmean / 10.0) if qmean > 0 else 1.0
-        expected = p_error * len(seq_bytes)
-        n_err = int(rng.poisson(expected))
-        if n_err <= 0:
-            return seq_bytes
-        if n_err >= len(seq_bytes):
-            n_err = len(seq_bytes) - 1
-        positions = rng.choice(len(seq_bytes), size=n_err, replace=False)
-        alt = {
-            ord('A'): b'CGT',
-            ord('C'): b'AGT',
-            ord('G'): b'ACT',
-            ord('T'): b'ACG',
-        }
-        for pos in positions:
-            b = seq_bytes[pos]
-            choices = alt.get(b)
-            if not choices:
-                continue
-            seq_bytes[pos] = choices[int(rng.integers(0, 3))]
-        return seq_bytes
-
-    def sim_fastq_hifi_simple(self):
-        out_fastq = '{0}/{1}.HiFi.fastq'.format(self.path, self.sample)
-        rng = np.random.default_rng(self.seed)
-        with open(out_fastq, 'w') as out:
-            molecules = []
-            weights = []
-            for i in self.ec.index:
-                ecc_id = str(self.ec.loc[i, 'id'])
-                seq_value = self.ec.loc[i, 'seq']
-                if pd.isna(seq_value):
-                    continue
-                seq = str(seq_value).upper()
-                if not seq:
-                    continue
-                seq_len = len(seq)
-                cov = float(self.ec.loc[i, 'tempcov'])
-                if not np.isfinite(cov):
-                    cov = 0.0
-                molecules.append((ecc_id, seq, cov))
-                weights.append(max(0.0, cov) * seq_len)
-
-            if not molecules:
-                raise ValueError('HiFi simple-mode: no valid molecules found in pool.')
-
-            if self.hifi_total_reads is not None:
-                if self.hifi_total_reads <= 0:
-                    raise ValueError('hifi_total_reads must be > 0')
-                wsum = float(np.sum(weights))
-                if wsum <= 0:
-                    weights = [len(seq) for _, seq, _ in molecules]
-                    wsum = float(np.sum(weights))
-                probs = np.array(weights, dtype=float) / wsum
-                expected = probs * self.hifi_total_reads
-                counts = np.floor(expected).astype(int)
-                remainder = int(self.hifi_total_reads - int(counts.sum()))
-                if remainder > 0:
-                    extras = rng.choice(len(molecules), size=remainder, replace=True, p=probs)
-                    for idx in extras:
-                        counts[int(idx)] += 1
-
-                for (ecc_id, seq, _), n_reads in zip(molecules, counts):
-                    if n_reads <= 0:
-                        continue
-                    seq_len = len(seq)
-                    for read_i in range(int(n_reads)):
-                        readlen = self.sample_hifi_read_length(rng)
-                        if readlen > seq_len:
-                            readlen = seq_len
-                        if readlen <= 0:
-                            continue
-                        if seq_len > readlen:
-                            start = int(rng.integers(0, seq_len - readlen + 1))
-                        else:
-                            start = 0
-                        read_seq = seq[start : start + readlen]
-                        seq_bytes = bytearray(read_seq.encode('ascii'))
-                        seq_bytes = self.introduce_substitution_errors(rng, seq_bytes, self.hifi_qmean)
-                        qual_bytes = self.sample_hifi_qualities(rng, readlen)
-                        out.write('@{0}_hifi_{1}\n'.format(ecc_id, read_i))
-                        out.write(seq_bytes.decode('ascii'))
-                        out.write('\n+\n')
-                        out.write(qual_bytes.decode('ascii'))
-                        out.write('\n')
-                return
-
-            for ecc_id, seq, cov in molecules:
-                if (not np.isfinite(cov)) or cov <= 0:
-                    continue
-                seq_len = len(seq)
-                target_bases = int(np.ceil(cov * seq_len))
-                produced = 0
-                read_i = 0
-                while produced < target_bases:
-                    readlen = self.sample_hifi_read_length(rng)
-                    if readlen > seq_len:
-                        readlen = seq_len
-                    if readlen <= 0:
-                        break
-                    if seq_len > readlen:
-                        start = int(rng.integers(0, seq_len - readlen + 1))
-                    else:
-                        start = 0
-                    read_seq = seq[start : start + readlen]
-                    seq_bytes = bytearray(read_seq.encode('ascii'))
-                    seq_bytes = self.introduce_substitution_errors(rng, seq_bytes, self.hifi_qmean)
-                    qual_bytes = self.sample_hifi_qualities(rng, readlen)
-                    out.write('@{0}_hifi_{1}\n'.format(ecc_id, read_i))
-                    out.write(seq_bytes.decode('ascii'))
-                    out.write('\n+\n')
-                    out.write(qual_bytes.decode('ascii'))
-                    out.write('\n')
-                    read_i += 1
-                    produced += readlen
-        return
-    
     def sort(self):
         '''
         functions to sort fastq files by read name
@@ -2006,14 +1833,12 @@ class fqsim:
             hifi_fastq = '{0}/{1}.HiFi.fastq'.format(self.path, self.sample)
             if exists(hifi_fastq):
                 hifi_truth_path = '{0}/{1}.HiFi.truth.tsv'.format(self.path, self.sample)
-                # 检测 HiFi 模式来选择合适的解析器
-                hifi_parser = 'hifi_simple' if self.hifi_effective_mode() == 'simple' else 'pbsim'
                 generate_truth_from_fastq(
                     fastq_path=hifi_fastq,
                     pool_csv_path=self.pool_csv_path,
                     output_truth_path=hifi_truth_path,
                     platform='HiFi',
-                    read_id_parser=hifi_parser
+                    read_id_parser='pbsim'
                 )
 
         # ONT truth

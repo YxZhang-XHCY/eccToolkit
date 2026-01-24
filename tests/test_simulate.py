@@ -54,7 +54,7 @@ class TestCLICommands:
         """Test readsim --help."""
         import subprocess
         result = subprocess.run(
-            ["ecc", "readsim", "--help"],
+            ["ecc", "sim-reads", "--help"],
             capture_output=True,
             text=True
         )
@@ -112,9 +112,9 @@ class TestSimulatePipelineLiteConversion:
 
         pipeline._convert_region_to_lite_format(fasta_path)
 
-        # lite 输出直接放在 lite_dir 下（不创建 sample 子目录）
-        pos_bed = pipeline.lite_dir / f"{config.sample}.pos.bed"
-        pos_csv = pipeline.lite_dir / f"{config.sample}.pos.csv"
+        # RCA 相关文件放在 rca_dir 下
+        pos_bed = pipeline.rca_dir / f"{config.sample}.pos.bed"
+        pos_csv = pipeline.rca_dir / f"{config.sample}.pos.csv"
 
         assert pos_bed.exists(), f"Expected {pos_bed} to exist"
         assert pos_csv.exists(), f"Expected {pos_csv} to exist"
