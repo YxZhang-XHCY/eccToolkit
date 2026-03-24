@@ -2,6 +2,7 @@
 
 from ecctoolkit.process.combine import combine_fled_circlemap
 from ecctoolkit.process.convert import convert_cnv_to_bed, convert_gff_to_csv
+from ecctoolkit.process.convert_rmsk import convert_repeatmasker
 from ecctoolkit.process.filter import filter_by_annotation
 from ecctoolkit.process.merge import merge_files
 from ecctoolkit.process.parse import parse_eccdna
@@ -15,6 +16,7 @@ __all__ = [
     "filter_by_annotation",
     "convert_gff_to_csv",
     "convert_cnv_to_bed",
+    "convert_repeatmasker",
     "generate_reports",
     "run_quantification",
 ]

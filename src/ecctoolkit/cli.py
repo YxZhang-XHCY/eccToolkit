@@ -163,10 +163,11 @@ def enrich_tad(input_files, tad, output, genome, prefix, nshuffle, threads, keep
 @click.option("-g", "--genome", required=True, help="Genome sizes file")
 @click.option("-n", "--nshuffle", default=1000, help="Number of permutations")
 @click.option("-t", "--threads", default=8, help="Number of threads")
-def enrich_overlap(input_file, annotation, output, genome, nshuffle, threads):
+@click.option("--exclude", help="Exclusion regions BED (gaps, centromeres)")
+def enrich_overlap(input_file, annotation, output, genome, nshuffle, threads, exclude):
     """General permutation test for genomic region overlap."""
     from ecctoolkit.enrich.overlap import run_overlap_test
-    run_overlap_test(input_file, list(annotation), output, genome, nshuffle, threads)
+    run_overlap_test(input_file, list(annotation), output, genome, nshuffle, threads, exclude)
 
 
 # ============================================================================
@@ -174,14 +175,15 @@ def enrich_overlap(input_file, annotation, output, genome, nshuffle, threads):
 # ============================================================================
 
 @main.command("hotspot-matrix")
-@click.option("-i", "--input", "input_file", required=True, help="eccDNA CSV file")
+@click.option("-i", "--input", "input_file", required=True, help="eccDNA CSV/BED file")
 @click.option("-f", "--fai", required=True, help="Reference genome FAI index")
 @click.option("-o", "--output", required=True, help="Output directory")
 @click.option("--windows", default="10000,50000,100000", help="Window sizes (comma-separated)")
 def hotspot_matrix(input_file, fai, output, windows):
-    """Generate multi-scale window count matrices using bedtools.
+    """Generate multi-scale window count matrices.
 
-    Creates eccDNA density matrices at different resolutions (default: 10kb, 50kb, 100kb).
+    Counts eccDNA midpoints per non-overlapping window at multiple resolutions
+    (default: 10kb, 50kb, 100kb). Outputs per-scale CSV files.
     """
     from ecctoolkit.hotspot.matrix import generate_multiscale_matrix
     window_list = [int(w) for w in windows.split(",")]
@@ -189,37 +191,70 @@ def hotspot_matrix(input_file, fai, output, windows):
 
 
 @main.command("hotspot-detect")
-@click.option("-i", "--input", "input_dir", required=True, help="Multi-scale matrix directory")
-@click.option("-e", "--eccdna", required=True, help="Original eccDNA CSV")
+@click.option("-i", "--input", "input_files", required=True, multiple=True, help="eccDNA CSV/BED files (one per sample)")
+@click.option("-f", "--fai", required=True, help="Reference genome FAI index")
 @click.option("-o", "--output", required=True, help="Output directory")
-def hotspot_detect(input_dir, eccdna, output):
-    """Detect hotspots with precise boundaries (SHARP method).
+@click.option("--sample-names", help="Sample names (comma-separated, matches -i order)")
+@click.option("--group-labels", help="Group labels per sample (comma-separated, e.g., HeLa,HeLa,HeLa,U87MG,U87MG,U87MG)")
+@click.option("--window-size", default=100000, type=int, help="Window size in bp (default: 100000)")
+@click.option("-n", "--nperm", default=1000, type=int, help="Number of permutations (default: 1000)")
+@click.option("-t", "--threads", default=4, type=int, help="Number of threads (default: 4)")
+@click.option("--fdr", default=0.05, type=float, help="FDR threshold (default: 0.05)")
+@click.option("--fold", default=3.0, type=float, help="Fold-above-median threshold (default: 3.0)")
+@click.option("--exclude", multiple=True, help="Exclusion region BED files (gap, centromere)")
+@click.option("--seed", default=42, type=int, help="Random seed")
+def hotspot_detect(input_files, fai, output, sample_names, group_labels,
+                   window_size, nperm, threads, fdr, fold, exclude, seed):
+    """Detect eccDNA hotspots with permutation test and classification.
 
-    Identifies candidate regions from multi-scale data and refines boundaries.
+    For single sample: identifies significant hotspot windows.
+    For multiple samples: classifies by replicate reproducibility (core/recurrent/sporadic).
+    For multiple groups: additionally classifies by specificity (shared/group-specific).
     """
     from ecctoolkit.hotspot.detect import run_sharp_detection
-    run_sharp_detection(input_dir, eccdna, output)
+    names = sample_names.split(",") if sample_names else None
+    groups = group_labels.split(",") if group_labels else None
+    excl = list(exclude) if exclude else None
+    run_sharp_detection(
+        input_files=list(input_files), fai_file=fai, output_dir=output,
+        sample_names=names, group_labels=groups,
+        window_size=window_size, n_perm=nperm, n_cores=threads,
+        fdr_threshold=fdr, fold_threshold=fold, exclude_files=excl, seed=seed,
+    )
 
 
 @main.command("hotspot-test")
-@click.option("-i", "--input", "input_dir", required=True, help="Multi-scale matrix directory")
+@click.option("-i", "--input", "input_file", required=True, help="eccDNA CSV/BED file")
+@click.option("-f", "--fai", required=True, help="Reference genome FAI index")
 @click.option("-o", "--output", required=True, help="Output directory")
-@click.option("-n", "--nshuffle", default=1000, help="Number of permutations")
-@click.option("-t", "--threads", default=8, help="Number of threads")
-def hotspot_test(input_dir, output, nshuffle, threads):
-    """Test hotspot significance using permutation (parallel version)."""
+@click.option("--window-size", default=100000, type=int, help="Window size in bp (default: 100000)")
+@click.option("-n", "--nperm", default=1000, type=int, help="Number of permutations")
+@click.option("-t", "--threads", default=4, type=int, help="Number of threads")
+@click.option("--fdr", default=0.05, type=float, help="FDR threshold (default: 0.05)")
+@click.option("--fold", default=3.0, type=float, help="Fold-above-median threshold (default: 3.0)")
+@click.option("--exclude", multiple=True, help="Exclusion region BED files")
+@click.option("--seed", default=42, type=int, help="Random seed")
+def hotspot_test(input_file, fai, output, window_size, nperm, threads, fdr, fold, exclude, seed):
+    """Test hotspot significance using genome-wide permutation with FDR."""
     from ecctoolkit.hotspot.permtest import run_hotspot_permtest
-    run_hotspot_permtest(input_dir, output, nshuffle, threads)
+    excl = list(exclude) if exclude else None
+    run_hotspot_permtest(
+        input_file=input_file, fai_file=fai, output_dir=output,
+        window_size=window_size, n_perm=nperm, n_cores=threads,
+        fdr_threshold=fdr, fold_threshold=fold, exclude_files=excl, seed=seed,
+    )
 
 
 @main.command("hotspot-refine")
-@click.option("-i", "--input", "input_file", required=True, help="Candidate hotspots file")
-@click.option("-e", "--eccdna", required=True, help="Original eccDNA CSV")
-@click.option("-o", "--output", required=True, help="Output file")
-def hotspot_refine(input_file, eccdna, output):
+@click.option("-i", "--input", "input_file", required=True, help="Candidate hotspots CSV")
+@click.option("-e", "--eccdna", required=True, help="Original eccDNA CSV/BED")
+@click.option("-o", "--output", required=True, help="Output CSV file")
+@click.option("--sub-window", default=1000, type=int, help="Sub-window size for refinement (default: 1000)")
+@click.option("--trim-fraction", default=0.1, type=float, help="Trim below this fraction of peak (default: 0.1)")
+def hotspot_refine(input_file, eccdna, output, sub_window, trim_fraction):
     """Refine hotspot boundaries at high resolution."""
     from ecctoolkit.hotspot.refine import refine_hotspot_boundaries
-    refine_hotspot_boundaries(input_file, eccdna, output)
+    refine_hotspot_boundaries(input_file, eccdna, output, sub_window, trim_fraction)
 
 
 # ============================================================================
@@ -227,40 +262,52 @@ def hotspot_refine(input_file, eccdna, output):
 # ============================================================================
 
 @main.command("te-analyze")
-@click.option("-i", "--input", "input_file", required=True, help="GFF annotation file")
+@click.option("-i", "--input", "input_file", required=True, help="eccDNA regions CSV/BED")
+@click.option("--te", "te_annotation", required=True, help="TE annotation file (RepeatMasker .out, rmsk.txt, GFF, or BED)")
 @click.option("-o", "--output", required=True, help="Output directory")
+@click.option("--te-format", default="auto", type=click.Choice(["auto", "rmsk", "gff", "bed"]),
+              help="TE annotation format (default: auto)")
 @click.option("-t", "--threads", default=8, help="Number of threads")
-def te_analyze(input_file, output, threads):
-    """Analyze TE composition from GFF, compare Mecc vs Uecc."""
+def te_analyze(input_file, te_annotation, output, te_format, threads):
+    """Analyze TE composition of eccDNA regions.
+
+    Intersects eccDNA with TE annotations, computes per-eccDNA TE coverage
+    and class/family breakdown.
+    """
     from ecctoolkit.te.analyze import run_te_analysis
-    run_te_analysis(input_file, output, threads)
+    run_te_analysis(input_file, output, te_annotation, te_format, threads)
 
 
 @main.command("te-classify")
-@click.option("-i", "--input", "input_file", required=True, help="TE annotation CSV")
+@click.option("-i", "--input", "input_file", required=True, help="TE-annotated eccDNA CSV (from te-analyze)")
 @click.option("-o", "--output", required=True, help="Output directory")
-def te_classify(input_file, output):
-    """Classify eccDNA as single or composite TE based on motif count."""
+@click.option("--min-te", default=0.1, type=float, help="Min TE fraction to count (default: 0.1)")
+@click.option("--dominant", default=0.8, type=float, help="Dominant TE threshold (default: 0.8)")
+def te_classify(input_file, output, min_te, dominant):
+    """Classify eccDNA as single-TE, composite-TE, partial-TE, or no-TE."""
     from ecctoolkit.te.classify import classify_te_composition
-    classify_te_composition(input_file, output)
+    classify_te_composition(input_file, output, min_te, dominant)
 
 
 @main.command("te-distribution")
-@click.option("-i", "--input", "input_file", required=True, help="TE annotation CSV")
+@click.option("-i", "--input", "input_file", required=True, help="TE-annotated eccDNA CSV")
 @click.option("-o", "--output", required=True, help="Output directory")
-def te_distribution(input_file, output):
-    """Analyze TE percentage distribution in 5 bins (0-20%, 20-40%, etc.)."""
+@click.option("--bins", default=5, type=int, help="Number of percentage bins (default: 5)")
+@click.option("--group-by", help="Column to group by (e.g., type, te_class)")
+def te_distribution(input_file, output, bins, group_by):
+    """Analyze TE percentage distribution in quantile bins."""
     from ecctoolkit.te.distribution import analyze_te_distribution
-    analyze_te_distribution(input_file, output)
+    analyze_te_distribution(input_file, output, bins, group_by)
 
 
 @main.command("te-composition")
-@click.option("-i", "--input", "input_file", required=True, help="TE annotation CSV")
+@click.option("-i", "--input", "input_file", required=True, help="TE-annotated eccDNA CSV")
 @click.option("-o", "--output", required=True, help="Output directory")
-def te_composition(input_file, output):
-    """Analyze composite TE composition and motif combinations."""
+@click.option("--min-count", default=2, type=int, help="Min count to report combination (default: 2)")
+def te_composition(input_file, output, min_count):
+    """Analyze composite TE motif combinations and their frequencies."""
     from ecctoolkit.te.composition import analyze_te_composition
-    analyze_te_composition(input_file, output)
+    analyze_te_composition(input_file, output, min_count)
 
 
 @main.command("te-process")
@@ -648,11 +695,13 @@ def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
         temp_pipeline.config = temp_config
         temp_pipeline.reference = reference
         temp_pipeline.sequencing_dir = Path(sample_dir)
+        temp_pipeline.rca_dir = Path(sample_dir) / "rca"
 
         # 转换格式
         temp_pipeline._convert_region_format(eccdna_path)
 
         # 运行 libsim (RCA 扩增)
+        rca_dir = str(temp_pipeline.rca_dir)
         lib = libsim(
             sample=sample,
             reference=reference,
@@ -661,8 +710,9 @@ def readsim(sample, path, threads, meancov, seed, skip_sr, skip_hifi, skip_ont,
             meancov=meancov,
             amp=amp,
             threads=threads,
+            rca_output_dir=rca_dir,
         )
-        csv_path = os.path.join(sample_dir, sample + '.lib.csv')
+        csv_path = os.path.join(rca_dir, sample + '.lib.csv')
     else:
         # Run seqsim (随机生成 eccDNA 和线性 DNA)
         logger.info("Generating random eccDNA from reference genome...")
@@ -1047,6 +1097,365 @@ def benchmark(result, truth_dir, truth_unique, truth_multi, truth_chimeric,
         reporter.save_csv_summary(csv_path)
 
     logger.info("Benchmark completed!")
+
+
+# ============================================================================
+# Benchmark Compare Command
+# ============================================================================
+
+@main.command("benchmark-compare")
+@click.option("--tool", "tools", multiple=True, nargs=3, type=(str, str, str),
+              help="Tool name, result file, and format. Can be specified multiple times. "
+                   "Format: --tool <name> <file> <format>. "
+                   "Supported formats: circleseeker, circlemap, cresil, eccfinder, bed, csv")
+@click.option("--truth-dir",
+              type=click.Path(exists=True),
+              help="Directory containing truth BED files (*.unique.bed, *.multi.bed, *.chimeric.bed)")
+@click.option("--truth-unique",
+              type=click.Path(exists=True),
+              help="UeccDNA ground truth BED file")
+@click.option("--truth-multi",
+              type=click.Path(exists=True),
+              help="MeccDNA ground truth BED file")
+@click.option("--truth-chimeric",
+              type=click.Path(exists=True),
+              help="CeccDNA ground truth BED file")
+@click.option("-o", "--output",
+              type=click.Path(), default="benchmark_comparison",
+              help="Output directory (default: benchmark_comparison)")
+@click.option("--overlap", default=0.8, type=float,
+              help="Minimum overlap ratio for matching (default: 0.8)")
+@click.option("-v", "--verbose", is_flag=True,
+              help="Verbose output")
+def benchmark_compare(tools, truth_dir, truth_unique, truth_multi, truth_chimeric,
+                      output, overlap, verbose):
+    """Compare multiple eccDNA detection tools against the same ground truth.
+
+    Evaluate and compare results from CircleSeeker, CReSIL, Circle-Map,
+    ecc_finder, or any BED/CSV formatted output simultaneously.
+
+    \b
+    Examples:
+      # Compare three tools
+      ecc benchmark-compare \\
+          --tool CircleSeeker merged_output.csv circleseeker \\
+          --tool CReSIL cresil_output.tsv cresil \\
+          --tool Circle-Map circlemap.bed circlemap \\
+          --truth-dir simulation_output/ \\
+          -o comparison_results/
+
+      # Compare with individual truth files
+      ecc benchmark-compare \\
+          --tool CircleSeeker result.csv circleseeker \\
+          --tool ecc_finder result.bed eccfinder \\
+          --truth-unique sim.unique.bed \\
+          --truth-multi sim.multi.bed \\
+          --truth-chimeric sim.chimeric.bed
+
+    \b
+    Supported formats:
+      circleseeker  CircleSeeker merged_output.csv (eccDNA_id, Regions, eccDNA_type, ...)
+      circlemap     Circle-Map BED output (chrom, start, end, ...)
+      cresil        CReSIL TSV/CSV output (merge_region, merge_len, num_region, ...)
+      eccfinder     ecc_finder BED output (chrom, start, end, ...)
+      bed           Generic BED format (chrom, start, end)
+      csv           Generic CSV format (chr/chrom, start, end columns)
+    """
+    import logging
+    import os
+
+    logging.basicConfig(
+        level=logging.DEBUG if verbose else logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    )
+    logger = logging.getLogger(__name__)
+
+    # Validate inputs
+    if not tools:
+        raise click.ClickException(
+            "At least one --tool is required. "
+            "Usage: --tool <name> <file> <format>"
+        )
+
+    if not truth_dir and not (truth_unique or truth_multi or truth_chimeric):
+        raise click.ClickException(
+            "Either --truth-dir or at least one of "
+            "--truth-unique/--truth-multi/--truth-chimeric is required"
+        )
+
+    from ecctoolkit.benchmark.comparator import BenchmarkComparator
+
+    comparator = BenchmarkComparator(overlap_threshold=overlap)
+
+    # Load truth
+    comparator.load_truth(
+        unique_bed=truth_unique,
+        multi_bed=truth_multi,
+        chimeric_bed=truth_chimeric,
+        truth_dir=truth_dir,
+    )
+
+    # Add tools
+    for tool_name, result_file, fmt in tools:
+        if not os.path.exists(result_file):
+            raise click.ClickException(f"Result file not found: {result_file}")
+        comparator.add_tool(tool_name, result_file, fmt)
+
+    # Evaluate
+    logger.info("Running multi-tool benchmark comparison...")
+    comparator.evaluate_all()
+
+    # Print summary
+    comparator.print_summary()
+
+    # Generate reports
+    comparator.generate_comparison_report(output)
+
+    logger.info(f"Comparison reports saved to: {output}")
+    logger.info("Benchmark comparison completed!")
+
+
+# ============================================================================
+# Analysis Commands (GC profile, etc.)
+# ============================================================================
+
+@main.command("design-primers")
+@click.option("-i", "--input", "input_file", required=True, help="eccDNA regions CSV/BED")
+@click.option("-g", "--genome", required=True, help="Reference genome FASTA (needs .fai index)")
+@click.option("-o", "--output", required=True, help="Output CSV/TSV file")
+@click.option("--product-size", default=200, type=int, help="Target product size in bp (default: 200)")
+@click.option("--junction-flank", default=300, type=int, help="Flanking size around junction (default: 300)")
+@click.option("--max-attempts", default=3, type=int, help="Max design attempts with relaxed params (default: 3)")
+@click.option("-t", "--threads", default=1, type=int, help="Threads for BLAST check (default: 1)")
+@click.option("--sample", "sample_n", type=int, help="Randomly sample N eccDNA (default: all)")
+@click.option("--seed", default=42, type=int, help="Random seed for sampling")
+@click.option("--skip-blast", is_flag=True, help="Skip BLAST specificity check")
+@click.option("--best-only", is_flag=True, help="Only output the best primer pair per eccDNA")
+def design_primers(input_file, genome, output, product_size, junction_flank,
+                   max_attempts, threads, sample_n, seed, skip_blast, best_only):
+    """Design outward-facing primers for eccDNA junction validation.
+
+    \b
+    Designs primers spanning the circularization junction. These primers
+    will only produce a PCR product if the DNA is circular.
+
+    \b
+    Features:
+      - Primer3 engine with automatic parameter relaxation
+      - BLAST specificity check (optional, requires BLAST+)
+      - Random sampling support (--sample N)
+      - Best-only mode for clean output tables
+    """
+    from ecctoolkit.analysis.primer_design import run_primer_design
+    run_primer_design(
+        input_file, genome, output, product_size, junction_flank,
+        max_attempts, threads, sample_n, seed, skip_blast, best_only,
+    )
+
+
+@main.command("gc-profile")
+@click.option("-i", "--input", "input_file", required=True, help="eccDNA regions CSV/BED")
+@click.option("-g", "--genome", required=True, help="Reference genome FASTA (needs .fai index)")
+@click.option("-o", "--output", required=True, help="Output directory")
+@click.option("--flank", default=150, type=int, help="Flanking size around breakpoints (default: 150)")
+@click.option("--n-background", default=10000, type=int, help="Number of background regions (default: 10000)")
+@click.option("--seed", default=42, type=int, help="Random seed for background sampling")
+@click.option("--smooth", default=10, type=int, help="Smoothing window for profile (default: 10)")
+def gc_profile(input_file, genome, output, flank, n_background, seed, smooth):
+    """Analyze GC content of eccDNA regions and breakpoint flanking sequences.
+
+    \b
+    Three analyses:
+      1. Per-eccDNA GC content distribution
+      2. Breakpoint ±N bp GC profile (metagene-style)
+      3. Comparison with genomic background (Mann-Whitney U test)
+
+    \b
+    Outputs:
+      eccdna_gc_content.csv      - GC per eccDNA
+      breakpoint_gc_profile.csv  - positional GC around junctions
+      background_gc_content.csv  - background GC distribution
+      gc_analysis_summary.csv    - summary statistics + p-value
+    """
+    from ecctoolkit.analysis.gc_profile import run_gc_profile
+    run_gc_profile(input_file, genome, output, flank, n_background, seed, smooth)
+
+
+# ============================================================================
+# CeccDNA Analysis Commands
+# ============================================================================
+
+@main.command("ceccdna-analyze")
+@click.option("-i", "--input", "input_files", required=True, multiple=True, help="eccDNA CSV files")
+@click.option("-o", "--output", required=True, help="Output directory")
+@click.option("--sample-names", help="Sample names (comma-separated)")
+@click.option("--location-col", default="location", help="Location column name (default: location)")
+@click.option("--type-col", default="type", help="Type column name (default: type)")
+@click.option("--type-value", default="Cecc", help="Type value for CeccDNA (default: Cecc)")
+def ceccdna_analyze(input_files, output, sample_names, location_col, type_col, type_value):
+    """Analyze chimeric eccDNA (CeccDNA) from detection results.
+
+    Extracts CeccDNA records, classifies inter/intra-chromosomal fusions,
+    computes segment statistics, and generates per-sample summaries.
+    """
+    from ecctoolkit.ceccdna.analyze import run_ceccdna_analysis
+    names = sample_names.split(",") if sample_names else None
+    run_ceccdna_analysis(list(input_files), output, names, location_col, type_col, type_value)
+
+
+@main.command("ceccdna-fdr")
+@click.option("--spikein", required=True, help="Spike-in control CSV (columns: sample, A, B, AB)")
+@click.option("--sample", "sample_file", required=True, help="Sample data CSV (columns: sample, total_reads, ceccdna_count)")
+@click.option("-o", "--output", required=True, help="Output CSV file")
+@click.option("--min-reads", default=2, type=int, help="Minimum read count filter (default: 2)")
+def ceccdna_fdr(spikein, sample_file, output, min_reads):
+    """Estimate CeccDNA false discovery rate from spike-in controls.
+
+    Calculates chimeric read fraction from spike-in data, estimates expected
+    false CeccDNA, and reports FDR with and without read-count filters.
+    """
+    from ecctoolkit.ceccdna.fdr import estimate_ceccdna_fdr
+    estimate_ceccdna_fdr(spikein, sample_file, output, min_reads)
+
+
+# ============================================================================
+# Overlap Analysis Commands
+# ============================================================================
+
+@main.command("overlap")
+@click.option("-i", "--input", "input_files", required=True, multiple=True, help="eccDNA CSV/BED files")
+@click.option("-o", "--output", required=True, help="Output CSV file")
+@click.option("--sample-names", help="Sample names (comma-separated)")
+@click.option("--min-reciprocal", default=0.5, type=float, help="Minimum reciprocal overlap (default: 0.5)")
+@click.option("--format", "input_format", default="auto", type=click.Choice(["auto", "csv", "bed"]),
+              help="Input format (default: auto)")
+@click.option("--matrix", is_flag=True, help="Also output NxN overlap matrix")
+def overlap_cmd(input_files, output, sample_names, min_reciprocal, input_format, matrix):
+    """Compute pairwise reciprocal overlap between eccDNA samples.
+
+    For each pair of samples, counts intervals with reciprocal overlap >= threshold.
+    """
+    from ecctoolkit.overlap.reciprocal import compute_reciprocal_overlap
+    names = sample_names.split(",") if sample_names else None
+    compute_reciprocal_overlap(list(input_files), output, names, min_reciprocal, input_format, matrix)
+
+
+@main.command("compare-tools")
+@click.option("--tool", "tools", required=True, multiple=True, nargs=2, type=(str, str),
+              help="Tool name and file path (use multiple times, e.g., --tool CircleSeeker file1.csv --tool CReSIL file2.txt)")
+@click.option("-o", "--output", required=True, help="Output directory")
+@click.option("--min-reciprocal", default=0.9, type=float, help="Reciprocal overlap threshold (default: 0.9)")
+def compare_tools(tools, output, min_reciprocal):
+    """Compare eccDNA detection results across multiple tools.
+
+    Computes pairwise overlap for both single-segment and chimeric entries.
+    """
+    from ecctoolkit.overlap.multi_tool import compare_detection_tools
+    tool_files = {name: path for name, path in tools}
+    compare_detection_tools(tool_files, output, min_reciprocal)
+
+
+# ============================================================================
+# Feature Enrichment Command
+# ============================================================================
+
+@main.command("enrich-feature")
+@click.option("-i", "--input", "input_file", required=True, help="eccDNA CSV/BED file")
+@click.option("--feature", "features", required=True, multiple=True, nargs=2, type=(str, str),
+              help="Feature name and BED file (use multiple times)")
+@click.option("-o", "--output", required=True, help="Output directory")
+@click.option("-g", "--genome", required=True, help="Genome sizes file")
+@click.option("--window-size", default=100000, type=int, help="Window size in bp (default: 100000)")
+@click.option("--hotspot-file", help="Pre-computed hotspot regions BED (optional)")
+@click.option("--hotspot-threshold", default=3.0, type=float, help="Fold-above-median for hotspot (default: 3.0)")
+def enrich_feature(input_file, features, output, genome, window_size, hotspot_file, hotspot_threshold):
+    """Analyze genomic feature enrichment at eccDNA hotspots.
+
+    Compares feature coverage in hotspot vs non-hotspot windows using Mann-Whitney U test.
+    """
+    from ecctoolkit.enrich.feature import run_feature_enrichment
+    feature_dict = {name: path for name, path in features}
+    run_feature_enrichment(input_file, feature_dict, output, genome, window_size, hotspot_file, hotspot_threshold)
+
+
+# ============================================================================
+# CReSIL Pipeline Command
+# ============================================================================
+
+@main.command("cresil")
+@click.option("-i", "--input", "input_fastq", required=True, help="Input FASTQ (long reads)")
+@click.option("--mmi", required=True, help="Minimap2 index (.mmi)")
+@click.option("-r", "--reference", required=True, help="Reference genome FASTA")
+@click.option("-o", "--output", required=True, help="Output directory")
+@click.option("--rmsk", help="RepeatMasker BED (for annotation)")
+@click.option("--cpg", help="CpG islands BED (for annotation)")
+@click.option("--gene", help="Gene annotation BED (for annotation)")
+@click.option("-t", "--threads", default=8, help="Number of threads")
+def cresil(input_fastq, mmi, reference, output, rmsk, cpg, gene, threads):
+    """Run CReSIL pipeline for chimeric eccDNA detection from long reads.
+
+    Executes: trim -> identify -> annotate (optional).
+    """
+    from ecctoolkit.detect.cresil import run_cresil_pipeline
+    run_cresil_pipeline(input_fastq, mmi, reference, output, rmsk, cpg, gene, threads)
+
+
+# ============================================================================
+# RepeatMasker Conversion Command
+# ============================================================================
+
+@main.command("convert-rmsk")
+@click.option("-i", "--input", "input_file", required=True, help="RepeatMasker .out file")
+@click.option("-o", "--output", required=True, help="Output file")
+@click.option("--alias", help="UCSC chromAlias.txt for chromosome name mapping")
+@click.option("--format", "output_format", default="ucsc", type=click.Choice(["ucsc", "bed"]),
+              help="Output format (default: ucsc)")
+def convert_rmsk(input_file, output, alias, output_format):
+    """Convert RepeatMasker .out to UCSC rmsk.txt or BED format.
+
+    Handles coordinate conversion (1-based to 0-based), strand, and milliDiv.
+    """
+    from ecctoolkit.process.convert_rmsk import convert_repeatmasker
+    convert_repeatmasker(input_file, output, alias, output_format)
+
+
+# ============================================================================
+# Statistical Analysis Commands
+# ============================================================================
+
+@main.command("null-model")
+@click.option("--saturation", required=True, help="Saturation curve CSV (columns: sample, fraction, n_eccdna)")
+@click.option("--overlap", "overlap_file", required=True, help="Pairwise overlap CSV (columns: sample_a, sample_b, n_a, n_b, n_shared)")
+@click.option("-o", "--output", required=True, help="Output CSV file")
+def null_model(saturation, overlap_file, output):
+    """Null model analysis for eccDNA inter-replicate overlap.
+
+    Estimates pool size from saturation data (exponential fit),
+    computes Lincoln-Petersen capture-recapture, and compares
+    expected vs observed overlap (hypergeometric).
+    """
+    from ecctoolkit.stats.null_model import run_null_model
+    run_null_model(saturation, overlap_file, output)
+
+
+@main.command("cnv-correlation")
+@click.option("-i", "--input", "input_files", required=True, multiple=True, help="eccDNA CSV files (>= 2 replicates)")
+@click.option("--cnv", required=True, help="CNV BED file (chrom, start, end, copy_ratio)")
+@click.option("-o", "--output", required=True, help="Output directory")
+@click.option("-g", "--genome", required=True, help="Genome sizes file")
+@click.option("--windows", default="10000,50000,100000,500000,1000000", help="Window sizes (comma-separated)")
+@click.option("--sample-names", help="Sample names (comma-separated)")
+def cnv_correlation(input_files, cnv, output, genome, windows, sample_names):
+    """CNV-controlled correlation analysis of eccDNA distribution.
+
+    Tests whether inter-replicate eccDNA density correlations are
+    driven by CNV through normalization, chromosome exclusion,
+    and intra-chromosome analysis.
+    """
+    from ecctoolkit.stats.cnv_correlation import run_cnv_correlation
+    window_list = [int(w) for w in windows.split(",")]
+    names = sample_names.split(",") if sample_names else None
+    run_cnv_correlation(list(input_files), cnv, output, genome, window_list, names)
 
 
 if __name__ == "__main__":

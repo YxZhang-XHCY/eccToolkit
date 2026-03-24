@@ -139,6 +139,32 @@ class BenchmarkReporter:
                         lines.append(f"    {dst}: {cnt}")
         lines.append("")
 
+        # CeccDNA-specific metrics
+        if "CeccDNA" in m.by_type:
+            c = m.by_type["CeccDNA"]
+            if c.truth_count > 0 or c.detected_count > 0:
+                lines.append("-" * 70)
+                lines.append("7. CeccDNA CHIMERIC MATCHING DETAILS")
+                lines.append("-" * 70)
+                lines.append(f"Segment Accuracy:      {c.segment_accuracy:.2%} "
+                             f"({c.total_matched_segments}/{c.total_truth_segments} segments)")
+                lines.append(f"Partial Matches:       {c.partial_match_count}")
+                lines.append("")
+                lines.append(f"{'Subtype':<20} {'Truth':>8} {'Detected':>10} {'TP':>8} "
+                             f"{'Prec':>8} {'Recall':>8}")
+                lines.append("-" * 70)
+                lines.append(
+                    f"{'Inter-chromosomal':<20} {c.inter_chr_truth:>8} "
+                    f"{c.inter_chr_detected:>10} {c.inter_chr_tp:>8} "
+                    f"{c.inter_chr_precision:>7.1%} {c.inter_chr_recall:>7.1%}"
+                )
+                lines.append(
+                    f"{'Intra-chromosomal':<20} {c.intra_chr_truth:>8} "
+                    f"{c.intra_chr_detected:>10} {c.intra_chr_tp:>8} "
+                    f"{c.intra_chr_precision:>7.1%} {c.intra_chr_recall:>7.1%}"
+                )
+                lines.append("")
+
         lines.append("=" * 70)
         lines.append("End of Report")
         lines.append("=" * 70)
@@ -169,7 +195,7 @@ class BenchmarkReporter:
         }
 
         for etype, t in m.by_type.items():
-            report["by_type"][etype] = {
+            type_report = {
                 "truth_count": t.truth_count,
                 "detected_count": t.detected_count,
                 "true_positive": t.true_positive,
@@ -181,6 +207,28 @@ class BenchmarkReporter:
                 "misclassified_from": t.misclassified_from,
                 "misclassified_as": t.misclassified_as,
             }
+            if etype == "CeccDNA":
+                type_report["chimeric_details"] = {
+                    "segment_accuracy": t.segment_accuracy,
+                    "total_matched_segments": t.total_matched_segments,
+                    "total_truth_segments": t.total_truth_segments,
+                    "partial_match_count": t.partial_match_count,
+                    "inter_chromosomal": {
+                        "truth": t.inter_chr_truth,
+                        "detected": t.inter_chr_detected,
+                        "true_positive": t.inter_chr_tp,
+                        "precision": t.inter_chr_precision,
+                        "recall": t.inter_chr_recall,
+                    },
+                    "intra_chromosomal": {
+                        "truth": t.intra_chr_truth,
+                        "detected": t.intra_chr_detected,
+                        "true_positive": t.intra_chr_tp,
+                        "precision": t.intra_chr_precision,
+                        "recall": t.intra_chr_recall,
+                    },
+                }
+            report["by_type"][etype] = type_report
 
         for state, s in m.by_state.items():
             report["by_state"][state] = {

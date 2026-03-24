@@ -84,11 +84,19 @@ class utilities(object):
         )
     
     def transfer_files(self, file1, file2):
-        with open(file1, 'rb') as src, open(file2, 'ab') as dst:
+        with open(file1, 'rb') as src, open(file2, 'a+b') as dst:
             if fcntl:
                 fcntl.flock(dst.fileno(), fcntl.LOCK_EX)
             try:
                 shutil.copyfileobj(src, dst, length=1024 * 1024)
+                # Ensure the appended content ends with a newline to prevent
+                # records from different molecules being concatenated on
+                # the same line, which would corrupt FASTQ format.
+                dst.seek(0, 2)  # seek to end
+                if dst.tell() > 0:
+                    dst.seek(-1, 2)  # seek to last byte
+                    if dst.read(1) != b'\n':
+                        dst.write(b'\n')
             finally:
                 if fcntl:
                     fcntl.flock(dst.fileno(), fcntl.LOCK_UN)

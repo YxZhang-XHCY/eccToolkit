@@ -1,0 +1,1276 @@
+2024-12-16 22:15:58,784 - INFO - Creating BLAST database...
+
+
+Building a new DB, current time: 12/16/2024 22:15:59
+New DB name:   /data9/home/yxzhang/Genome_Ref/Human/T2T-CHM13v2.0_chr
+New DB title:  /data9/home/yxzhang/Genome_Ref/Human/T2T-CHM13v2.0_chr.fna
+Sequence type: Nucleotide
+Deleted existing Nucleotide BLAST database named /data9/home/yxzhang/Genome_Ref/Human/T2T-CHM13v2.0_chr
+Keep MBits: T
+Maximum file size: 3000000000B
+Adding sequences from FASTA; added 24 sequences in 40.9425 seconds.
+
+
+2024-12-16 22:16:41,780 - INFO - BLAST database created: /data9/home/yxzhang/Genome_Ref/Human/T2T-CHM13v2.0_chr
+2024-12-16 22:17:58,298 - INFO - Found specific primers for chr1:111968393-111968794 on attempt 1
+2024-12-16 22:17:59,800 - INFO - Found specific primers for chr1:109263604-109265997 on attempt 1
+2024-12-16 22:18:00,819 - INFO - Found specific primers for chr1:116951983-116954267 on attempt 1
+2024-12-16 22:18:00,976 - INFO - Found specific primers for chr1:118111906-118112295 on attempt 1
+2024-12-16 22:18:01,312 - INFO - Found specific primers for chr1:11042106-11044136 on attempt 1
+2024-12-16 22:18:01,465 - INFO - Found specific primers for chr1:110165427-110165899 on attempt 1
+2024-12-16 22:18:03,838 - INFO - Found specific primers for chr1:107666344-107667282 on attempt 1
+2024-12-16 22:18:10,376 - INFO - Found specific primers for chr1:10228763-10229588 on attempt 1
+2024-12-16 22:18:10,440 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:18:35,976 - INFO - Found specific primers for chr1:112900613-112901466 on attempt 1
+2024-12-16 22:18:47,765 - INFO - Found specific primers for chr1:11660867-11662357 on attempt 1
+2024-12-16 22:19:12,581 - INFO - Found specific primers for chr1:109263605-109265997 on attempt 1
+2024-12-16 22:19:13,923 - INFO - Found specific primers for chr1:118111907-118112295 on attempt 1
+2024-12-16 22:19:15,165 - INFO - Found specific primers for chr1:11042107-11044136 on attempt 1
+2024-12-16 22:19:17,728 - INFO - Found specific primers for chr1:107716972-107717584 on attempt 1
+2024-12-16 22:19:18,346 - INFO - Found specific primers for chr1:112003109-112003620 on attempt 1
+2024-12-16 22:19:18,527 - INFO - Found specific primers for chr1:117056740-117058262 on attempt 1
+2024-12-16 22:19:20,979 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:19:23,396 - INFO - Found specific primers for chr1:10393358-10396355 on attempt 1
+2024-12-16 22:19:32,283 - INFO - Found specific primers for chr1:10228979-10229702 on attempt 1
+2024-12-16 22:19:32,524 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:19:47,374 - INFO - Found specific primers for chr1:100001519-100006025 on attempt 1
+2024-12-16 22:19:55,930 - INFO - Found specific primers for chr1:119675758-119677208 on attempt 1
+2024-12-16 22:19:59,172 - INFO - Found specific primers for chr1:112934274-112934640 on attempt 1
+2024-12-16 22:20:21,911 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:20:23,358 - INFO - Found specific primers for chr1:109263606-109264008 on attempt 1
+2024-12-16 22:20:30,451 - INFO - Found specific primers for chr1:118333050-118334002 on attempt 1
+2024-12-16 22:20:30,758 - INFO - Found specific primers for chr1:107804745-107805345 on attempt 1
+2024-12-16 22:20:31,427 - INFO - Found specific primers for chr1:11042108-11044136 on attempt 1
+2024-12-16 22:20:39,070 - INFO - Found specific primers for chr1:112003110-112003620 on attempt 1
+2024-12-16 22:20:39,659 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:20:46,215 - INFO - Found specific primers for chr1:10242341-10242952 on attempt 1
+2024-12-16 22:20:47,944 - INFO - Found specific primers for chr1:11660868-11662357 on attempt 1
+2024-12-16 22:21:10,353 - INFO - Found specific primers for chr1:100034924-100036631 on attempt 1
+2024-12-16 22:21:30,317 - INFO - Found specific primers for chr1:109263606-109265330 on attempt 1
+2024-12-16 22:21:32,647 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:21:33,114 - INFO - Found specific primers for chr1:117114830-117116462 on attempt 1
+2024-12-16 22:21:39,291 - INFO - Found specific primers for chr1:118333051-118334002 on attempt 1
+2024-12-16 22:21:45,321 - INFO - Found specific primers for chr1:11042109-11044136 on attempt 1
+2024-12-16 22:21:47,423 - INFO - Found specific primers for chr1:107845462-107846200 on attempt 1
+2024-12-16 22:21:53,755 - INFO - Found specific primers for chr1:112131306-112132215 on attempt 1
+2024-12-16 22:21:55,687 - INFO - Found specific primers for chr1:10393359-10396355 on attempt 1
+2024-12-16 22:22:01,256 - INFO - Found specific primers for chr1:102785044-102786178 on attempt 1
+2024-12-16 22:22:12,290 - INFO - Found specific primers for chr1:115619807-115620149 on attempt 1
+2024-12-16 22:22:23,393 - INFO - Found specific primers for chr1:100065943-100066729 on attempt 1
+2024-12-16 22:22:36,186 - INFO - Found specific primers for chr1:109263606-109265997 on attempt 1
+2024-12-16 22:22:49,519 - INFO - Found specific primers for chr1:108145712-108146273 on attempt 1
+2024-12-16 22:22:51,485 - INFO - Found specific primers for chr1:110429702-110430524 on attempt 1
+2024-12-16 22:22:56,808 - INFO - Found specific primers for chr1:102948697-102949112 on attempt 1
+2024-12-16 22:22:57,542 - INFO - Found specific primers for chr1:11660869-11662357 on attempt 1
+2024-12-16 22:22:58,504 - INFO - Found specific primers for chr1:112195001-112195515 on attempt 1
+2024-12-16 22:22:59,441 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:23:04,366 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:23:22,272 - INFO - Found specific primers for chr1:109280070-109280394 on attempt 1
+2024-12-16 22:23:36,948 - INFO - Found specific primers for chr1:108541782-108542134 on attempt 1
+2024-12-16 22:23:41,711 - INFO - Found specific primers for chr1:117114831-117116462 on attempt 1
+2024-12-16 22:23:43,637 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:23:47,398 - INFO - Found specific primers for chr1:11225954-11226503 on attempt 1
+2024-12-16 22:23:49,686 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:23:58,296 - INFO - Found specific primers for chr1:110448494-110448824 on attempt 1
+2024-12-16 22:24:10,618 - INFO - Found specific primers for chr1:109282737-109283380 on attempt 1
+2024-12-16 22:24:15,239 - INFO - Found specific primers for chr1:108602663-108603249 on attempt 1
+2024-12-16 22:24:33,854 - INFO - Found specific primers for chr1:112290113-112293416 on attempt 1
+2024-12-16 22:24:48,326 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:24:48,792 - INFO - Found specific primers for chr1:11660870-11662357 on attempt 1
+2024-12-16 22:24:53,593 - INFO - Found specific primers for chr1:109282742-109283385 on attempt 1
+2024-12-16 22:25:05,181 - INFO - Found specific primers for chr1:11849468-11850043 on attempt 1
+2024-12-16 22:25:06,094 - INFO - Found specific primers for chr1:119744050-119744536 on attempt 1
+2024-12-16 22:25:12,137 - INFO - Creating BLAST database...
+
+
+Building a new DB, current time: 12/16/2024 22:25:12
+New DB name:   /data9/home/yxzhang/Genome_Ref/Human/T2T-CHM13v2.0_chr
+New DB title:  /data9/home/yxzhang/Genome_Ref/Human/T2T-CHM13v2.0_chr.fna
+Sequence type: Nucleotide
+Deleted existing Nucleotide BLAST database named /data9/home/yxzhang/Genome_Ref/Human/T2T-CHM13v2.0_chr
+Keep MBits: T
+Maximum file size: 3000000000B
+2024-12-16 22:25:13,194 - INFO - Found specific primers for chr1:117114832-117116462 on attempt 1
+2024-12-16 22:25:13,396 - INFO - Found specific primers for chr1:110165430-110165902 on attempt 1
+2024-12-16 22:25:13,952 - INFO - Found specific primers for chr1:112523856-112524210 on attempt 1
+2024-12-16 22:25:14,550 - INFO - Found specific primers for chr1:109282745-109283388 on attempt 1
+2024-12-16 22:25:16,426 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:17,231 - INFO - Found specific primers for chr1:11855352-11855702 on attempt 1
+2024-12-16 22:25:17,477 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:17,546 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:18,447 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:18,527 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:19,383 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:21,297 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:22,239 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:22,501 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:22,575 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:23,288 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:23,642 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:24,494 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:27,441 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:27,884 - INFO - Found specific primers for chr1:100149546-100150011 on attempt 1
+2024-12-16 22:25:29,756 - ERROR - Error designing primers for chr1:109287425-109287579: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 308, GC content: 43.51%
+2024-12-16 22:25:29,758 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:29,760 - ERROR - Error designing primers for chr1:109287425-109287579: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 308, GC content: 43.51%
+2024-12-16 22:25:29,760 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:29,824 - ERROR - Error designing primers for chr1:109287425-109287579: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 308, GC content: 43.51%
+2024-12-16 22:25:29,828 - WARNING - Failed to design specific primers for chr1:109287425-109287579 after 3 attempts
+2024-12-16 22:25:31,273 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:32,164 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:32,550 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:32,891 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:32,916 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:33,053 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:33,349 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:34,390 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:35,799 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:36,604 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:36,645 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:37,256 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:37,302 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:37,549 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:38,173 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:38,179 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:39,172 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:42,108 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:44,022 - ERROR - Error designing primers for chr1:109553979-109554176: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 394, GC content: 52.79%
+2024-12-16 22:25:44,028 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:44,029 - ERROR - Error designing primers for chr1:109553979-109554176: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 394, GC content: 52.79%
+2024-12-16 22:25:44,029 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:44,029 - ERROR - Error designing primers for chr1:109553979-109554176: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 394, GC content: 52.79%
+2024-12-16 22:25:44,029 - WARNING - Failed to design specific primers for chr1:109553979-109554176 after 3 attempts
+2024-12-16 22:25:45,849 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:46,062 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:46,155 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:46,573 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:46,778 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:46,779 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:48,458 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:48,491 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:48,705 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:25:50,658 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:50,751 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:51,168 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:51,417 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:51,551 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:25:51,681 - INFO - Attempt 3/3 with relaxed parameters
+Adding sequences from FASTA; added 24 sequences in 39.456 seconds.
+
+
+2024-12-16 22:25:52,109 - INFO - BLAST database created: /data9/home/yxzhang/Genome_Ref/Human/T2T-CHM13v2.0_chr
+2024-12-16 22:26:18,933 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:26:20,166 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:26:48,989 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:26:57,867 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:27:09,127 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:27:58,289 - INFO - Found specific primers for chr1:119940929-119942337 on attempt 3
+2024-12-16 22:28:05,219 - INFO - Found specific primers for chr1:111221733-111222812 on attempt 3
+2024-12-16 22:28:16,190 - INFO - Found specific primers for chr1:11660871-11662357 on attempt 1
+2024-12-16 22:28:17,180 - INFO - Found specific primers for chr1:109019210-109020412 on attempt 3
+2024-12-16 22:28:21,255 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:21,542 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:22,054 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:25,617 - INFO - Found specific primers for chr2:199939614-199941515 on attempt 1
+2024-12-16 22:28:29,821 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:30,348 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:31,698 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:32,042 - INFO - Found specific primers for chr1:117216071-117218378 on attempt 3
+2024-12-16 22:28:32,425 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:35,222 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:36,185 - INFO - Found specific primers for chr1:110165434-110165906 on attempt 3
+2024-12-16 22:28:37,626 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:58,556 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:28:59,404 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:29:05,257 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:29:10,883 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:29:15,789 - INFO - Found specific primers for chr16:10814749-10815638 on attempt 1
+2024-12-16 22:29:35,941 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:30:37,691 - INFO - Found specific primers for chr1:111221734-111222812 on attempt 1
+2024-12-16 22:30:38,006 - INFO - Found specific primers for chr1:119967055-119967769 on attempt 1
+2024-12-16 22:30:46,810 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:30:47,291 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:30:48,873 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:30:49,223 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:31:00,039 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:31:01,196 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:31:04,024 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:31:04,867 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:31:09,638 - INFO - Found specific primers for chr1:117216073-117218378 on attempt 1
+2024-12-16 22:31:15,867 - INFO - Found specific primers for chr1:110165440-110165913 on attempt 1
+2024-12-16 22:31:19,174 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:31:44,270 - INFO - Found specific primers for chr1:11660872-11662357 on attempt 1
+2024-12-16 22:32:01,608 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:32:03,016 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:32:14,517 - INFO - Found specific primers for chr1:100171553-100172120 on attempt 3
+2024-12-16 22:32:16,000 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:32:17,168 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:32:25,587 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:32:40,903 - INFO - Found specific primers for chr1:11262638-11264266 on attempt 3
+2024-12-16 22:33:02,007 - INFO - Found specific primers for chr1:109716855-109718658 on attempt 1
+2024-12-16 22:33:05,533 - INFO - Found specific primers for chr1:111221735-111222812 on attempt 1
+2024-12-16 22:33:07,105 - INFO - Found specific primers for chr1:119979956-119980967 on attempt 1
+2024-12-16 22:33:12,838 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:33:17,191 - INFO - Found specific primers for chr1:115737276-115737843 on attempt 1
+2024-12-16 22:33:53,718 - INFO - Found specific primers for chr1:110165441-110165913 on attempt 1
+2024-12-16 22:33:59,246 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:34:10,018 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:34:12,753 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:34:27,024 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:34:49,152 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:34:51,482 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:35:11,886 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:35:23,026 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:35:24,595 - INFO - Found specific primers for chr1:111221736-111222812 on attempt 1
+2024-12-16 22:35:29,109 - INFO - Found specific primers for chr1:109758693-109759296 on attempt 1
+2024-12-16 22:35:37,741 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:35:44,748 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:36:00,405 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:36:03,944 - INFO - Found specific primers for chr1:115885573-115886075 on attempt 1
+2024-12-16 22:36:07,353 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:36:22,004 - INFO - Found specific primers for chr1:110165442-110165913 on attempt 1
+2024-12-16 22:36:22,761 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:36:30,922 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:36:38,784 - INFO - Found specific primers for chr1:104076718-104077522 on attempt 1
+2024-12-16 22:37:13,386 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:37:27,150 - INFO - Found specific primers for chr1:100171554-100172120 on attempt 1
+2024-12-16 22:37:31,295 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:37:32,504 - INFO - Found specific primers for chr1:119293933-119295247 on attempt 1
+2024-12-16 22:37:35,568 - INFO - Found specific primers for chr1:111272871-111273726 on attempt 1
+2024-12-16 22:37:39,453 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:37:48,776 - INFO - Found specific primers for chr1:11262643-11264271 on attempt 1
+2024-12-16 22:37:49,418 - INFO - Found specific primers for chr1:109831773-109832404 on attempt 1
+2024-12-16 22:37:49,440 - WARNING - No primers found for chr1:110165418-110165890. Sequence length: 944, GC content: 75.85%
+2024-12-16 22:37:49,440 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:37:49,463 - WARNING - No primers found for chr1:110165418-110165890. Sequence length: 944, GC content: 75.85%
+2024-12-16 22:37:49,464 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:37:52,317 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:38:00,453 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:38:06,138 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:38:16,499 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:38:19,469 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:38:29,491 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:38:34,322 - INFO - Found specific primers for chr1:110205024-110205444 on attempt 1
+2024-12-16 22:38:40,779 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:38:57,305 - INFO - Found specific primers for chr1:10498918-10499287 on attempt 1
+2024-12-16 22:39:13,969 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:39:23,804 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:39:24,686 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:39:45,881 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:39:46,285 - INFO - Found specific primers for chr1:100188440-100188808 on attempt 1
+2024-12-16 22:39:49,580 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:39:53,079 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:39:54,210 - INFO - Found specific primers for chr1:111618829-111619790 on attempt 1
+2024-12-16 22:39:56,390 - INFO - Found specific primers for chr1:110165418-110165890 on attempt 3
+2024-12-16 22:39:57,300 - INFO - Found specific primers for chr1:119293935-119295247 on attempt 1
+2024-12-16 22:40:41,172 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:40:45,415 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:40:51,654 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:40:58,584 - INFO - Found specific primers for chr1:110205025-110205444 on attempt 1
+2024-12-16 22:41:04,423 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:41:16,097 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:41:26,816 - INFO - Found specific primers for chr1:10498919-10499287 on attempt 1
+2024-12-16 22:41:49,791 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:42:17,240 - INFO - Found specific primers for chr1:11262644-11264271 on attempt 1
+2024-12-16 22:42:25,913 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:42:29,136 - INFO - Found specific primers for chr1:100234444-100235177 on attempt 1
+2024-12-16 22:42:30,092 - INFO - Found specific primers for chr1:110165424-110165896 on attempt 1
+2024-12-16 22:42:31,394 - INFO - Found specific primers for chr1:111654468-111655114 on attempt 1
+2024-12-16 22:42:36,196 - INFO - Found specific primers for chr1:119338904-119340491 on attempt 1
+2024-12-16 22:42:43,404 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:42:53,673 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:43:05,395 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:43:33,560 - INFO - Found specific primers for chr1:110217241-110217934 on attempt 1
+2024-12-16 22:43:37,085 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:43:37,833 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:43:38,071 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:43:39,498 - INFO - Found specific primers for chr1:103363586-103365418 on attempt 1
+2024-12-16 22:43:50,120 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:43:57,821 - INFO - Found specific primers for chr1:113085638-113086547 on attempt 1
+2024-12-16 22:44:01,847 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:44:33,134 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:44:41,843 - INFO - Found specific primers for chr1:105578659-105580205 on attempt 1
+2024-12-16 22:45:04,227 - INFO - Found specific primers for chr1:110165425-110165897 on attempt 1
+2024-12-16 22:45:12,207 - INFO - Found specific primers for chr1:119338905-119340491 on attempt 1
+2024-12-16 22:45:16,413 - INFO - Found specific primers for chr1:100308708-100309135 on attempt 1
+2024-12-16 22:45:23,821 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:45:25,807 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:45:42,367 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:45:54,985 - INFO - Found specific primers for chr1:113879397-113880948 on attempt 1
+2024-12-16 22:45:57,322 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:46:03,419 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:46:05,560 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:46:12,255 - INFO - Found specific primers for chr1:110227584-110228106 on attempt 1
+2024-12-16 22:46:14,189 - INFO - Found specific primers for chr1:103366994-103367982 on attempt 1
+2024-12-16 22:46:37,132 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:47:14,383 - INFO - Found specific primers for chr1:105685391-105686445 on attempt 1
+2024-12-16 22:47:17,253 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:47:31,241 - INFO - Found specific primers for chr1:12065364-12065778 on attempt 1
+2024-12-16 22:47:35,984 - INFO - Found specific primers for chr1:11262649-11264271 on attempt 1
+2024-12-16 22:47:47,401 - INFO - Found specific primers for chr1:119338906-119340491 on attempt 1
+2024-12-16 22:47:50,972 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:47:51,926 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:47:53,265 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:48:06,024 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:48:09,394 - INFO - Found specific primers for chr1:100330072-100331346 on attempt 1
+2024-12-16 22:48:43,898 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:48:44,589 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:48:49,959 - INFO - Found specific primers for chr1:110227598-110228120 on attempt 1
+2024-12-16 22:48:55,552 - INFO - Found specific primers for chr1:113879400-113880948 on attempt 1
+2024-12-16 22:49:08,093 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:49:15,497 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:49:29,421 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:49:35,593 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:49:45,162 - INFO - Found specific primers for chr1:105752857-105753591 on attempt 1
+2024-12-16 22:50:21,591 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:50:22,090 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:50:27,220 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:50:39,625 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:51:04,142 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:51:08,186 - INFO - Found specific primers for chr1:110248143-110248951 on attempt 1
+2024-12-16 22:51:13,539 - INFO - Found specific primers for chr1:114272558-114273305 on attempt 1
+2024-12-16 22:51:33,108 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:51:35,406 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:51:41,759 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:51:53,704 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:52:09,930 - INFO - Found specific primers for chr1:106445633-106446830 on attempt 1
+2024-12-16 22:52:16,992 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:52:33,861 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:52:33,922 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:52:39,676 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:52:42,281 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:52:48,440 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:53:04,964 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:53:32,585 - INFO - Found specific primers for chr1:110297163-110297413 on attempt 1
+2024-12-16 22:53:43,133 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:53:51,773 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:54:01,227 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:54:01,410 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:54:07,013 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:54:12,039 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:54:15,780 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:54:30,108 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:54:43,976 - INFO - Found specific primers for chr1:106445634-106446830 on attempt 1
+2024-12-16 22:54:57,901 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:55:02,345 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:55:13,683 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:55:14,266 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:55:52,738 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:56:00,892 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:56:01,539 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:56:01,784 - INFO - Found specific primers for chr1:11041997-11044027 on attempt 1
+2024-12-16 22:56:16,061 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:56:23,500 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:56:31,248 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:56:32,905 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:56:46,527 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:57:07,498 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:57:19,536 - INFO - Found specific primers for chr1:10688749-10689506 on attempt 1
+2024-12-16 22:57:54,175 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:57:55,692 - INFO - Found specific primers for chr1:119404248-119404672 on attempt 1
+2024-12-16 22:57:55,775 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:57:59,466 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:58:15,536 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:58:30,058 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:58:31,142 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:58:35,921 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:58:40,502 - INFO - Found specific primers for chr1:11042092-11044136 on attempt 1
+2024-12-16 22:58:45,041 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:58:58,536 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:59:03,870 - WARNING - No primers found for chr7:154003838-154004063. Sequence length: 450, GC content: 1.78%
+2024-12-16 22:59:03,871 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 22:59:03,882 - WARNING - No primers found for chr7:154003838-154004063. Sequence length: 450, GC content: 1.78%
+2024-12-16 22:59:03,883 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:59:03,897 - WARNING - No primers found for chr7:154003838-154004063. Sequence length: 450, GC content: 1.78%
+2024-12-16 22:59:03,898 - WARNING - Failed to design specific primers for chr7:154003838-154004063 after 3 attempts
+2024-12-16 22:59:34,737 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:59:43,375 - INFO - Found specific primers for chr1:10688750-10689506 on attempt 1
+2024-12-16 22:59:58,362 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 22:59:58,824 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:00:00,730 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:00:07,263 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:00:14,832 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:00:22,790 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:00:29,928 - INFO - Found specific primers for chr1:119553217-119555050 on attempt 1
+2024-12-16 23:00:46,133 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:00:50,172 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:01:01,273 - INFO - Found specific primers for chr1:11042093-11044136 on attempt 1
+2024-12-16 23:01:07,172 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:01:29,559 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:01:37,785 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:01:43,120 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:02:28,501 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:02:43,788 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:02:44,166 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:02:47,258 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:02:47,306 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:03:12,006 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:03:19,509 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:03:28,087 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:03:37,718 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:03:45,372 - INFO - Found specific primers for chr1:114612019-114613323 on attempt 1
+2024-12-16 23:03:46,811 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:03:48,901 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:03:50,070 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:03:54,470 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:04:07,334 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:04:34,521 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:04:47,829 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:04:59,766 - INFO - Found specific primers for chr1:119675755-119677208 on attempt 1
+2024-12-16 23:05:05,454 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:05:11,039 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:05:12,585 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:05:27,710 - ERROR - Error designing primers for chr1:10343869-10343983: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 228, GC content: 44.74%
+2024-12-16 23:05:27,711 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:05:27,711 - ERROR - Error designing primers for chr1:10343869-10343983: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 228, GC content: 44.74%
+2024-12-16 23:05:27,711 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:05:27,712 - ERROR - Error designing primers for chr1:10343869-10343983: SEQUENCE_INCLUDED_REGION length < min PRIMER_PRODUCT_SIZE_RANGE. Sequence length: 228, GC content: 44.74%
+2024-12-16 23:05:27,712 - WARNING - Failed to design specific primers for chr1:10343869-10343983 after 3 attempts
+2024-12-16 23:05:29,615 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:05:45,233 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:06:15,110 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:06:17,643 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:06:20,979 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:06:21,361 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:06:50,297 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:06:55,750 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:07:37,463 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:07:43,897 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:07:47,226 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:07:48,588 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:08:02,697 - INFO - Found specific primers for chr1:103465055-103466029 on attempt 1
+2024-12-16 23:08:08,773 - INFO - Found specific primers for chr1:114665228-114667186 on attempt 1
+2024-12-16 23:08:23,476 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:08:40,356 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:08:51,185 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:08:52,893 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:09:02,442 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:09:24,529 - INFO - Found specific primers for chr2:10226546-10227555 on attempt 1
+2024-12-16 23:09:27,633 - INFO - Found specific primers for chr1:119675756-119677208 on attempt 1
+2024-12-16 23:09:28,020 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:09:59,693 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:10:21,481 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:10:26,434 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:10:26,947 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:10:31,327 - INFO - Found specific primers for chr1:117549996-117550595 on attempt 1
+2024-12-16 23:10:42,435 - INFO - Found specific primers for chr1:1035319-1035639 on attempt 1
+2024-12-16 23:10:42,811 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:10:43,900 - INFO - Found specific primers for chr1:107538080-107538818 on attempt 1
+2024-12-16 23:11:02,641 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:11:08,052 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:11:24,604 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:11:28,185 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:11:29,346 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:11:33,181 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:11:38,692 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:12:18,012 - INFO - Found specific primers for chr1:114665229-114667186 on attempt 1
+2024-12-16 23:12:49,488 - INFO - Found specific primers for chr1:111801180-111806548 on attempt 1
+2024-12-16 23:12:53,828 - INFO - Found specific primers for chr1:12170463-12173261 on attempt 1
+2024-12-16 23:13:17,954 - INFO - Found specific primers for chr1:11759763-11760211 on attempt 1
+2024-12-16 23:13:28,040 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:13:30,215 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:13:31,557 - INFO - Found specific primers for chr1:107538083-107538821 on attempt 1
+2024-12-16 23:13:33,511 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:13:38,380 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:14:06,817 - INFO - Found specific primers for chr1:12096288-12097335 on attempt 1
+2024-12-16 23:14:09,294 - INFO - Found specific primers for chr1:119675757-119677208 on attempt 1
+2024-12-16 23:14:17,542 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:14:23,886 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:14:34,764 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:15:45,102 - INFO - Found specific primers for chr1:111802108-111806548 on attempt 1
+2024-12-16 23:15:51,018 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:15:54,691 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:16:01,799 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:16:13,617 - INFO - Found specific primers for chr1:11759764-11760211 on attempt 1
+2024-12-16 23:16:17,736 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:16:19,502 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:16:27,272 - INFO - Found specific primers for chr1:107565188-107566458 on attempt 1
+2024-12-16 23:16:37,580 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:16:40,106 - INFO - Found specific primers for chr1:114665230-114667186 on attempt 1
+2024-12-16 23:16:53,887 - INFO - Found specific primers for chr1:101249733-101250409 on attempt 1
+2024-12-16 23:17:00,351 - INFO - Found specific primers for chr1:1267679-1268432 on attempt 1
+2024-12-16 23:17:04,516 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:17:06,096 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:17:07,052 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:17:08,269 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:17:26,239 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:17:29,820 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:17:50,487 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:17:53,606 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:17:57,231 - INFO - Found specific primers for chr1:116168643-116169749 on attempt 1
+2024-12-16 23:18:28,056 - INFO - Found specific primers for chr1:111919032-111919427 on attempt 1
+2024-12-16 23:18:33,733 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:18:37,021 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:18:39,007 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:18:55,824 - INFO - Found specific primers for chr1:117985198-117986103 on attempt 1
+2024-12-16 23:19:09,846 - INFO - Found specific primers for chr1:116699593-116701492 on attempt 1
+2024-12-16 23:19:20,491 - INFO - Found specific primers for chr1:107565189-107566458 on attempt 1
+2024-12-16 23:19:27,818 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:19:31,324 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:19:34,122 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:19:46,219 - INFO - Found specific primers for chr1:101635539-101636650 on attempt 1
+2024-12-16 23:19:49,674 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:19:52,788 - INFO - Found specific primers for chr1:109198154-109200152 on attempt 1
+2024-12-16 23:20:01,170 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:20:02,266 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:20:03,227 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:20:05,976 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:20:23,567 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:20:59,011 - INFO - Found specific primers for chr1:116176624-116177000 on attempt 1
+2024-12-16 23:21:05,808 - INFO - Found specific primers for chr1:114665231-114667186 on attempt 1
+2024-12-16 23:21:15,389 - INFO - Found specific primers for chr1:111968386-111968787 on attempt 1
+2024-12-16 23:21:38,470 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:21:48,474 - INFO - Found specific primers for chr1:118017964-118018533 on attempt 1
+2024-12-16 23:21:48,632 - INFO - Found specific primers for chr1:116699594-116701492 on attempt 1
+2024-12-16 23:22:03,409 - INFO - Found specific primers for chr1:107565190-107566458 on attempt 1
+2024-12-16 23:22:05,310 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:22:22,642 - INFO - Found specific primers for chr1:101724766-101727098 on attempt 1
+2024-12-16 23:22:28,853 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:22:29,783 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:22:44,549 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:22:47,810 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:23:07,408 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:23:26,673 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:23:33,078 - INFO - Found specific primers for chr1:116203667-116204278 on attempt 1
+2024-12-16 23:24:02,982 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:24:05,500 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:24:06,688 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:24:09,129 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:24:20,726 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:24:23,760 - INFO - Found specific primers for chr1:116699595-116701492 on attempt 1
+2024-12-16 23:24:43,753 - INFO - Found specific primers for chr1:107565191-107566458 on attempt 1
+2024-12-16 23:24:44,673 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:24:49,630 - INFO - Found specific primers for chr1:101836142-101837360 on attempt 1
+2024-12-16 23:25:09,560 - INFO - Found specific primers for chr1:114665232-114667186 on attempt 1
+2024-12-16 23:25:19,068 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:25:20,022 - INFO - Found specific primers for chr1:109198158-109200152 on attempt 1
+2024-12-16 23:25:26,630 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:25:28,568 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:25:46,235 - INFO - Found specific primers for chr1:116227246-116228247 on attempt 1
+2024-12-16 23:26:17,467 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:26:17,572 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:26:47,824 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:26:48,379 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:26:52,015 - INFO - Found specific primers for chr1:118106073-118106472 on attempt 1
+2024-12-16 23:26:52,323 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:26:57,905 - INFO - Found specific primers for chr1:101836638-101837419 on attempt 1
+2024-12-16 23:27:24,215 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:27:30,436 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:27:35,837 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:27:55,936 - INFO - Found specific primers for chr1:11632316-11632686 on attempt 1
+2024-12-16 23:28:08,270 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:28:10,269 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:28:10,955 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:28:29,119 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:28:51,953 - INFO - Found specific primers for chr7:7806242-7808207 on attempt 1
+2024-12-16 23:28:57,679 - INFO - Found specific primers for chr1:114665233-114667186 on attempt 1
+2024-12-16 23:29:06,709 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:29:08,667 - INFO - Found specific primers for chr1:118111905-118112294 on attempt 1
+2024-12-16 23:29:21,385 - INFO - Found specific primers for chr1:10225462-10226341 on attempt 1
+2024-12-16 23:29:22,816 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:29:37,922 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:29:48,166 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:29:56,637 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:30:01,981 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:30:04,073 - INFO - Found specific primers for chr1:10393352-10396355 on attempt 1
+2024-12-16 23:30:14,694 - INFO - Found specific primers for chr1:109198159-109200152 on attempt 1
+2024-12-16 23:30:18,099 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:30:53,646 - INFO - Found specific primers for chr1:116360450-116361511 on attempt 1
+2024-12-16 23:31:18,742 - INFO - Found specific primers for chr1:118111905-118112295 on attempt 1
+2024-12-16 23:31:29,877 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:31:30,240 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:31:31,785 - INFO - Found specific primers for chr1:10228748-10229573 on attempt 1
+2024-12-16 23:31:38,275 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:31:44,726 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:32:00,545 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:32:00,716 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:32:05,814 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:32:09,277 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:32:30,767 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:32:37,911 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:32:50,686 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:32:58,933 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:33:02,946 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:33:21,741 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:33:22,298 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:33:28,746 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:33:33,726 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:33:33,827 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:33:38,635 - INFO - Found specific primers for chr1:10393353-10396355 on attempt 1
+2024-12-16 23:34:15,254 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:34:20,613 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:34:26,964 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:34:28,701 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:34:39,094 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:34:47,861 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:34:49,175 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:35:02,683 - INFO - Found specific primers for chr1:109198160-109200152 on attempt 1
+2024-12-16 23:35:07,101 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:35:11,028 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:35:21,249 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:35:24,252 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:35:48,722 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:36:02,411 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:36:47,330 - INFO - Found specific primers for chr1:10393354-10396355 on attempt 1
+2024-12-16 23:36:49,143 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:37:28,767 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:37:32,975 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:37:33,552 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:37:35,976 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:38:04,944 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:38:30,401 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:38:30,865 - INFO - Found specific primers for chr1:12193888-12194602 on attempt 1
+2024-12-16 23:38:55,439 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:38:57,603 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:38:59,464 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:39:12,219 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:39:22,022 - INFO - Found specific primers for chr1:109198161-109200152 on attempt 1
+2024-12-16 23:39:23,576 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:39:28,159 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:39:36,269 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:39:45,307 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:39:45,415 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:39:50,426 - INFO - Found specific primers for chr1:10393355-10396355 on attempt 1
+2024-12-16 23:39:50,700 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:40:25,120 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:40:42,815 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:40:52,476 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:41:00,333 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:41:01,352 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:41:10,987 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:41:31,514 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:41:33,934 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:41:37,603 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:41:39,418 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:41:42,431 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:42:07,196 - INFO - Found specific primers for chr1:112774690-112775877 on attempt 1
+2024-12-16 23:42:25,296 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:42:41,248 - INFO - Found specific primers for chr1:10393356-10396355 on attempt 1
+2024-12-16 23:42:47,203 - INFO - Found specific primers for chr1:116442616-116444662 on attempt 1
+2024-12-16 23:42:52,308 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:42:53,056 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:42:58,677 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:43:08,105 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:43:34,892 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:43:45,447 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:43:54,578 - INFO - Found specific primers for chr1:109198162-109200152 on attempt 1
+2024-12-16 23:44:36,231 - INFO - Found specific primers for chr1:116442617-116444662 on attempt 1
+2024-12-16 23:44:51,068 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:45:19,318 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:45:27,457 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:45:32,762 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:45:36,748 - INFO - Found specific primers for chr1:10393357-10396355 on attempt 1
+2024-12-16 23:45:50,127 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:45:53,944 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:45:56,026 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:46:01,538 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:46:06,138 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:46:09,551 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:46:11,762 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:46:29,779 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:46:48,111 - INFO - Found specific primers for chr1:116471816-116472658 on attempt 1
+2024-12-16 23:46:55,637 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:46:56,466 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:47:22,053 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:47:26,459 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:47:59,905 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:48:01,562 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:48:04,844 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:48:07,049 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:48:15,485 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:48:15,656 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:48:32,622 - INFO - Found specific primers for chr1:109198163-109200152 on attempt 1
+2024-12-16 23:48:42,307 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:48:45,729 - INFO - Found specific primers for chr2:226977618-226978368 on attempt 1
+2024-12-16 23:48:59,993 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:49:19,937 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:49:24,235 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:49:28,381 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:49:29,039 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:49:43,776 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:49:48,792 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:49:51,545 - INFO - Found specific primers for chr1:12245646-12247710 on attempt 1
+2024-12-16 23:50:01,967 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:50:02,444 - INFO - Found specific primers for chr1:12030639-12030975 on attempt 1
+2024-12-16 23:50:36,663 - INFO - Found specific primers for chr1:109263603-109265997 on attempt 1
+2024-12-16 23:50:59,556 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:51:57,372 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:51:59,822 - INFO - Found specific primers for chr1:11659145-11660415 on attempt 1
+2024-12-16 23:52:00,070 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:52:04,965 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:52:08,312 - INFO - Found specific primers for chr6:43128911-43132379 on attempt 1
+2024-12-16 23:52:15,826 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:52:18,288 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:52:19,963 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:52:26,212 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:52:34,807 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:52:38,385 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:52:57,528 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:53:18,846 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:53:24,983 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:53:27,869 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:53:30,086 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:54:02,153 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:54:05,408 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:54:08,067 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:54:08,886 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:54:09,125 - INFO - Found specific primers for chr1:62195549-62196383 on attempt 1
+2024-12-16 23:54:23,438 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:54:28,440 - INFO - Found specific primers for chr1:11660866-11662357 on attempt 1
+2024-12-16 23:54:29,782 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:54:51,358 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:54:58,924 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:55:09,537 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:55:22,567 - INFO - Found specific primers for chr19:53548374-53550356 on attempt 1
+2024-12-16 23:55:24,753 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:55:31,990 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:55:43,398 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:55:45,513 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:55:45,803 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:55:59,703 - INFO - Found specific primers for chr1:112810956-112811527 on attempt 1
+2024-12-16 23:56:35,474 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:56:56,553 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:57:11,079 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:57:14,327 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:57:20,357 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:57:21,591 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:57:21,852 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:57:31,007 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:57:57,725 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:58:00,224 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:58:25,190 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:58:34,224 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:58:49,629 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:59:11,630 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:59:15,074 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:59:16,097 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-16 23:59:19,178 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:59:26,640 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:59:35,774 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:59:48,802 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-16 23:59:58,203 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:00:01,468 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:00:02,240 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:00:24,303 - INFO - Found specific primers for chr7:31033509-31034272 on attempt 1
+2024-12-17 00:00:38,831 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:00:48,901 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:00:56,660 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:01:09,018 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:01:10,553 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:01:11,678 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:01:40,536 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:02:01,916 - INFO - Found specific primers for chr1:11674433-11675072 on attempt 1
+2024-12-17 00:02:05,999 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:02:08,530 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:02:23,798 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:02:38,196 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:02:43,465 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:02:52,470 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:02:55,432 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:03:03,362 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:03:28,302 - INFO - Found specific primers for chr1:11679585-11679938 on attempt 1
+2024-12-17 00:03:34,229 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:03:37,974 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:03:42,624 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:03:44,091 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:03:54,599 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:04:08,526 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:04:11,897 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:04:19,225 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:04:21,687 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:04:22,282 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:04:29,194 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:04:37,326 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:04:55,088 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:05:02,568 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:05:19,882 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:05:20,609 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:06:01,625 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:06:07,711 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:06:09,578 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:06:13,075 - INFO - Found specific primers for chr1:115084402-115084961 on attempt 1
+2024-12-17 00:06:13,351 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:06:16,982 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:06:40,012 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:06:55,542 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:07:22,083 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:07:36,048 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:07:43,823 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:07:44,924 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:07:52,407 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:07:53,532 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:08:03,786 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:08:24,402 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:08:28,523 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:08:47,227 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:08:56,064 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:09:12,510 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:09:21,162 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:09:24,298 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:09:24,808 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:09:25,303 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:09:32,757 - INFO - Found specific primers for chr1:12375507-12377091 on attempt 1
+2024-12-17 00:09:45,971 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:10:14,314 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:10:18,263 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:10:32,242 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:10:32,616 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:10:35,792 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:11:11,280 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:11:36,481 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:11:43,856 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:11:50,236 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:11:56,770 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:12:08,438 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:12:37,557 - INFO - Found specific primers for chr1:113207431-113207776 on attempt 1
+2024-12-17 00:12:38,312 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:12:46,278 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:12:50,863 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:13:00,148 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:13:03,482 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:13:19,993 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:13:36,041 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:13:41,688 - WARNING - No primers found for chr21:3597653-3597872. Sequence length: 438, GC content: 60.73%
+2024-12-17 00:13:41,688 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:13:41,691 - WARNING - No primers found for chr21:3597653-3597872. Sequence length: 438, GC content: 60.73%
+2024-12-17 00:13:41,691 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:13:41,695 - WARNING - No primers found for chr21:3597653-3597872. Sequence length: 438, GC content: 60.73%
+2024-12-17 00:13:41,695 - WARNING - Failed to design specific primers for chr21:3597653-3597872 after 3 attempts
+2024-12-17 00:13:57,675 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:13:58,984 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:14:01,601 - INFO - Found specific primers for chr1:113218379-113220325 on attempt 1
+2024-12-17 00:14:26,097 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:14:27,683 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:14:37,563 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:15:03,954 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:15:04,251 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:15:17,921 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:15:18,391 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:15:34,795 - INFO - Found specific primers for chr1:113218380-113220325 on attempt 1
+2024-12-17 00:15:45,597 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:16:02,083 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:16:13,447 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:16:29,314 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:16:32,910 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:16:37,058 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:16:59,817 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:17:08,629 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:17:13,087 - INFO - Found specific primers for chr1:113362655-113363239 on attempt 1
+2024-12-17 00:17:21,680 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:17:33,371 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:17:57,450 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:17:59,988 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:18:01,549 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:18:08,079 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:18:14,802 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:18:28,002 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:18:42,154 - INFO - Found specific primers for chr1:113393799-113394432 on attempt 1
+2024-12-17 00:19:01,438 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:19:21,706 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:19:26,371 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:19:37,912 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:19:41,907 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:19:54,788 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:20:03,688 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:20:11,224 - INFO - Found specific primers for chr1:113442354-113443178 on attempt 1
+2024-12-17 00:20:33,979 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:20:44,550 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:20:47,062 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:21:04,748 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:21:05,786 - INFO - Found specific primers for chr1:115326215-115328966 on attempt 1
+2024-12-17 00:21:14,149 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:21:36,686 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:21:43,693 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:21:52,429 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:22:18,775 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:22:24,351 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:22:35,706 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:22:36,085 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:22:37,301 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:22:50,949 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:22:52,183 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:23:08,965 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:23:11,534 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:23:14,732 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:23:24,107 - INFO - Found specific primers for chr1:115480023-115480549 on attempt 1
+2024-12-17 00:23:36,710 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:23:51,421 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:24:02,058 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:24:03,290 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:24:19,447 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:24:40,174 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:24:42,306 - INFO - Found specific primers for chr1:115569754-115570846 on attempt 1
+2024-12-17 00:24:49,546 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:25:00,629 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:25:18,988 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:25:56,210 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:25:58,786 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:26:12,487 - INFO - Found specific primers for chr7:67750617-67751385 on attempt 1
+2024-12-17 00:26:15,905 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:26:37,859 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:26:41,395 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:26:54,108 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:27:15,383 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:27:21,277 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:27:23,324 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:27:25,114 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:27:40,374 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:27:41,827 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:28:10,422 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:28:14,228 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:28:14,365 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:28:15,619 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:28:21,808 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:28:30,075 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:28:38,107 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:28:39,211 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:29:08,744 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:29:23,928 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:29:24,822 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:29:33,706 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:29:42,000 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:29:44,698 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:29:48,390 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:30:23,913 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:30:27,130 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:30:33,172 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:30:40,536 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:30:40,671 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:30:50,285 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:31:12,659 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:31:14,554 - INFO - Found specific primers for chr1:121431178-121432742 on attempt 1
+2024-12-17 00:31:49,598 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:31:51,126 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:31:58,506 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:32:00,064 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:32:03,265 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:32:19,199 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:32:19,263 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:32:19,323 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:32:45,554 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:32:51,289 - INFO - Found specific primers for chr1:121431182-121432742 on attempt 1
+2024-12-17 00:33:19,914 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:33:22,816 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:33:40,545 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:33:40,863 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:33:42,196 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:34:26,512 - INFO - Found specific primers for chr1:121431183-121432742 on attempt 1
+2024-12-17 00:34:41,902 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:34:42,982 - INFO - Found specific primers for chr1:113671410-113672158 on attempt 1
+2024-12-17 00:35:01,803 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:35:03,007 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:35:03,628 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:35:05,916 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:35:06,079 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:35:09,892 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:35:33,175 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:35:37,479 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:36:04,792 - INFO - Found specific primers for chr1:121431184-121432742 on attempt 1
+2024-12-17 00:36:12,254 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:36:15,829 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:36:24,258 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:36:24,372 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:36:33,465 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:36:45,504 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:36:47,158 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:36:51,194 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:37:01,029 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:37:06,712 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:37:13,917 - INFO - Found specific primers for chr1:121534853-121535689 on attempt 1
+2024-12-17 00:37:32,440 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:38:13,849 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:38:14,695 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:38:19,530 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:38:19,829 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:38:20,144 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:38:25,626 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:38:29,563 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:38:30,322 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:39:09,164 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:39:21,368 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:39:34,711 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:39:45,310 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:39:45,823 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:39:51,467 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:39:57,954 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:40:14,001 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:40:20,504 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:40:26,116 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:40:36,845 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:40:39,289 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:40:56,012 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:40:58,066 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:41:23,075 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:41:23,918 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:41:27,562 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:41:37,828 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:41:39,284 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:41:44,644 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:41:50,217 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:42:41,960 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:42:45,271 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:42:49,016 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:42:50,959 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:43:16,666 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:43:26,097 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:43:32,515 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:43:38,565 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:44:01,411 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:44:10,702 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:44:14,035 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:44:22,397 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:44:41,815 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:44:59,568 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:45:08,958 - INFO - Primers designed and written to Hela.Uecc.primer.csv
+2024-12-17 00:45:09,035 - INFO - === 设计结果统计 ===
+2024-12-17 00:45:09,036 - INFO - 总序列数: 349
+2024-12-17 00:45:09,036 - INFO - 成功设计特异性引物的序列数: 226
+2024-12-17 00:45:09,036 - INFO - 成功率: 64.76%
+2024-12-17 00:45:09,064 - INFO - 
+每次尝试的成功数量：
+2024-12-17 00:45:09,064 - INFO - 第 1 次尝试成功数量: 788
+2024-12-17 00:45:09,064 - INFO - 第 3 次尝试成功数量: 28
+2024-12-17 00:45:16,992 - INFO - Found specific primers for chr2:18554398-18557703 on attempt 1
+2024-12-17 00:45:18,167 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:45:26,563 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:45:43,084 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:45:45,455 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:45:56,468 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:45:56,967 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:45:59,861 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:46:15,983 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:46:24,588 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:46:28,703 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:46:53,809 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:47:10,647 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:47:19,108 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:47:31,769 - INFO - Found specific primers for chr10:70205410-70206048 on attempt 1
+2024-12-17 00:47:45,061 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:47:46,281 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:47:47,065 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:48:17,152 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:48:22,358 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:48:26,612 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:48:31,528 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:48:38,195 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:48:46,574 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:48:58,601 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:49:29,069 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:49:30,388 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:49:34,366 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:49:44,148 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:49:49,750 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:50:00,427 - INFO - Found specific primers for chr17:33920998-33921925 on attempt 1
+2024-12-17 00:50:44,016 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:50:45,204 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:50:46,854 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:50:55,854 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:51:02,753 - INFO - Found specific primers for chr16:61147939-61149246 on attempt 1
+2024-12-17 00:51:05,508 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:51:24,199 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:51:35,637 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:51:41,120 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:51:44,655 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:51:45,676 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:52:04,261 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:52:09,597 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:52:20,216 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:52:30,222 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:53:01,546 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:53:36,958 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:53:37,511 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:53:46,142 - INFO - Found specific primers for chr7:67750611-67751378 on attempt 1
+2024-12-17 00:53:50,180 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:54:00,413 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:54:19,484 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:54:23,314 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:54:29,176 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:54:30,063 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:54:33,601 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:54:37,725 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:54:48,098 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:55:13,827 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:55:18,036 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:55:51,292 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:55:57,378 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:55:58,063 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:56:05,961 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:56:33,445 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:56:33,677 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:56:41,433 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:56:41,489 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:57:03,731 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:57:12,899 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:57:29,427 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:57:48,471 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:57:55,807 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:58:35,333 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:58:52,517 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:59:17,718 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:59:27,579 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 00:59:36,388 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 00:59:41,095 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:00:01,466 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:00:18,860 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:00:19,578 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:00:25,626 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:00:27,134 - INFO - Found specific primers for chr20:14360072-14363273 on attempt 1
+2024-12-17 01:00:31,702 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:00:42,306 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:00:42,851 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:00:58,714 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:01:08,675 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:01:28,943 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:01:37,361 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:01:41,807 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:01:45,865 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:01:46,311 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:02:09,223 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:02:14,991 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:02:24,223 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:02:50,636 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:03:06,253 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:03:06,840 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:03:10,331 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:03:30,199 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:03:31,388 - INFO - Found specific primers for chr20:66017077-66018634 on attempt 1
+2024-12-17 01:03:51,440 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:04:02,671 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:04:07,094 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:04:11,477 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:04:43,695 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:04:52,890 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:04:54,182 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:05:08,341 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:05:21,280 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:05:28,334 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:05:52,369 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:06:04,352 - INFO - Found specific primers for chr16:90739294-90740419 on attempt 1
+2024-12-17 01:06:06,673 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:06:15,975 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:06:25,085 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:06:48,148 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:06:53,229 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:07:05,930 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:07:06,718 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:07:08,368 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:07:32,340 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:07:36,650 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:07:52,698 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:08:24,806 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:08:34,767 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:08:53,814 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:08:54,447 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:09:12,885 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:09:20,295 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:09:41,739 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:09:47,389 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:10:13,302 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:10:15,912 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:10:51,313 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:10:53,439 - INFO - Found specific primers for chr2:90790335-90790756 on attempt 1
+2024-12-17 01:10:54,194 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:11:06,864 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:11:25,671 - INFO - Found specific primers for chr2:199939622-199941524 on attempt 1
+2024-12-17 01:11:41,380 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:11:56,097 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:11:57,875 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:11:59,613 - INFO - Found specific primers for chr10:21332015-21334422 on attempt 1
+2024-12-17 01:12:30,032 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:12:49,948 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:13:21,697 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:14:33,448 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:14:41,804 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:15:28,311 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:15:59,216 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:17:14,785 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:17:58,382 - INFO - Found specific primers for chr19:1297547-1298984 on attempt 1
+2024-12-17 01:18:27,204 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:18:35,212 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:18:55,724 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:19:01,844 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:20:50,609 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:21:00,418 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:22:11,827 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:24:04,589 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:24:12,908 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:25:00,898 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:25:01,794 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:26:10,054 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:26:10,886 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:26:34,717 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:27:21,445 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:27:32,103 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:27:44,785 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:28:03,124 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:28:15,082 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:28:41,570 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:28:47,363 - INFO - Found specific primers for chr22:28130823-28132272 on attempt 1
+2024-12-17 01:29:21,709 - INFO - Found specific primers for chr17:57941594-57942217 on attempt 1
+2024-12-17 01:29:26,238 - INFO - Found specific primers for chr12:92152664-92155779 on attempt 1
+2024-12-17 01:29:32,654 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:29:58,191 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:29:58,710 - INFO - Found specific primers for chr14:83254340-83255102 on attempt 1
+2024-12-17 01:30:08,026 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:30:33,217 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:30:40,897 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:30:48,436 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:31:06,421 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:31:54,409 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:32:21,326 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:32:34,654 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:32:54,779 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:33:09,002 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:33:27,643 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:34:07,924 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:34:09,832 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:34:45,994 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:35:44,364 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:36:01,665 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:36:24,347 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:36:24,706 - INFO - Found specific primers for chr17:63532289-63534939 on attempt 1
+2024-12-17 01:36:40,684 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:37:11,577 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:37:36,206 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:37:53,732 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:38:05,838 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:38:28,286 - INFO - Found specific primers for chr5:176242498-176242858 on attempt 1
+2024-12-17 01:38:34,360 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:38:47,440 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:39:49,230 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:40:35,278 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:41:47,811 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:42:14,508 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:42:15,633 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:42:50,172 - INFO - Found specific primers for chr16:64473337-64475516 on attempt 1
+2024-12-17 01:43:22,765 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:43:37,318 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:43:55,393 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:44:31,375 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:44:56,266 - INFO - Found specific primers for chr5:7010422-7011128 on attempt 1
+2024-12-17 01:45:26,917 - INFO - Found specific primers for chr2:10226558-10227567 on attempt 1
+2024-12-17 01:46:00,316 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:46:45,236 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:48:04,198 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:49:52,529 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:50:24,332 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:50:58,659 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:51:18,521 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:51:41,675 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:52:21,634 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:52:53,576 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:53:41,987 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:54:05,789 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:54:28,213 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:55:23,339 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:55:56,034 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:57:23,353 - INFO - Attempt 2/3 with relaxed parameters
+2024-12-17 01:58:16,575 - INFO - Attempt 3/3 with relaxed parameters
+2024-12-17 01:59:18,181 - INFO - Primers designed and written to Hela.Mecc.primer.csv
+2024-12-17 01:59:18,271 - INFO - === 设计结果统计 ===
+2024-12-17 01:59:18,271 - INFO - 总序列数: 376
+2024-12-17 01:59:18,272 - INFO - 成功设计特异性引物的序列数: 31
+2024-12-17 01:59:18,272 - INFO - 成功率: 8.24%
+2024-12-17 01:59:18,296 - INFO - 
+每次尝试的成功数量：
+2024-12-17 01:59:18,297 - INFO - 第 1 次尝试成功数量: 101

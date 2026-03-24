@@ -1,0 +1,488 @@
+nohup: ignoring input
+2025-02-07 21:25:14,924 - INFO - Found specific primers for chr3:47302936-47303627 on attempt 1
+2025-02-07 21:25:15,636 - INFO - Found specific primers for chr6:131423577-131425089 on attempt 1
+2025-02-07 21:25:21,863 - INFO - Found specific primers for chr5:180421840-180422429 on attempt 1
+2025-02-07 21:25:23,992 - INFO - Found specific primers for chr11:30448606-30451720 on attempt 1
+2025-02-07 21:25:24,563 - INFO - Found specific primers for chr17:41200653-41201187 on attempt 1
+2025-02-07 21:25:30,697 - INFO - Found specific primers for chr9:135856851-135859218 on attempt 1
+2025-02-07 21:25:57,054 - INFO - Found specific primers for chr17:17936336-17937840 on attempt 1
+2025-02-07 21:26:10,670 - INFO - Found specific primers for chr5:39684563-39687218 on attempt 1
+2025-02-07 21:26:33,186 - INFO - Found specific primers for chr17:78539721-78540076 on attempt 1
+2025-02-07 21:28:04,556 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:28:47,861 - INFO - Found specific primers for chr8:141430125-141430901 on attempt 1
+2025-02-07 21:28:56,805 - INFO - Found specific primers for chr16:10871496-10874101 on attempt 1
+2025-02-07 21:29:11,122 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:29:37,458 - INFO - Found specific primers for chr17:81102243-81102903 on attempt 1
+2025-02-07 21:29:41,734 - INFO - Found specific primers for chr12:113177957-113179858 on attempt 1
+2025-02-07 21:29:45,560 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:30:07,264 - INFO - Found specific primers for chr6:49603331-49604487 on attempt 1
+2025-02-07 21:30:22,890 - INFO - Found specific primers for chr21:33104425-33105895 on attempt 1
+2025-02-07 21:32:35,426 - INFO - Found specific primers for chr17:60220549-60222158 on attempt 1
+2025-02-07 21:32:56,993 - INFO - Found specific primers for chr17:76921311-76921802 on attempt 1
+2025-02-07 21:33:12,743 - INFO - Found specific primers for chr9:145769771-145770480 on attempt 1
+2025-02-07 21:33:30,754 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:34:00,345 - INFO - Found specific primers for chr9:140516502-140517815 on attempt 1
+2025-02-07 21:34:11,752 - INFO - Found specific primers for chr10:109757030-109758917 on attempt 1
+2025-02-07 21:35:57,816 - INFO - Found specific primers for chr7:74784331-74784940 on attempt 1
+2025-02-07 21:36:09,833 - INFO - Found specific primers for chr19:30909948-30912290 on attempt 1
+2025-02-07 21:36:34,195 - INFO - Found specific primers for chr16:63790427-63791466 on attempt 1
+2025-02-07 21:36:38,844 - INFO - Found specific primers for chr2:2718429-2719249 on attempt 1
+2025-02-07 21:37:37,269 - INFO - Found specific primers for chrX:111631985-111634680 on attempt 1
+2025-02-07 21:37:41,395 - INFO - Found specific primers for chr1:19173124-19174439 on attempt 1
+2025-02-07 21:37:53,851 - INFO - Found specific primers for chr5:32837912-32838877 on attempt 1
+2025-02-07 21:39:27,724 - INFO - Found specific primers for chr1:227343594-227344501 on attempt 1
+2025-02-07 21:39:31,377 - INFO - Found specific primers for chr11:62489184-62490786 on attempt 1
+2025-02-07 21:39:34,062 - INFO - Found specific primers for chr4:7048275-7050415 on attempt 1
+2025-02-07 21:40:05,958 - INFO - Found specific primers for chr17:30075088-30076033 on attempt 1
+2025-02-07 21:40:25,191 - INFO - Found specific primers for chr5:139491884-139492813 on attempt 1
+2025-02-07 21:41:00,837 - INFO - Found specific primers for chr10:78729904-78730856 on attempt 1
+2025-02-07 21:41:10,001 - INFO - Found specific primers for chr1:44161206-44162755 on attempt 1
+2025-02-07 21:43:09,464 - INFO - Found specific primers for chr5:23008806-23009532 on attempt 1
+2025-02-07 21:43:15,558 - INFO - Found specific primers for chr16:30250476-30251126 on attempt 1
+2025-02-07 21:43:58,059 - INFO - Found specific primers for chr8:145760991-145761502 on attempt 1
+2025-02-07 21:44:13,286 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:44:51,456 - INFO - Found specific primers for chr12:108420831-108422182 on attempt 1
+2025-02-07 21:44:54,362 - INFO - Found specific primers for chr11:70948107-70950238 on attempt 1
+2025-02-07 21:45:46,390 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:46:21,740 - INFO - Found specific primers for chr17:34514625-34515488 on attempt 1
+2025-02-07 21:46:48,874 - INFO - Found specific primers for chr9:139737669-139738847 on attempt 1
+2025-02-07 21:47:16,790 - INFO - Found specific primers for chr7:75667816-75668379 on attempt 1
+2025-02-07 21:47:42,028 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:47:57,419 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:48:10,843 - INFO - Found specific primers for chrX:25809833-25810487 on attempt 1
+2025-02-07 21:49:31,398 - INFO - Found specific primers for chr1:155300084-155302101 on attempt 1
+2025-02-07 21:49:52,501 - INFO - Found specific primers for chr16:2877977-2880827 on attempt 1
+2025-02-07 21:50:08,363 - INFO - Found specific primers for chr17:61003754-61004594 on attempt 1
+2025-02-07 21:50:21,056 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 21:51:35,755 - INFO - Found specific primers for chr8:142188473-142189177 on attempt 1
+2025-02-07 21:53:22,883 - INFO - Found specific primers for chr4:26438321-26439828 on attempt 1
+2025-02-07 21:53:27,521 - INFO - Found specific primers for chr1:37341844-37342377 on attempt 1
+2025-02-07 21:53:33,965 - INFO - Found specific primers for chr1:58474366-58475260 on attempt 1
+2025-02-07 21:53:34,865 - INFO - Found specific primers for chr18:25295124-25296006 on attempt 1
+2025-02-07 21:54:20,020 - INFO - Found specific primers for chr13:60735603-60737553 on attempt 1
+2025-02-07 21:54:37,895 - INFO - Found specific primers for chr17:61429073-61429440 on attempt 1
+2025-02-07 21:56:36,899 - INFO - Found specific primers for chr14:93279592-93280375 on attempt 1
+2025-02-07 21:58:06,883 - INFO - Found specific primers for chr16:4849608-4852147 on attempt 1
+2025-02-07 21:58:26,575 - INFO - Found specific primers for chr5:23936840-23939248 on attempt 1
+2025-02-07 21:59:08,585 - INFO - Found specific primers for chr1:36220865-36221750 on attempt 1
+2025-02-07 21:59:25,180 - INFO - Found specific primers for chr16:71369396-71372759 on attempt 1
+2025-02-07 21:59:57,542 - INFO - Found specific primers for chr20:39927207-39927726 on attempt 1
+2025-02-07 22:00:12,474 - INFO - Found specific primers for chr5:127325564-127327023 on attempt 1
+2025-02-07 22:00:58,777 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:01:20,803 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:01:49,214 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:02:41,828 - INFO - Found specific primers for chr7:2168932-2171512 on attempt 1
+2025-02-07 22:02:55,244 - INFO - Found specific primers for chr17:81954062-81954839 on attempt 1
+2025-02-07 22:03:20,977 - INFO - Found specific primers for chr6:33546482-33547728 on attempt 1
+2025-02-07 22:04:04,923 - INFO - Found specific primers for chr16:63816612-63818147 on attempt 1
+2025-02-07 22:04:49,184 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:04:53,169 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:05:25,457 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:05:49,398 - INFO - Found specific primers for chr15:70573743-70574402 on attempt 1
+2025-02-07 22:06:02,051 - INFO - Found specific primers for chr20:48810417-48810974 on attempt 1
+2025-02-07 22:06:38,224 - INFO - Found specific primers for chr20:1328928-1331469 on attempt 1
+2025-02-07 22:08:19,662 - INFO - Found specific primers for chr1:180923135-180924723 on attempt 1
+2025-02-07 22:08:46,495 - INFO - Found specific primers for chr1:21472696-21475541 on attempt 1
+2025-02-07 22:08:47,129 - INFO - Found specific primers for chr1:62223010-62223993 on attempt 1
+2025-02-07 22:10:54,644 - INFO - Found specific primers for chr6:115267507-115268783 on attempt 1
+2025-02-07 22:11:33,990 - INFO - Found specific primers for chr7:118612137-118614625 on attempt 1
+2025-02-07 22:12:01,587 - INFO - Found specific primers for chr2:109892958-109894715 on attempt 1
+2025-02-07 22:12:13,065 - INFO - Found specific primers for chr5:2616023-2616713 on attempt 1
+2025-02-07 22:14:22,699 - INFO - Found specific primers for chr20:38981687-38982101 on attempt 1
+2025-02-07 22:14:57,445 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:15:40,551 - INFO - Found specific primers for chr6:161571300-161572601 on attempt 1
+2025-02-07 22:15:41,047 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:16:10,588 - INFO - Found specific primers for chr16:74128244-74129620 on attempt 1
+2025-02-07 22:16:26,078 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:16:59,972 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:17:37,517 - INFO - Found specific primers for chr8:38503080-38504373 on attempt 1
+2025-02-07 22:17:51,251 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:18:52,176 - INFO - Found specific primers for chr2:26667813-26668302 on attempt 1
+2025-02-07 22:19:08,388 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:20:51,389 - INFO - Found specific primers for chr4:8307985-8309323 on attempt 1
+2025-02-07 22:21:37,521 - INFO - Found specific primers for chr6:80923722-80925553 on attempt 1
+2025-02-07 22:22:08,609 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:22:17,762 - INFO - Found specific primers for chr20:21015178-21016286 on attempt 1
+2025-02-07 22:23:22,321 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:24:24,203 - INFO - Found specific primers for chr1:80515791-80520737 on attempt 1
+2025-02-07 22:24:44,243 - INFO - Found specific primers for chr19:35407950-35408422 on attempt 1
+2025-02-07 22:25:30,060 - INFO - Found specific primers for chr10:49817988-49818484 on attempt 1
+2025-02-07 22:26:01,603 - INFO - Found specific primers for chr14:28308189-28309470 on attempt 1
+2025-02-07 22:26:52,519 - INFO - Found specific primers for chr13:90007428-90017747 on attempt 1
+2025-02-07 22:27:16,570 - INFO - Found specific primers for chr2:101180511-101182241 on attempt 1
+2025-02-07 22:28:33,259 - INFO - Found specific primers for chr22:47784486-47785076 on attempt 1
+2025-02-07 22:28:51,624 - INFO - Found specific primers for chr11:58684256-58686447 on attempt 1
+2025-02-07 22:29:24,313 - INFO - Found specific primers for chr2:128741257-128741895 on attempt 1
+2025-02-07 22:29:55,595 - INFO - Found specific primers for chr3:29076808-29077839 on attempt 1
+2025-02-07 22:30:07,090 - INFO - Found specific primers for chr15:96508391-96510640 on attempt 1
+2025-02-07 22:30:39,584 - INFO - Found specific primers for chr20:57972979-57974482 on attempt 1
+2025-02-07 22:31:15,247 - INFO - Found specific primers for chrX:128327102-128327917 on attempt 1
+2025-02-07 22:32:05,340 - INFO - Found specific primers for chr9:108374589-108375342 on attempt 1
+2025-02-07 22:32:19,822 - INFO - Found specific primers for chr19:11018397-11019560 on attempt 1
+2025-02-07 22:33:10,658 - INFO - Found specific primers for chr17:4432631-4433505 on attempt 1
+2025-02-07 22:33:36,705 - INFO - Found specific primers for chr18:49053233-49054262 on attempt 1
+2025-02-07 22:33:37,696 - INFO - Found specific primers for chr8:37795406-37795782 on attempt 1
+2025-02-07 22:33:42,577 - INFO - Found specific primers for chr8:70107849-70114342 on attempt 1
+2025-02-07 22:34:05,964 - INFO - Found specific primers for chr3:161445750-161446690 on attempt 1
+2025-02-07 22:35:47,643 - INFO - Found specific primers for chr11:40437330-40438060 on attempt 1
+2025-02-07 22:35:49,809 - INFO - Found specific primers for chr16:19922793-19923489 on attempt 1
+2025-02-07 22:36:36,608 - INFO - Found specific primers for chr22:48808457-48809136 on attempt 1
+2025-02-07 22:37:10,554 - INFO - Found specific primers for chr3:130232142-130233446 on attempt 1
+2025-02-07 22:37:10,957 - INFO - Found specific primers for chr11:93438340-93439122 on attempt 1
+2025-02-07 22:37:26,473 - INFO - Found specific primers for chr9:143880467-143882060 on attempt 1
+2025-02-07 22:37:33,401 - INFO - Found specific primers for chr22:20257150-20259450 on attempt 1
+2025-02-07 22:37:35,139 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:39:29,208 - INFO - Found specific primers for chr4:11461715-11462872 on attempt 1
+2025-02-07 22:39:35,008 - INFO - Found specific primers for chr15:86412847-86413898 on attempt 1
+2025-02-07 22:40:02,886 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:40:08,593 - INFO - Found specific primers for chr12:130972161-130972895 on attempt 1
+2025-02-07 22:41:11,114 - INFO - Found specific primers for chr13:50207279-50207982 on attempt 1
+2025-02-07 22:41:49,699 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:42:01,794 - INFO - Found specific primers for chr20:60183601-60184588 on attempt 1
+2025-02-07 22:43:12,706 - INFO - Found specific primers for chr7:32889756-32890385 on attempt 1
+2025-02-07 22:43:13,784 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:43:19,093 - INFO - Found specific primers for chr3:126092369-126095175 on attempt 1
+2025-02-07 22:44:05,703 - INFO - Found specific primers for chr5:173087547-173088333 on attempt 1
+2025-02-07 22:45:40,621 - INFO - Found specific primers for chr2:204273432-204274602 on attempt 1
+2025-02-07 22:46:22,340 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:46:39,724 - INFO - Found specific primers for chr2:200227012-200227686 on attempt 1
+2025-02-07 22:46:50,483 - INFO - Found specific primers for chr4:8390862-8391340 on attempt 1
+2025-02-07 22:47:14,022 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:47:44,801 - INFO - Found specific primers for chr11:60873857-60874916 on attempt 1
+2025-02-07 22:49:07,093 - INFO - Found specific primers for chrX:152777059-152777728 on attempt 1
+2025-02-07 22:49:55,517 - INFO - Found specific primers for chr6:162838357-162839901 on attempt 1
+2025-02-07 22:50:19,493 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:51:20,678 - INFO - Found specific primers for chr10:102666211-102666963 on attempt 1
+2025-02-07 22:51:24,671 - INFO - Found specific primers for chr15:86971549-86973050 on attempt 1
+2025-02-07 22:52:16,840 - INFO - Found specific primers for chr3:13475432-13476382 on attempt 1
+2025-02-07 22:52:29,152 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:52:33,453 - INFO - Found specific primers for chr16:62430698-62433630 on attempt 1
+2025-02-07 22:53:15,599 - INFO - Found specific primers for chr11:67426421-67426887 on attempt 1
+2025-02-07 22:54:15,724 - INFO - Found specific primers for chr1:152749361-152749804 on attempt 1
+2025-02-07 22:55:23,255 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:55:47,867 - INFO - Found specific primers for chr21:42772577-42773529 on attempt 1
+2025-02-07 22:56:09,296 - INFO - Found specific primers for chr1:211966736-211967488 on attempt 1
+2025-02-07 22:56:46,144 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 22:56:47,821 - INFO - Found specific primers for chr5:110118615-110119610 on attempt 1
+2025-02-07 22:57:42,400 - INFO - Found specific primers for chr5:136180126-136182421 on attempt 1
+2025-02-07 22:57:52,359 - INFO - Found specific primers for chr1:222264425-222265646 on attempt 1
+2025-02-07 22:59:40,125 - INFO - Found specific primers for chr20:60022648-60023787 on attempt 1
+2025-02-07 23:00:24,655 - INFO - Found specific primers for chr13:99762218-99762810 on attempt 1
+2025-02-07 23:01:04,764 - INFO - Found specific primers for chr18:47979893-47981706 on attempt 1
+2025-02-07 23:01:29,059 - INFO - Found specific primers for chr9:143926997-143928091 on attempt 1
+2025-02-07 23:02:18,527 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:02:40,680 - INFO - Found specific primers for chr1:41190188-41190770 on attempt 1
+2025-02-07 23:02:40,989 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:03:04,289 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:03:37,913 - INFO - Found specific primers for chr9:7362690-7365545 on attempt 1
+2025-02-07 23:03:53,290 - INFO - Found specific primers for chr18:12409876-12410856 on attempt 1
+2025-02-07 23:03:54,592 - INFO - Found specific primers for chr16:2799931-2800694 on attempt 1
+2025-02-07 23:04:27,415 - INFO - Found specific primers for chr20:54352167-54353866 on attempt 1
+2025-02-07 23:06:01,545 - INFO - Found specific primers for chr11:64273782-64274294 on attempt 1
+2025-02-07 23:06:36,041 - INFO - Found specific primers for chr15:77595389-77600227 on attempt 1
+2025-02-07 23:06:53,292 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:07:33,181 - INFO - Found specific primers for chr17:10679315-10681449 on attempt 1
+2025-02-07 23:07:58,006 - INFO - Found specific primers for chr5:73145816-73146899 on attempt 1
+2025-02-07 23:08:57,734 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:09:48,631 - INFO - Found specific primers for chr4:113931192-113931743 on attempt 1
+2025-02-07 23:10:34,425 - INFO - Found specific primers for chr22:45695284-45696630 on attempt 1
+2025-02-07 23:10:59,928 - INFO - Found specific primers for chr16:351780-353234 on attempt 1
+2025-02-07 23:12:06,539 - INFO - Found specific primers for chr11:65156938-65157667 on attempt 1
+2025-02-07 23:12:21,662 - INFO - Found specific primers for chr5:43821829-43823132 on attempt 1
+2025-02-07 23:13:15,342 - INFO - Found specific primers for chr9:146808882-146809466 on attempt 1
+2025-02-07 23:14:00,034 - INFO - Found specific primers for chr5:95383423-95384613 on attempt 1
+2025-02-07 23:15:34,007 - INFO - Found specific primers for chr10:102631746-102633473 on attempt 1
+2025-02-07 23:15:42,647 - INFO - Found specific primers for chr13:93589560-93591688 on attempt 1
+2025-02-07 23:15:49,101 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:16:25,140 - INFO - Found specific primers for chr11:61274611-61278040 on attempt 1
+2025-02-07 23:16:32,659 - INFO - Found specific primers for chr8:97711770-97713993 on attempt 1
+2025-02-07 23:16:39,975 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:18:09,301 - INFO - Found specific primers for chr16:62670996-62673585 on attempt 1
+2025-02-07 23:18:24,751 - INFO - Found specific primers for chr19:52905532-52906607 on attempt 1
+2025-02-07 23:19:43,886 - INFO - Found specific primers for chr12:3595375-3596329 on attempt 1
+2025-02-07 23:19:58,070 - INFO - Found specific primers for chr11:72702842-72704152 on attempt 1
+2025-02-07 23:20:08,950 - INFO - Found specific primers for chr6:124101134-124102648 on attempt 1
+2025-02-07 23:21:40,683 - INFO - Found specific primers for chr16:91368369-91369032 on attempt 1
+2025-02-07 23:22:12,889 - INFO - Found specific primers for chr6:31932642-31934068 on attempt 1
+2025-02-07 23:22:37,875 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:22:50,199 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:23:21,676 - INFO - Found specific primers for chr9:35369412-35371389 on attempt 1
+2025-02-07 23:23:22,116 - INFO - Found specific primers for chr7:4362756-4363565 on attempt 1
+2025-02-07 23:23:24,033 - INFO - Found specific primers for chr11:11623012-11625501 on attempt 1
+2025-02-07 23:23:44,047 - INFO - Found specific primers for chr2:60400695-60402064 on attempt 1
+2025-02-07 23:26:55,009 - INFO - Found specific primers for chr14:15522869-15523599 on attempt 1
+2025-02-07 23:26:59,704 - INFO - Found specific primers for chr7:150586004-150586900 on attempt 1
+2025-02-07 23:27:24,814 - INFO - Found specific primers for chr20:52016633-52017922 on attempt 1
+2025-02-07 23:27:38,176 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:27:56,040 - INFO - Found specific primers for chr4:13746901-13748393 on attempt 1
+2025-02-07 23:28:07,772 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:28:58,969 - INFO - Found specific primers for chr9:111707183-111708799 on attempt 1
+2025-02-07 23:29:43,067 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:30:21,764 - INFO - Found specific primers for chr3:158420835-158422778 on attempt 1
+2025-02-07 23:30:33,575 - INFO - Found specific primers for chr20:34286532-34287876 on attempt 1
+2025-02-07 23:31:07,950 - INFO - Found specific primers for chr11:60955224-60956315 on attempt 1
+2025-02-07 23:31:33,057 - INFO - Found specific primers for chr12:19602049-19602638 on attempt 1
+2025-02-07 23:34:08,916 - INFO - Found specific primers for chr4:7566150-7567466 on attempt 1
+2025-02-07 23:34:09,724 - INFO - Found specific primers for chr1:78407698-78411440 on attempt 1
+2025-02-07 23:34:43,523 - INFO - Found specific primers for chr19:60806945-60812589 on attempt 1
+2025-02-07 23:34:55,687 - INFO - Found specific primers for chr16:94404816-94405301 on attempt 1
+2025-02-07 23:34:56,276 - INFO - Found specific primers for chr5:174093481-174094184 on attempt 1
+2025-02-07 23:36:38,601 - INFO - Found specific primers for chr11:70196590-70198340 on attempt 1
+2025-02-07 23:37:19,296 - INFO - Found specific primers for chr11:123280983-123282383 on attempt 1
+2025-02-07 23:37:29,402 - INFO - Found specific primers for chr3:4766411-4766928 on attempt 1
+2025-02-07 23:37:33,432 - INFO - Found specific primers for chr3:35568608-35572677 on attempt 1
+2025-02-07 23:37:37,726 - INFO - Found specific primers for chr10:72774972-72777967 on attempt 1
+2025-02-07 23:37:48,996 - INFO - Found specific primers for chr3:55557251-55558517 on attempt 1
+2025-02-07 23:38:33,772 - INFO - Found specific primers for chr7:16924393-16924794 on attempt 1
+2025-02-07 23:38:56,352 - INFO - Found specific primers for chr5:33597015-33598578 on attempt 1
+2025-02-07 23:39:20,498 - INFO - Found specific primers for chr4:6298029-6300032 on attempt 1
+2025-02-07 23:39:43,908 - INFO - Found specific primers for chr1:199213016-199214513 on attempt 1
+2025-02-07 23:40:15,713 - INFO - Found specific primers for chr3:163584480-163585649 on attempt 1
+2025-02-07 23:40:44,853 - INFO - Found specific primers for chr2:228199184-228199617 on attempt 1
+2025-02-07 23:41:00,661 - INFO - Found specific primers for chr13:30240546-30241961 on attempt 1
+2025-02-07 23:41:06,640 - INFO - Found specific primers for chr9:33384846-33386565 on attempt 1
+2025-02-07 23:41:09,273 - INFO - Found specific primers for chr18:35628819-35632376 on attempt 1
+2025-02-07 23:42:42,872 - INFO - Found specific primers for chr10:80277647-80278184 on attempt 1
+2025-02-07 23:43:10,464 - INFO - Found specific primers for chr9:132635436-132638345 on attempt 1
+2025-02-07 23:43:50,689 - INFO - Found specific primers for chr7:76906114-76906671 on attempt 1
+2025-02-07 23:43:58,453 - INFO - Found specific primers for chr2:2670375-2672393 on attempt 1
+2025-02-07 23:44:17,404 - INFO - Found specific primers for chr1:229697854-229699051 on attempt 1
+2025-02-07 23:44:32,661 - INFO - Found specific primers for chr2:207178320-207181263 on attempt 1
+2025-02-07 23:44:32,866 - INFO - Found specific primers for chr12:66156677-66158260 on attempt 1
+2025-02-07 23:45:11,435 - INFO - Found specific primers for chr12:77653095-77654245 on attempt 1
+2025-02-07 23:45:26,029 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:46:06,039 - INFO - Found specific primers for chr17:2645826-2647691 on attempt 1
+2025-02-07 23:46:51,149 - INFO - Found specific primers for chrX:3018932-3025970 on attempt 1
+2025-02-07 23:47:13,466 - INFO - Found specific primers for chr20:645590-647269 on attempt 1
+2025-02-07 23:47:21,373 - INFO - Found specific primers for chr8:126690949-126691321 on attempt 1
+2025-02-07 23:48:26,718 - INFO - Found specific primers for chr3:131203025-131204156 on attempt 1
+2025-02-07 23:49:25,112 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:49:36,991 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:50:11,436 - INFO - Found specific primers for chr20:44391035-44393043 on attempt 1
+2025-02-07 23:50:11,848 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:51:35,473 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:51:40,072 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:53:22,502 - INFO - Found specific primers for chr19:16653159-16654915 on attempt 1
+2025-02-07 23:54:07,000 - INFO - Found specific primers for chr1:199334116-199336834 on attempt 1
+2025-02-07 23:54:21,445 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-07 23:55:26,184 - INFO - Found specific primers for chr16:63542753-63543208 on attempt 1
+2025-02-07 23:55:28,344 - INFO - Found specific primers for chr11:122759306-122760038 on attempt 1
+2025-02-07 23:56:47,085 - INFO - Found specific primers for chr3:14891234-14891879 on attempt 1
+2025-02-07 23:58:46,634 - INFO - Found specific primers for chr9:148734937-148735893 on attempt 1
+2025-02-08 00:00:03,875 - INFO - Found specific primers for chr5:97599312-97600673 on attempt 1
+2025-02-08 00:00:09,325 - INFO - Found specific primers for chr22:36593933-36595357 on attempt 1
+2025-02-08 00:00:15,090 - INFO - Found specific primers for chr13:56796738-56797980 on attempt 1
+2025-02-08 00:00:20,866 - INFO - Found specific primers for chr5:124578302-124582257 on attempt 1
+2025-02-08 00:00:26,124 - INFO - Found specific primers for chr17:81197681-81198438 on attempt 1
+2025-02-08 00:02:23,865 - INFO - Found specific primers for chr15:69410151-69410746 on attempt 1
+2025-02-08 00:03:00,223 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:03:50,033 - INFO - Found specific primers for chr16:88900831-88903010 on attempt 1
+2025-02-08 00:03:55,099 - INFO - Found specific primers for chr8:38074602-38076021 on attempt 1
+2025-02-08 00:04:01,074 - INFO - Found specific primers for chr17:63629349-63631471 on attempt 1
+2025-02-08 00:04:06,660 - INFO - Found specific primers for chr9:142332466-142334736 on attempt 1
+2025-02-08 00:04:17,524 - INFO - Found specific primers for chr5:42127158-42127911 on attempt 1
+2025-02-08 00:05:08,336 - INFO - Found specific primers for chr12:131987390-131988062 on attempt 1
+2025-02-08 00:05:50,788 - INFO - Found specific primers for chr11:36109270-36110248 on attempt 1
+2025-02-08 00:05:59,943 - INFO - Found specific primers for chr11:88147857-88151018 on attempt 1
+2025-02-08 00:06:02,261 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:07:21,760 - INFO - Found specific primers for chr9:111535653-111536354 on attempt 1
+2025-02-08 00:07:24,731 - INFO - Found specific primers for chr10:51453718-51455758 on attempt 1
+2025-02-08 00:07:27,519 - INFO - Found specific primers for chr7:31185184-31185781 on attempt 1
+2025-02-08 00:08:34,100 - INFO - Found specific primers for chr2:217035624-217036641 on attempt 1
+2025-02-08 00:09:24,359 - INFO - Found specific primers for chr17:52986858-52989008 on attempt 1
+2025-02-08 00:09:48,308 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:10:49,966 - INFO - Found specific primers for chr3:12833520-12834085 on attempt 1
+2025-02-08 00:10:50,365 - INFO - Found specific primers for chr17:4399833-4400627 on attempt 1
+2025-02-08 00:11:01,331 - INFO - Found specific primers for chr6:35223518-35224777 on attempt 1
+2025-02-08 00:12:23,697 - INFO - Found specific primers for chr5:180368351-180369043 on attempt 1
+2025-02-08 00:12:43,066 - INFO - Found specific primers for chr1:226182845-226183178 on attempt 1
+2025-02-08 00:13:03,873 - INFO - Found specific primers for chr2:240227697-240228407 on attempt 1
+2025-02-08 00:14:49,999 - INFO - Found specific primers for chr13:26481428-26481974 on attempt 1
+2025-02-08 00:14:50,323 - INFO - Found specific primers for chr1:161668922-161670285 on attempt 1
+2025-02-08 00:14:58,816 - INFO - Found specific primers for chr9:148848613-148849247 on attempt 1
+2025-02-08 00:15:13,344 - INFO - Found specific primers for chr7:37034730-37036251 on attempt 1
+2025-02-08 00:15:27,469 - INFO - Found specific primers for chr2:109759368-109761249 on attempt 1
+2025-02-08 00:16:01,990 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:16:44,799 - INFO - Found specific primers for chr1:3216066-3216736 on attempt 1
+2025-02-08 00:16:56,173 - INFO - Found specific primers for chr15:25785887-25787055 on attempt 1
+2025-02-08 00:17:14,546 - INFO - Found specific primers for chr5:31758861-31760431 on attempt 1
+2025-02-08 00:18:15,890 - INFO - Found specific primers for chr3:137930677-137931662 on attempt 1
+2025-02-08 00:18:35,650 - INFO - Found specific primers for chr18:34514460-34515797 on attempt 1
+2025-02-08 00:19:37,311 - INFO - Found specific primers for chr9:92394104-92396833 on attempt 1
+2025-02-08 00:20:22,343 - INFO - Found specific primers for chr9:107583388-107583955 on attempt 1
+2025-02-08 00:20:36,917 - INFO - Found specific primers for chr11:34138950-34139701 on attempt 1
+2025-02-08 00:20:46,006 - INFO - Found specific primers for chr13:102146973-102148823 on attempt 1
+2025-02-08 00:21:22,341 - INFO - Found specific primers for chrX:68572536-68574429 on attempt 1
+2025-02-08 00:22:31,317 - INFO - Found specific primers for chr7:28706049-28709239 on attempt 1
+2025-02-08 00:22:54,871 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:23:23,091 - INFO - Found specific primers for chr19:38539511-38540606 on attempt 1
+2025-02-08 00:24:03,940 - INFO - Found specific primers for chr2:48861161-48862534 on attempt 1
+2025-02-08 00:24:19,392 - INFO - Found specific primers for chr10:107504918-107505797 on attempt 1
+2025-02-08 00:24:20,004 - INFO - Found specific primers for chr1:26945190-26946299 on attempt 1
+2025-02-08 00:25:08,935 - INFO - Found specific primers for chrX:118726990-118727849 on attempt 1
+2025-02-08 00:26:03,016 - INFO - Found specific primers for chr8:128954700-128956026 on attempt 1
+2025-02-08 00:26:57,420 - INFO - Found specific primers for chr19:52352168-52355139 on attempt 1
+2025-02-08 00:27:42,627 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:27:44,545 - INFO - Found specific primers for chr9:134806059-134807223 on attempt 1
+2025-02-08 00:27:51,075 - INFO - Found specific primers for chr8:139909503-139912043 on attempt 1
+2025-02-08 00:28:28,368 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:28:36,963 - INFO - Found specific primers for chr11:121910208-121911141 on attempt 1
+2025-02-08 00:29:14,519 - INFO - Found specific primers for chr7:48468121-48469566 on attempt 1
+2025-02-08 00:31:13,978 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:31:51,988 - INFO - Found specific primers for chr19:13283787-13284381 on attempt 1
+2025-02-08 00:32:29,039 - INFO - Found specific primers for chr19:40795185-40796569 on attempt 1
+2025-02-08 00:32:33,697 - INFO - Found specific primers for chr19:19472970-19473706 on attempt 1
+2025-02-08 00:32:38,105 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:33:41,016 - INFO - Found specific primers for chr5:39495057-39496030 on attempt 1
+2025-02-08 00:33:49,899 - INFO - Found specific primers for chr7:146135888-146138383 on attempt 1
+2025-02-08 00:34:43,603 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:35:28,717 - INFO - Found specific primers for chr21:27388031-27388954 on attempt 1
+2025-02-08 00:36:23,708 - INFO - Found specific primers for chr10:126675606-126676577 on attempt 1
+2025-02-08 00:37:27,288 - INFO - Found specific primers for chr15:80540821-80542395 on attempt 1
+2025-02-08 00:37:37,915 - INFO - Found specific primers for chr9:132107951-132109266 on attempt 1
+2025-02-08 00:39:17,444 - INFO - Found specific primers for chr10:127706304-127708131 on attempt 1
+2025-02-08 00:39:57,938 - INFO - Found specific primers for chr20:371014-371803 on attempt 1
+2025-02-08 00:41:02,662 - INFO - Found specific primers for chr17:17810598-17812106 on attempt 1
+2025-02-08 00:41:06,217 - INFO - Found specific primers for chr2:105948411-105950153 on attempt 1
+2025-02-08 00:41:21,769 - INFO - Found specific primers for chr21:44369828-44370467 on attempt 1
+2025-02-08 00:41:48,677 - INFO - Found specific primers for chr14:62988572-62990088 on attempt 1
+2025-02-08 00:41:53,939 - INFO - Found specific primers for chr1:168558550-168560058 on attempt 1
+2025-02-08 00:41:56,985 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:43:40,829 - INFO - Found specific primers for chr16:77839147-77839920 on attempt 1
+2025-02-08 00:43:50,285 - INFO - Found specific primers for chr3:100692444-100693173 on attempt 1
+2025-02-08 00:44:49,703 - INFO - Found specific primers for chr8:9319172-9319755 on attempt 1
+2025-02-08 00:45:31,823 - INFO - Found specific primers for chr15:62731123-62733042 on attempt 1
+2025-02-08 00:45:48,047 - INFO - Found specific primers for chr13:108305973-108306699 on attempt 1
+2025-02-08 00:45:54,969 - INFO - Found specific primers for chr9:141006556-141009199 on attempt 1
+2025-02-08 00:45:57,037 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:46:26,792 - INFO - Found specific primers for chr11:130423630-130424448 on attempt 1
+2025-02-08 00:47:09,544 - INFO - Found specific primers for chr19:16515898-16517713 on attempt 1
+2025-02-08 00:47:43,880 - INFO - Found specific primers for chr1:27435227-27436057 on attempt 1
+2025-02-08 00:48:22,143 - INFO - Found specific primers for chr10:27456960-27464645 on attempt 1
+2025-02-08 00:48:38,929 - INFO - Found specific primers for chr10:121965789-121966846 on attempt 1
+2025-02-08 00:49:11,583 - INFO - Found specific primers for chr13:19389701-19390161 on attempt 1
+2025-02-08 00:49:32,720 - INFO - Found specific primers for chr13:110882856-110884746 on attempt 1
+2025-02-08 00:49:42,990 - INFO - Found specific primers for chr21:33425967-33426928 on attempt 1
+2025-02-08 00:49:51,682 - INFO - Found specific primers for chr5:89155689-89156060 on attempt 1
+2025-02-08 00:50:21,491 - INFO - Found specific primers for chr1:154358095-154359459 on attempt 1
+2025-02-08 00:50:55,683 - INFO - Found specific primers for chr21:35612903-35615000 on attempt 1
+2025-02-08 00:51:24,270 - INFO - Found specific primers for chr10:80044316-80047012 on attempt 1
+2025-02-08 00:52:13,071 - INFO - Found specific primers for chr2:10868042-10869276 on attempt 1
+2025-02-08 00:52:54,466 - INFO - Found specific primers for chr2:239446882-239447831 on attempt 1
+2025-02-08 00:53:06,415 - INFO - Found specific primers for chr2:17351788-17352367 on attempt 1
+2025-02-08 00:53:23,694 - INFO - Found specific primers for chr1:7093435-7094837 on attempt 1
+2025-02-08 00:53:30,910 - INFO - Found specific primers for chr14:94955580-94956586 on attempt 1
+2025-02-08 00:54:04,018 - INFO - Found specific primers for chr22:38395272-38395907 on attempt 1
+2025-02-08 00:54:10,459 - INFO - Found specific primers for chr11:44779275-44780830 on attempt 1
+2025-02-08 00:54:29,078 - INFO - Found specific primers for chr5:51784517-51785461 on attempt 1
+2025-02-08 00:54:51,306 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:55:05,638 - INFO - Found specific primers for chr18:79139818-79141859 on attempt 1
+2025-02-08 00:55:58,374 - INFO - Found specific primers for chr7:132820906-132822363 on attempt 1
+2025-02-08 00:56:41,080 - INFO - Found specific primers for chr1:15884814-15885757 on attempt 1
+2025-02-08 00:56:41,110 - INFO - Found specific primers for chr15:95810107-95811701 on attempt 1
+2025-02-08 00:57:39,221 - INFO - Found specific primers for chr20:61619555-61620508 on attempt 1
+2025-02-08 00:58:00,514 - INFO - Found specific primers for chr7:75190176-75192089 on attempt 1
+2025-02-08 00:58:06,644 - INFO - Found specific primers for chr12:175413-176599 on attempt 1
+2025-02-08 00:59:18,372 - INFO - Found specific primers for chr5:1685028-1686029 on attempt 1
+2025-02-08 00:59:50,606 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 00:59:59,838 - INFO - Found specific primers for chr1:43883396-43885277 on attempt 1
+2025-02-08 01:00:03,590 - INFO - Found specific primers for chr8:22644240-22645263 on attempt 1
+2025-02-08 01:00:51,247 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:00:51,749 - INFO - Found specific primers for chr3:180448031-180452316 on attempt 1
+2025-02-08 01:01:13,705 - INFO - Found specific primers for chr19:60018729-60019908 on attempt 1
+2025-02-08 01:01:14,892 - INFO - Found specific primers for chr9:22312669-22314575 on attempt 1
+2025-02-08 01:01:42,186 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:01:51,725 - INFO - Found specific primers for chr9:103434936-103438571 on attempt 1
+2025-02-08 01:02:22,726 - INFO - Found specific primers for chr4:10243272-10246437 on attempt 1
+2025-02-08 01:02:53,082 - INFO - Found specific primers for chr9:35929808-35930442 on attempt 1
+2025-02-08 01:03:33,183 - INFO - Found specific primers for chr5:179766126-179771183 on attempt 1
+2025-02-08 01:04:06,039 - INFO - Found specific primers for chr2:31039850-31041881 on attempt 1
+2025-02-08 01:04:55,627 - INFO - Found specific primers for chr3:44421247-44422331 on attempt 1
+2025-02-08 01:06:05,781 - INFO - Found specific primers for chr14:94347669-94349579 on attempt 1
+2025-02-08 01:06:31,876 - INFO - Found specific primers for chrX:39678264-39680007 on attempt 1
+2025-02-08 01:06:48,932 - INFO - Found specific primers for chr7:152104693-152105611 on attempt 1
+2025-02-08 01:07:08,395 - INFO - Found specific primers for chr19:47981388-47982523 on attempt 1
+2025-02-08 01:07:51,620 - INFO - Found specific primers for chr9:136239923-136240409 on attempt 1
+2025-02-08 01:08:24,219 - INFO - Found specific primers for chr3:10909994-10911155 on attempt 1
+2025-02-08 01:09:03,794 - INFO - Found specific primers for chr7:136818244-136819344 on attempt 1
+2025-02-08 01:09:21,827 - INFO - Found specific primers for chr5:163707764-163709669 on attempt 1
+2025-02-08 01:09:27,031 - INFO - Found specific primers for chr19:13078354-13079184 on attempt 1
+2025-02-08 01:09:55,934 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:10:36,471 - INFO - Found specific primers for chr2:17651399-17651876 on attempt 1
+2025-02-08 01:11:46,595 - INFO - Found specific primers for chr13:107725327-107727424 on attempt 1
+2025-02-08 01:12:24,977 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:12:51,176 - INFO - Found specific primers for chr1:30758455-30759213 on attempt 1
+2025-02-08 01:13:02,146 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:13:19,036 - INFO - Found specific primers for chr2:115174645-115179195 on attempt 1
+2025-02-08 01:14:13,273 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:14:19,859 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:14:59,915 - INFO - Found specific primers for chr11:1034414-1035500 on attempt 1
+2025-02-08 01:15:29,189 - INFO - Found specific primers for chr4:14531262-14532049 on attempt 1
+2025-02-08 01:17:21,013 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:17:34,708 - INFO - Found specific primers for chr1:24699239-24699961 on attempt 1
+2025-02-08 01:18:36,508 - INFO - Found specific primers for chr14:60196009-60196429 on attempt 1
+2025-02-08 01:19:56,107 - INFO - Found specific primers for chr6:35001239-35002977 on attempt 1
+2025-02-08 01:19:56,196 - INFO - Found specific primers for chr5:70234874-70236651 on attempt 1
+2025-02-08 01:20:17,724 - INFO - Found specific primers for chr10:77977764-77978354 on attempt 1
+2025-02-08 01:20:39,618 - INFO - Found specific primers for chr22:35923518-35925301 on attempt 1
+2025-02-08 01:21:13,745 - INFO - Found specific primers for chr10:98859771-98860488 on attempt 1
+2025-02-08 01:21:45,837 - INFO - Found specific primers for chr3:45051902-45053007 on attempt 1
+2025-02-08 01:22:03,232 - INFO - Found specific primers for chr3:131099328-131099739 on attempt 1
+2025-02-08 01:22:31,561 - INFO - Found specific primers for chrX:151988914-151989275 on attempt 1
+2025-02-08 01:22:35,476 - INFO - Found specific primers for chr17:3815663-3816480 on attempt 1
+2025-02-08 01:22:58,703 - INFO - Found specific primers for chr8:9371451-9372287 on attempt 1
+2025-02-08 01:23:00,047 - INFO - Found specific primers for chr11:70221885-70223696 on attempt 1
+2025-02-08 01:23:21,892 - INFO - Found specific primers for chr15:40192510-40193087 on attempt 1
+2025-02-08 01:23:37,788 - INFO - Found specific primers for chr1:54061328-54062850 on attempt 1
+2025-02-08 01:24:04,966 - INFO - Found specific primers for chr4:75912389-75912966 on attempt 1
+2025-02-08 01:24:39,173 - INFO - Found specific primers for chr13:95946618-95947522 on attempt 1
+2025-02-08 01:24:41,856 - INFO - Found specific primers for chr7:150149445-150150108 on attempt 1
+2025-02-08 01:25:03,928 - INFO - Found specific primers for chr9:35418087-35418613 on attempt 1
+2025-02-08 01:25:43,725 - INFO - Found specific primers for chr12:57080255-57081636 on attempt 1
+2025-02-08 01:25:56,101 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:26:25,476 - INFO - Found specific primers for chr15:82615085-82615643 on attempt 1
+2025-02-08 01:27:19,417 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:27:26,688 - INFO - Found specific primers for chr16:592651-593065 on attempt 1
+2025-02-08 01:27:41,142 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:28:55,307 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:29:31,545 - INFO - Found specific primers for chr1:7730365-7731304 on attempt 1
+2025-02-08 01:29:36,925 - INFO - Found specific primers for chr2:71509276-71509803 on attempt 1
+2025-02-08 01:30:08,263 - INFO - Found specific primers for chr15:46439047-46440037 on attempt 1
+2025-02-08 01:30:47,120 - INFO - Found specific primers for chr17:1634894-1635471 on attempt 1
+2025-02-08 01:31:03,557 - INFO - Found specific primers for chr4:6876196-6876731 on attempt 1
+2025-02-08 01:31:49,789 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:32:33,866 - INFO - Found specific primers for chr5:32330659-32333012 on attempt 1
+2025-02-08 01:32:43,834 - INFO - Found specific primers for chr5:7551509-7553059 on attempt 1
+2025-02-08 01:33:12,927 - INFO - Found specific primers for chr13:41792409-41793750 on attempt 1
+2025-02-08 01:33:16,544 - INFO - Found specific primers for chr14:98941032-98942090 on attempt 1
+2025-02-08 01:33:47,339 - INFO - Found specific primers for chr1:152818623-152819411 on attempt 1
+2025-02-08 01:33:51,730 - INFO - Found specific primers for chr8:142392303-142393795 on attempt 1
+2025-02-08 01:33:58,487 - INFO - Found specific primers for chr6:92606735-92607910 on attempt 1
+2025-02-08 01:34:30,740 - INFO - Found specific primers for chr1:231441891-231444176 on attempt 1
+2025-02-08 01:34:33,016 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:34:37,288 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:35:31,721 - INFO - Found specific primers for chr1:23676398-23677311 on attempt 1
+2025-02-08 01:36:04,018 - INFO - Found specific primers for chr11:117824298-117825705 on attempt 1
+2025-02-08 01:36:19,422 - INFO - Found specific primers for chr11:66233736-66235286 on attempt 1
+2025-02-08 01:36:38,967 - INFO - Found specific primers for chr9:147693095-147693929 on attempt 1
+2025-02-08 01:37:08,125 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:37:18,526 - INFO - Found specific primers for chr12:54405032-54406744 on attempt 1
+2025-02-08 01:37:43,073 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:37:57,464 - INFO - Found specific primers for chr17:12130277-12131232 on attempt 1
+2025-02-08 01:38:27,553 - INFO - Found specific primers for chr7:96483327-96487768 on attempt 1
+2025-02-08 01:38:40,084 - INFO - Found specific primers for chr7:31005663-31007203 on attempt 1
+2025-02-08 01:38:48,576 - INFO - Found specific primers for chr2:236421262-236422786 on attempt 1
+2025-02-08 01:39:57,245 - INFO - Found specific primers for chr8:124440713-124442215 on attempt 1
+2025-02-08 01:41:58,774 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:41:59,045 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:45:45,212 - INFO - Found specific primers for chr22:23106916-23108461 on attempt 1
+2025-02-08 01:47:22,634 - INFO - Attempt 2/2 with relaxed parameters
+2025-02-08 01:47:25,753 - INFO - Found specific primers for chr2:159411559-159415671 on attempt 1
+2025-02-08 01:50:37,103 - INFO - Primers designed and written to eccDNA_Circel-Seq_NGS_primers_500bp_32t_2a.tsv
+2025-02-08 01:50:37,107 - INFO - === 设计结果统计 ===
+2025-02-08 01:50:37,107 - INFO - 总序列数: 479
+2025-02-08 01:50:37,107 - INFO - 成功设计特异性引物的序列数: 393
+2025-02-08 01:50:37,107 - INFO - 成功率: 82.05%
+2025-02-08 01:50:37,108 - INFO - 
+每次尝试的成功数量：
+2025-02-08 01:50:37,108 - INFO - 第 1 次尝试成功数量: 1470

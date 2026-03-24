@@ -21,6 +21,17 @@ class TypeMetrics:
     misclassified_as: dict[str, int] = field(default_factory=dict)
     misclassified_from: dict[str, int] = field(default_factory=dict)
 
+    # CeccDNA-specific metrics (only populated for CeccDNA type)
+    partial_match_count: int = 0  # CeccDNA where some but not all segments matched
+    total_matched_segments: int = 0  # Total number of correctly matched segments
+    total_truth_segments: int = 0  # Total number of truth segments
+    inter_chr_truth: int = 0
+    inter_chr_tp: int = 0
+    inter_chr_detected: int = 0
+    intra_chr_truth: int = 0
+    intra_chr_tp: int = 0
+    intra_chr_detected: int = 0
+
     @property
     def precision(self) -> float:
         """Precision = TP / (TP + FP)"""
@@ -49,6 +60,39 @@ class TypeMetrics:
         if self.detected_count == 0:
             return 0.0
         return self.false_positive / self.detected_count
+
+    # CeccDNA-specific computed properties
+
+    @property
+    def segment_accuracy(self) -> float:
+        """Fraction of correctly matched segments (CeccDNA only)."""
+        if self.total_truth_segments == 0:
+            return 0.0
+        return self.total_matched_segments / self.total_truth_segments
+
+    @property
+    def inter_chr_precision(self) -> float:
+        if self.inter_chr_detected == 0:
+            return 0.0
+        return self.inter_chr_tp / self.inter_chr_detected
+
+    @property
+    def inter_chr_recall(self) -> float:
+        if self.inter_chr_truth == 0:
+            return 0.0
+        return self.inter_chr_tp / self.inter_chr_truth
+
+    @property
+    def intra_chr_precision(self) -> float:
+        if self.intra_chr_detected == 0:
+            return 0.0
+        return self.intra_chr_tp / self.intra_chr_detected
+
+    @property
+    def intra_chr_recall(self) -> float:
+        if self.intra_chr_truth == 0:
+            return 0.0
+        return self.intra_chr_tp / self.intra_chr_truth
 
 
 @dataclass

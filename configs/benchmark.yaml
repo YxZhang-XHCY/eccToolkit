@@ -1,0 +1,109 @@
+# ============================================================================
+# eccToolkit Benchmark Experiment Configuration
+# For iMeta paper: CircleSeeker + eccToolkit
+# ============================================================================
+#
+# This file defines the benchmark experiment parameters.
+# Used as reference by scripts/benchmark_experiment.sh
+#
+# Not directly consumed by CLI; serves as documentation and
+# parameter reference for the benchmark experiments.
+
+# Global settings
+reference: null  # set via CLI
+threads: 8
+seed: 42
+
+# ============================================================================
+# Experiment 1: Standard Benchmark (iMeta Main Figure)
+# ============================================================================
+experiments:
+  standard:
+    description: "Main benchmark comparing all tools (iMeta Fig 3)"
+    ground_truth:
+      num_unique: 10000
+      num_multi: 1000
+      num_chimeric: 500
+      seed: 42
+    platforms:
+      - name: hifi
+        coverage: 30
+      - name: ngs
+        coverage: 30
+      - name: ont
+        coverage: 30
+    tools:
+      hifi:
+        - CircleSeeker
+        - CReSIL
+        - ecc_finder
+      ngs:
+        - CircleSeeker
+        - Circle-Map
+        - ecc_finder
+      ont:
+        - CircleSeeker
+
+  # ============================================================================
+  # Experiment 2: Coverage Gradient (iMeta Supplementary)
+  # ============================================================================
+  coverage_gradient:
+    description: "Coverage gradient experiment (iMeta Fig 4)"
+    ground_truth:
+      num_unique: 10000
+      num_multi: 1000
+      num_chimeric: 500
+      seed: 42
+    coverages: [5, 10, 30, 50, 100]
+    platform: hifi
+    tools:
+      - CircleSeeker
+      - CReSIL
+
+  # ============================================================================
+  # Experiment 3: Complexity Gradient (iMeta Supplementary)
+  # ============================================================================
+  complexity_gradient:
+    description: "Complexity gradient experiment (iMeta Supplementary)"
+    complexities:
+      - { total: 1000,  u: 800,   m: 150,  c: 50   }
+      - { total: 5000,  u: 4000,  m: 750,  c: 250  }
+      - { total: 10000, u: 8000,  m: 1500, c: 500  }
+      - { total: 50000, u: 40000, m: 7500, c: 2500 }
+    coverage: 30
+    platform: hifi
+    tools:
+      - CircleSeeker
+
+# ============================================================================
+# Benchmark evaluation settings
+# ============================================================================
+benchmark:
+  overlap_threshold: 0.8
+  output_format: all  # text, json, csv, all
+
+# ============================================================================
+# Length bins for stratified analysis
+# ============================================================================
+length_bins:
+  - { label: "<500bp",    min: 0,     max: 500    }
+  - { label: "500bp-1kb", min: 500,   max: 1000   }
+  - { label: "1kb-5kb",   min: 1000,  max: 5000   }
+  - { label: "5kb-50kb",  min: 5000,  max: 50000  }
+  - { label: ">50kb",     min: 50000, max: 500000 }
+
+# ============================================================================
+# Plot settings (used by benchmark_plot.py)
+# ============================================================================
+plot:
+  dpi: 300
+  font_family: "Arial"
+  color_palette:
+    CircleSeeker: "#E64B35"
+    CReSIL: "#4DBBD5"
+    Circle-Map: "#00A087"
+    ecc_finder: "#3C5488"
+  ecc_type_colors:
+    UeccDNA: "#2166AC"
+    MeccDNA: "#B2182B"
+    CeccDNA: "#35978F"
