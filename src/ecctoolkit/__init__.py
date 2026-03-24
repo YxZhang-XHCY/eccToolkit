@@ -11,5 +11,5 @@ This package provides tools for:
 - Visualization and reporting
 """
 
-__version__ = "0.6.5"
+__version__ = "0.6.9"
 __author__ = "eccToolkit Team"
